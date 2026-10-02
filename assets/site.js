@@ -11,10 +11,6 @@
     node.setAttribute("href", config.whatsappUrl || "#");
   });
 
-  document.querySelectorAll("[data-contact-instagram]").forEach(function (node) {
-    node.setAttribute("href", config.instagramUrl || "#");
-  });
-
   document.querySelectorAll("[data-contact-x]").forEach(function (node) {
     node.setAttribute("href", config.xUrl || "#");
   });
@@ -217,12 +213,40 @@
     }
   };
 
+  var heroVideoSources = {
+    en: "/assets/hero-chambre17.mp4",
+    fr: "/assets/hero-fr.mp4",
+    ar: "/assets/hero-ar.mp4"
+  };
+
+  function setHeroVideo(lang) {
+    var heroVideo = document.querySelector("[data-hero-video]");
+    if (!heroVideo) {
+      return;
+    }
+
+    var nextSource = heroVideoSources[lang] || heroVideoSources.en;
+    if (heroVideo.getAttribute("data-current-src") === nextSource) {
+      return;
+    }
+
+    heroVideo.setAttribute("data-current-src", nextSource);
+    heroVideo.innerHTML = '<source src="' + nextSource + '" type="video/mp4">';
+    heroVideo.load();
+
+    var playPromise = heroVideo.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(function () {});
+    }
+  }
+
   function applyLanguage(lang) {
     var selected = translations[lang] ? lang : "en";
     var dict = translations[selected];
     document.documentElement.lang = selected;
     document.documentElement.dir = selected === "ar" ? "rtl" : "ltr";
     document.documentElement.setAttribute("data-lang", selected);
+    setHeroVideo(selected);
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var key = node.getAttribute("data-i18n");
       if (dict[key]) {

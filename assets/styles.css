@@ -252,6 +252,37 @@ select {
   filter: grayscale(1) contrast(1.08) brightness(0.98);
 }
 
+.hero-arabic-copy {
+  position: relative;
+  z-index: 2;
+  display: none;
+  width: min(100% - (var(--gutter) * 2), 980px);
+  margin: auto;
+  color: #fff;
+  direction: rtl;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(2.7rem, 7vw, 7.8rem);
+  font-weight: 700;
+  line-height: 1.08;
+  text-shadow: 0 0 22px rgba(255, 255, 255, 0.12), 0 18px 44px rgba(0, 0, 0, 0.7);
+}
+
+.hero-arabic-copy span {
+  display: block;
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  animation: arabicHeroIn 900ms cubic-bezier(0.2, 0.7, 0.08, 1) forwards;
+}
+
+.hero-arabic-copy span + span {
+  animation-delay: 420ms;
+}
+
+html[data-lang="ar"] .hero-arabic-copy {
+  display: block;
+}
+
 .reduced-motion .hero-video,
 .hero-video-missing .hero-video {
   display: none;
@@ -414,6 +445,13 @@ select {
 @keyframes underlineGrow {
   to {
     width: min(180px, 36%);
+  }
+}
+
+@keyframes arabicHeroIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -1261,11 +1299,11 @@ select {
 
 @keyframes ctaFloat {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
 
   50% {
-    transform: translateY(-4px);
+    transform: translateX(-50%) translateY(-4px);
   }
 }
 
@@ -1572,10 +1610,11 @@ select {
 
 @media (max-width: 980px) {
   .site-header {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto 1fr auto;
   }
 
   .menu-button {
+    grid-column: 3;
     display: block;
     justify-self: end;
   }
@@ -1618,11 +1657,19 @@ select {
   }
 
   .header-actions {
+    grid-column: 2;
     justify-self: end;
+    margin-right: 14px;
   }
 
   .language-switcher {
-    display: none;
+    display: flex;
+    padding: 2px;
+  }
+
+  .language-switcher button {
+    min-width: 34px;
+    padding: 7px 8px;
   }
 
   .split,
@@ -1707,6 +1754,22 @@ select {
     min-height: 100svh;
   }
 
+  .hero-video {
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  html:not([data-lang="ar"]) .hero::after {
+    background:
+      linear-gradient(to top, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28)),
+      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 12vw);
+  }
+
+  .hero-arabic-copy {
+    width: min(100% - 34px, 560px);
+    font-size: clamp(2.35rem, 11vw, 4.8rem);
+  }
+
   .hero-copy h1 {
     font-size: clamp(2.8rem, 14vw, 5.3rem);
     line-height: 0.95;
@@ -1757,7 +1820,10 @@ html[dir="rtl"] body {
   direction: rtl;
 }
 
-html[dir="rtl"] .site-header,
+html[dir="rtl"] .site-header {
+  direction: ltr;
+}
+
 html[dir="rtl"] .hero-center,
 html[dir="rtl"] .footer-links,
 html[dir="rtl"] .contact-layout,
