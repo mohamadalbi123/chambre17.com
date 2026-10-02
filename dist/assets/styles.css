@@ -211,6 +211,12 @@ select {
   color: var(--white);
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.58;
+  transform: none;
+}
+
 .button.secondary {
   background: transparent;
   color: var(--white);

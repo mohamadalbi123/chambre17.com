@@ -86,7 +86,9 @@
       "form.option.management": "Website management",
       "form.option.all": "Website, web app and management",
       "form.option.unsure": "Not sure yet",
-      "form.status.mailto": "Your email app should open with the project message ready to send. Please press send there to complete the enquiry.",
+      "form.status.sending": "Sending your message...",
+      "form.status.success": "Message sent. We will get back to you soon.",
+      "form.status.error": "Something went wrong. Please email us directly at mohalbi123@icloud.com.",
       "form.status.invalid": "Please complete the required fields with a valid email address.",
       "footer.location": "Digital studio",
       "footer.services": "Services",
@@ -168,7 +170,9 @@
       "form.option.management": "Gestion de site",
       "form.option.all": "Site web, web app et gestion",
       "form.option.unsure": "Je ne sais pas encore",
-      "form.status.mailto": "Votre application email devrait s'ouvrir avec le message prêt à envoyer. Appuyez sur envoyer dans votre email pour terminer la demande.",
+      "form.status.sending": "Envoi du message...",
+      "form.status.success": "Message envoyé. Nous vous répondrons bientôt.",
+      "form.status.error": "Une erreur est survenue. Veuillez nous écrire directement à mohalbi123@icloud.com.",
       "form.status.invalid": "Veuillez compléter les champs obligatoires avec une adresse email valide.",
       "footer.location": "Digital studio",
       "footer.services": "Services",
@@ -250,7 +254,9 @@
       "form.option.management": "إدارة موقع",
       "form.option.all": "موقع، تطبيق ويب وإدارة",
       "form.option.unsure": "لست متأكداً بعد",
-      "form.status.mailto": "يجب أن يفتح تطبيق البريد الإلكتروني مع الرسالة جاهزة للإرسال. اضغط إرسال من تطبيق البريد لإكمال الطلب.",
+      "form.status.sending": "جاري إرسال الرسالة...",
+      "form.status.success": "تم إرسال الرسالة. سنعود إليك قريباً.",
+      "form.status.error": "حدث خطأ. يرجى مراسلتنا مباشرة على mohalbi123@icloud.com.",
       "form.status.invalid": "يرجى إكمال الحقول المطلوبة وإدخال بريد إلكتروني صحيح.",
       "footer.location": "استوديو رقمي",
       "footer.services": "الخدمات",
@@ -439,11 +445,12 @@
 
   var contactForm = document.querySelector("[data-project-form]");
   if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
+    contactForm.addEventListener("submit", async function (event) {
       event.preventDefault();
       var selectedLanguage = document.documentElement.getAttribute("data-lang") || "en";
       var activeDictionary = translations[selectedLanguage] || translations.en;
       var statusNode = contactForm.querySelector("[data-form-status]");
+      var submitButton = contactForm.querySelector('button[type="submit"]');
 
       if (!contactForm.checkValidity()) {
         if (statusNode) {
@@ -455,24 +462,51 @@
       }
 
       var data = new FormData(contactForm);
-      var lines = [
-        "Name: " + (data.get("name") || ""),
-        "Company: " + (data.get("company") || ""),
-        "Email: " + (data.get("email") || ""),
-        "Phone: " + (data.get("phone") || ""),
-        "Need: " + (data.get("need") || ""),
-        "",
-        data.get("message") || ""
-      ];
-      var subject = encodeURIComponent("Project enquiry — CHAMBRE 17");
-      var body = encodeURIComponent(lines.join("\n"));
+
       if (statusNode) {
-        statusNode.textContent = activeDictionary["form.status.mailto"];
+        statusNode.textContent = activeDictionary["form.status.sending"];
         statusNode.setAttribute("data-state", "success");
       }
-      window.setTimeout(function () {
-        window.location.href = "mailto:" + (config.email || "hello@chambre17.com") + "?subject=" + subject + "&body=" + body;
-      }, 180);
+
+      if (submitButton) {
+        submitButton.disabled = true;
+      }
+
+      try {
+        var response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: data.get("name") || "",
+            company: data.get("company") || "",
+            email: data.get("email") || "",
+            phone: data.get("phone") || "",
+            need: data.get("need") || "",
+            message: data.get("message") || ""
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error("Contact request failed");
+        }
+
+        contactForm.reset();
+        if (statusNode) {
+          statusNode.textContent = activeDictionary["form.status.success"];
+          statusNode.setAttribute("data-state", "success");
+        }
+      } catch (error) {
+        if (statusNode) {
+          statusNode.textContent = activeDictionary["form.status.error"];
+          statusNode.setAttribute("data-state", "error");
+        }
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+        }
+      }
     });
   }
 }());
