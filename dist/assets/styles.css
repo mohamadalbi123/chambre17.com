@@ -69,6 +69,42 @@ select {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0));
 }
 
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.language-switcher button {
+  min-width: 38px;
+  height: 38px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.language-switcher button:last-child {
+  border-right: 0;
+}
+
+.language-switcher button[data-active="true"],
+.language-switcher button:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -557,6 +593,59 @@ select {
 
 .statement-section .lead {
   max-width: 980px;
+}
+
+.work-showcase {
+  display: grid;
+  gap: clamp(36px, 6vw, 82px);
+}
+
+.work-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.work-card {
+  min-height: 360px;
+  display: grid;
+  align-content: space-between;
+  gap: 32px;
+  padding: clamp(28px, 4vw, 58px);
+  border-right: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 58%),
+    rgba(255, 255, 255, 0.018);
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.work-card:last-child {
+  border-right: 0;
+}
+
+.work-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-5px);
+}
+
+.work-card span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.work-card h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 6vw, 7rem);
+  line-height: 0.86;
+  font-weight: 400;
+}
+
+.work-card p {
+  max-width: 520px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.66);
 }
 
 .work-row {
@@ -1444,6 +1533,14 @@ select {
     display: none;
   }
 
+  .header-actions {
+    justify-self: end;
+  }
+
+  .language-switcher {
+    display: none;
+  }
+
   .split,
   .process-intro,
   .management-band,
@@ -1456,6 +1553,7 @@ select {
   }
 
   .service-grid,
+  .work-showcase-grid,
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -1463,6 +1561,16 @@ select {
   .service-panel {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .work-card {
+    min-height: 300px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .work-card:last-child {
+    border-bottom: 0;
   }
 
   .process-flow {
@@ -1552,6 +1660,27 @@ select {
   .process-visual {
     width: min(100%, 280px);
   }
+
+  .work-card {
+    min-height: 260px;
+  }
+}
+
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="rtl"] .site-header,
+html[dir="rtl"] .hero-center,
+html[dir="rtl"] .footer-links,
+html[dir="rtl"] .contact-layout,
+html[dir="rtl"] .split,
+html[dir="rtl"] .process-intro {
+  direction: rtl;
+}
+
+html[dir="rtl"] .main-nav {
+  direction: rtl;
 }
 
 @media (prefers-reduced-motion: reduce) {
