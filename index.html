@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CHAMBRE 17 — Website Design & Management in La Rochelle</title>
-    <meta name="description" content="CHAMBRE 17 designs and manages custom websites for businesses from La Rochelle, France.">
+    <title>CHAMBRE 17 — Website Design, Web Apps & Management</title>
+    <meta name="description" content="CHAMBRE 17 designs, builds and manages websites and web apps for businesses.">
     <meta name="theme-color" content="#000000">
     <meta property="og:title" content="CHAMBRE 17">
     <meta property="og:description" content="We build websites for your business and maintain them monthly.">
@@ -44,26 +44,7 @@
         <video class="hero-video" data-hero-video autoplay muted loop playsinline poster="/favicon.svg">
           <source src="/assets/hero-chambre17.mp4" type="video/mp4">
         </video>
-        <div class="hero-inner">
-          <div class="hero-center">
-            <p class="hero-brand" data-reveal>CHAMBRE 17</p>
-            <div class="hero-copy" data-reveal aria-label="Tell us about your business. We'll build the digital solution around it.">
-              <h1 class="hero-sequence">
-                <span class="hero-line line-one" data-i18n="hero.line1">Tell us about your business.</span>
-                <span class="hero-line line-two" data-i18n="hero.line2">We'll build the digital solution around it.</span>
-              </h1>
-            </div>
-          </div>
-          <aside class="hero-meta hero-meta-minimal" aria-label="Studio location" data-reveal>
-            <a class="button hero-whatsapp" href="https://wa.me/33763734372" data-i18n="hero.cta">Start a conversation</a>
-          </aside>
-        </div>
-      </section>
-
-      <section class="hero-support-section" aria-label="Business first">
-        <div class="section-inner">
-          <p data-reveal data-i18n="hero.support">We start by understanding your business, your customers and your needs. Then we propose and build the digital solution that makes sense for you.</p>
-        </div>
+        <a class="button hero-whatsapp hero-floating-cta" href="https://wa.me/33763734372" data-i18n="hero.cta">Start a conversation</a>
       </section>
 
       <section class="section" id="services">
@@ -103,15 +84,25 @@
             <h2 class="section-title kinetic-title" data-i18n="work.title">Real projects. Real businesses.</h2>
           </div>
           <div class="work-showcase-grid">
-            <article class="work-card" data-reveal>
-              <span>01</span>
-              <h3>Lazoya</h3>
-              <p data-i18n="work.lazoya">Brand and digital commerce experience for a product-led business.</p>
-            </article>
+            <a class="work-card" href="https://www.lazoya.fr" target="_blank" rel="noopener" data-reveal>
+              <div class="work-preview lazoya-preview" aria-hidden="true">
+                <iframe src="https://www.lazoya.fr" loading="lazy" title="Lazoya homepage preview"></iframe>
+              </div>
+              <div>
+                <span>01</span>
+                <h3>Lazoya</h3>
+                <p data-i18n="work.lazoya">Brand and digital commerce experience for a product-led business.</p>
+              </div>
+            </a>
             <a class="work-card" href="https://www.jleilati.com" target="_blank" rel="noopener" data-reveal>
-              <span>02</span>
-              <h3>J. Leilati</h3>
-              <p data-i18n="work.jleilati">A refined web presence built around clarity, trust and conversion.</p>
+              <div class="work-preview jleilati-preview" aria-hidden="true">
+                <iframe src="https://www.jleilati.com" loading="lazy" title="J. Leilati homepage preview"></iframe>
+              </div>
+              <div>
+                <span>02</span>
+                <h3>J. Leilati</h3>
+                <p data-i18n="work.jleilati">A refined web presence built around clarity, trust and conversion.</p>
+              </div>
             </a>
           </div>
         </div>
@@ -244,7 +235,7 @@
           <p class="section-kicker" data-reveal data-i18n="about.kicker">About Us</p>
           <div data-reveal>
             <h2 class="lead" data-i18n="about.title">We understand business before we design the website.</h2>
-            <p class="body-large" data-i18n="about.body1">Chambre 17 is an independent digital studio based in La Rochelle, built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.</p>
+            <p class="body-large" data-i18n="about.body1">Chambre 17 is an independent digital studio built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.</p>
             <p class="body-large" data-i18n="about.body2">Our approach is simple: we don't start with a template. We start by understanding your business — your customers, your goals and what your website actually needs to achieve.</p>
             <p class="body-large" data-i18n="about.body3">Then we design and build around it.</p>
             <p class="about-signature"><strong data-i18n="about.sig1">Design. Business. Technology.</strong><strong data-i18n="about.sig2">All in one room.</strong></p>
@@ -304,7 +295,7 @@
     <footer class="site-footer">
       <div>
         <a class="brand-mark" href="#top">CHAMBRE 17</a>
-        <p data-i18n="footer.location">La Rochelle, France</p>
+        <p data-i18n="footer.location">Digital studio</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <div>
@@ -321,8 +312,8 @@
         </div>
         <div>
           <span data-i18n="footer.legal">Legal</span>
-          <a href="/mentions-legales/">Mentions légales</a>
-          <a href="/politique-confidentialite/">Politique de confidentialité</a>
+          <a href="/mentions-legales/" data-i18n="footer.legalNotice">Legal Notice</a>
+          <a href="/politique-confidentialite/" data-i18n="footer.privacy">Privacy Policy</a>
         </div>
       </nav>
       <p class="copyright">© CHAMBRE 17 2026</p>

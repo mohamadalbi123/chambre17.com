@@ -61,7 +61,7 @@
       "management.body": "Your website can stay maintained, updated and improved every month.",
       "about.kicker": "About Us",
       "about.title": "We understand business before we design the website.",
-      "about.body1": "Chambre 17 is an independent digital studio based in La Rochelle, built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.",
+      "about.body1": "Chambre 17 is an independent digital studio built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.",
       "about.body2": "Our approach is simple: we don't start with a template. We start by understanding your business — your customers, your goals and what your website actually needs to achieve.",
       "about.body3": "Then we design and build around it.",
       "about.sig1": "Design. Business. Technology.",
@@ -75,13 +75,15 @@
       "form.need": "What do you need?",
       "form.message": "Message",
       "form.submit": "Start a project",
-      "footer.location": "La Rochelle, France",
+      "footer.location": "Digital studio",
       "footer.services": "Services",
       "footer.website": "Website Design",
       "footer.webapp": "Web App Development",
       "footer.management": "Website Management",
       "footer.contact": "Contact",
-      "footer.legal": "Legal"
+      "footer.legal": "Legal",
+      "footer.legalNotice": "Legal Notice",
+      "footer.privacy": "Privacy Policy"
     },
     fr: {
       "nav.services": "Services",
@@ -124,7 +126,7 @@
       "management.body": "Votre site peut rester maintenu, mis a jour et ameliore chaque mois.",
       "about.kicker": "A propos",
       "about.title": "Nous comprenons le business avant de designer le site.",
-      "about.body1": "Chambre 17 est un studio digital independant base a La Rochelle, construit sur une experience en business, retail, marketing digital, data, IA, e-commerce et design graphique.",
+      "about.body1": "Chambre 17 est un studio digital independant construit sur une experience en business, retail, marketing digital, data, IA, e-commerce et design graphique.",
       "about.body2": "Notre approche est simple : nous ne commencons pas par un template. Nous commencons par comprendre votre business, vos clients, vos objectifs et ce que votre site doit vraiment accomplir.",
       "about.body3": "Ensuite, nous designons et construisons autour.",
       "about.sig1": "Design. Business. Technologie.",
@@ -138,13 +140,15 @@
       "form.need": "De quoi avez-vous besoin ?",
       "form.message": "Message",
       "form.submit": "Demarrer un projet",
-      "footer.location": "La Rochelle, France",
+      "footer.location": "Digital studio",
       "footer.services": "Services",
       "footer.website": "Site web",
       "footer.webapp": "Web app",
       "footer.management": "Gestion de site",
       "footer.contact": "Contact",
-      "footer.legal": "Legal"
+      "footer.legal": "Legal",
+      "footer.legalNotice": "Mentions legales",
+      "footer.privacy": "Politique de confidentialite"
     },
     ar: {
       "nav.services": "الخدمات",
@@ -187,7 +191,7 @@
       "management.body": "يمكن أن يبقى موقعك محدثاً ومحسناً ومعتنى به كل شهر.",
       "about.kicker": "من نحن",
       "about.title": "نفهم العمل قبل تصميم الموقع.",
-      "about.body1": "Chambre 17 استوديو رقمي مستقل في لاروشيل، مبني على خبرة في الأعمال، التجزئة، التسويق الرقمي، البيانات، الذكاء الاصطناعي، التجارة الإلكترونية والتصميم.",
+      "about.body1": "Chambre 17 استوديو رقمي مستقل، مبني على خبرة في الأعمال، التجزئة، التسويق الرقمي، البيانات، الذكاء الاصطناعي، التجارة الإلكترونية والتصميم.",
       "about.body2": "طريقتنا بسيطة: لا نبدأ من قالب جاهز. نبدأ بفهم عملك، عملائك، أهدافك وما يجب أن يحققه موقعك فعلاً.",
       "about.body3": "بعد ذلك نصمم ونبني حوله.",
       "about.sig1": "تصميم. أعمال. تقنية.",
@@ -201,13 +205,15 @@
       "form.need": "ماذا تحتاج؟",
       "form.message": "الرسالة",
       "form.submit": "ابدأ مشروعك",
-      "footer.location": "لاروشيل، فرنسا",
+      "footer.location": "استوديو رقمي",
       "footer.services": "الخدمات",
       "footer.website": "تصميم مواقع",
       "footer.webapp": "تطبيقات ويب",
       "footer.management": "إدارة الموقع",
       "footer.contact": "تواصل",
-      "footer.legal": "قانوني"
+      "footer.legal": "قانوني",
+      "footer.legalNotice": "الإشعار القانوني",
+      "footer.privacy": "سياسة الخصوصية"
     }
   };
 

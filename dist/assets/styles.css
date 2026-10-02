@@ -223,7 +223,7 @@ select {
   display: grid;
   align-items: center;
   overflow: hidden;
-  padding: 132px var(--gutter) 64px;
+  padding: 0;
   background: #000;
 }
 
@@ -237,7 +237,7 @@ select {
 
 .hero::after {
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.08) 45%, rgba(0, 0, 0, 0.52)),
+    linear-gradient(to top, rgba(0, 0, 0, 0.26), rgba(0, 0, 0, 0.02) 45%, rgba(0, 0, 0, 0.4)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 12vw);
 }
 
@@ -249,7 +249,7 @@ select {
   height: 100%;
   object-fit: cover;
   opacity: 1;
-  filter: grayscale(1) contrast(1.14) brightness(0.9);
+  filter: grayscale(1) contrast(1.08) brightness(0.98);
 }
 
 .reduced-motion .hero-video,
@@ -449,6 +449,14 @@ select {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 32px rgba(255, 255, 255, 0.12);
 }
 
+.hero-floating-cta {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(28px, 5vw, 58px);
+  z-index: 3;
+  transform: translateX(-50%);
+}
+
 .section {
   padding: clamp(68px, 10vw, 132px) var(--gutter);
   border-top: 1px solid var(--line);
@@ -610,7 +618,7 @@ select {
 .work-card {
   min-height: 360px;
   display: grid;
-  align-content: space-between;
+  grid-template-rows: auto 1fr;
   gap: 32px;
   padding: clamp(28px, 4vw, 58px);
   border-right: 1px solid var(--line);
@@ -646,6 +654,82 @@ select {
   max-width: 520px;
   margin: 0;
   color: rgba(255, 255, 255, 0.66);
+}
+
+.work-preview {
+  position: relative;
+  min-height: clamp(210px, 24vw, 340px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: #050505;
+}
+
+.browser-bar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.browser-bar span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 50%;
+}
+
+.work-preview iframe {
+  width: 130%;
+  height: 130%;
+  border: 0;
+  filter: grayscale(1) contrast(1.03);
+  transform: scale(0.78);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.preview-stage {
+  position: absolute;
+  inset: 34px 0 0;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.14), transparent 38%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 36px),
+    #070707;
+}
+
+.preview-stage strong {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 6vw, 7rem);
+  font-weight: 400;
+}
+
+.preview-stage em,
+.preview-stage small {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.preview-stage em {
+  left: 13%;
+  bottom: 18%;
+  width: 32%;
+  height: 22%;
+}
+
+.preview-stage small {
+  right: 13%;
+  top: 22%;
+  width: 28%;
+  height: 34%;
 }
 
 .work-row {
@@ -1621,8 +1705,6 @@ select {
 @media (max-width: 640px) {
   .hero {
     min-height: 100svh;
-    padding-top: 112px;
-    padding-bottom: 42px;
   }
 
   .hero-copy h1 {
@@ -1663,6 +1745,11 @@ select {
 
   .work-card {
     min-height: 260px;
+  }
+
+  .hero-floating-cta {
+    width: auto;
+    min-width: 210px;
   }
 }
 
