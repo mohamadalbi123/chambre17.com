@@ -9,9 +9,11 @@
     <meta property="og:title" content="CHAMBRE 17">
     <meta property="og:description" content="We build websites for your business and maintain them monthly.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://chambre17.com/">
+    <meta property="og:url" content="https://www.chambre17.com/">
+    <meta name="twitter:title" content="CHAMBRE 17">
+    <meta name="twitter:description" content="Website design, web apps and optional monthly management for businesses.">
     <meta name="twitter:card" content="summary">
-    <link rel="canonical" href="https://chambre17.com/">
+    <link rel="canonical" href="https://www.chambre17.com/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preload" href="/assets/hero-chambre17.mp4" as="video" type="video/mp4">
     <link rel="stylesheet" href="/assets/styles.css">
@@ -41,6 +43,7 @@
 
     <main id="top">
       <section class="hero" aria-label="CHAMBRE 17">
+        <h1 class="visually-hidden" data-i18n="hero.h1">Tell us about your business. We'll build the digital solution around it.</h1>
         <video class="hero-video" data-hero-video autoplay muted loop playsinline poster="/favicon.svg">
           <source src="/assets/hero-chambre17.mp4" type="video/mp4">
         </video>
@@ -60,7 +63,7 @@
               <span>01</span>
               <div>
                 <h3 data-i18n="services.website.title">Custom Website Design</h3>
-                <p data-i18n="services.website.body">We do not offer just a website. We offer business perspective. You explain your business, then we design the exact website you need with the right tools.</p>
+                <p data-i18n="services.website.body">We don't just build websites. We bring a business perspective to every project. You tell us about your business, and we design the digital solution around what you actually need.</p>
               </div>
             </article>
             <article class="service-panel" data-reveal>
@@ -99,8 +102,15 @@
               </div>
               <div>
                 <span>01</span>
-                <h3>Lazoya</h3>
-                <p data-i18n="work.lazoya">Brand and digital commerce experience for a product-led business.</p>
+                <h3 data-i18n="work.lazoya.title">LAZOYA — Beauty Centre</h3>
+                <p data-i18n="work.lazoya">Service-focused website and digital experience with online booking integration, multilingual content and a customer journey designed around the beauty centre.</p>
+                <ul class="work-tags" aria-label="Project tags">
+                  <li data-i18n="work.tags.website">Website</li>
+                  <li>UX/UI</li>
+                  <li data-i18n="work.tags.booking">Booking</li>
+                  <li data-i18n="work.tags.multilingual">Multilingual</li>
+                  <li data-i18n="work.tags.management">Ongoing Management</li>
+                </ul>
               </div>
             </a>
             <a class="work-card" href="https://www.jleilati.com" target="_blank" rel="noopener" data-reveal>
@@ -110,8 +120,15 @@
               </div>
               <div>
                 <span>02</span>
-                <h3>J. Leilati</h3>
-                <p data-i18n="work.jleilati">A refined web presence built around clarity, trust and conversion.</p>
+                <h3 data-i18n="work.jleilati.title">J. LEILATI — E-commerce</h3>
+                <p data-i18n="work.jleilati">Multilingual e-commerce platform with product management, customer accounts, checkout and European delivery.</p>
+                <ul class="work-tags" aria-label="Project tags">
+                  <li data-i18n="work.tags.ecommerce">E-commerce</li>
+                  <li data-i18n="work.tags.webapp">Web App</li>
+                  <li data-i18n="work.tags.multilingual">Multilingual</li>
+                  <li data-i18n="work.tags.products">Product Management</li>
+                  <li data-i18n="work.tags.checkout">Checkout</li>
+                </ul>
               </div>
             </a>
           </div>
@@ -227,7 +244,7 @@
           <div class="management-copy" data-reveal>
             <p class="section-kicker" data-i18n="management.kicker">Monthly Management</p>
             <h2 class="lead" data-i18n="management.title">Your website keeps moving with your business.</h2>
-            <p data-i18n="management.body">Your website can stay maintained, updated and improved every month.</p>
+            <p data-i18n="management.body">Monthly management is optional. After launch, Chambre 17 can continue handling content updates, new pages or features, technical maintenance, performance monitoring and continuous improvements.</p>
           </div>
           <div class="management-system" aria-hidden="true" data-reveal>
             <span class="system-window"></span>
@@ -248,7 +265,7 @@
             <p class="body-large" data-i18n="about.body1">Chambre 17 is an independent digital studio built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.</p>
             <p class="body-large" data-i18n="about.body2">Our approach is simple: we don't start with a template. We start by understanding your business — your customers, your goals and what your website actually needs to achieve.</p>
             <p class="body-large" data-i18n="about.body3">Then we design and build around it.</p>
-            <p class="about-signature"><strong data-i18n="about.sig1">Design. Business. Technology.</strong><strong data-i18n="about.sig2">All in one room.</strong></p>
+            <p class="about-signature"><strong data-i18n="about.sig">Design. Business. Technology. All in one room.</strong></p>
           </div>
         </div>
       </section>
@@ -263,7 +280,7 @@
               <a data-contact-whatsapp href="https://wa.me/33763734372">+33 7 63 73 43 72</a>
             </div>
           </div>
-          <form class="project-form" data-project-form data-reveal>
+          <form class="project-form" data-project-form data-reveal novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="name" data-i18n="form.name">Name</label>
@@ -284,11 +301,11 @@
               <div class="field full">
                 <label for="need" data-i18n="form.need">What do you need?</label>
                 <select id="need" name="need">
-                  <option>Website design</option>
-                  <option>Web app development</option>
-                  <option>Website management</option>
-                  <option>Website, web app and management</option>
-                  <option>Not sure yet</option>
+                  <option data-i18n="form.option.website">Website design</option>
+                  <option data-i18n="form.option.webapp">Web app development</option>
+                  <option data-i18n="form.option.management">Website management</option>
+                  <option data-i18n="form.option.all">Website, web app and management</option>
+                  <option data-i18n="form.option.unsure">Not sure yet</option>
                 </select>
               </div>
               <div class="field full">
@@ -297,6 +314,7 @@
               </div>
             </div>
             <button class="button" type="submit" data-i18n="form.submit">Start a project</button>
+            <p class="form-status" data-form-status aria-live="polite"></p>
           </form>
         </div>
       </section>

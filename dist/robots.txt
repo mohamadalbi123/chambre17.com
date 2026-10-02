@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chambre17.com/sitemap.xml
+Sitemap: https://www.chambre17.com/sitemap.xml

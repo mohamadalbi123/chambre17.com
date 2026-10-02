@@ -43,6 +43,18 @@ a {
   text-decoration: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 img,
 video {
   display: block;
@@ -683,8 +695,8 @@ html[data-lang="ar"] .hero-arabic-copy {
 .work-card h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(3rem, 6vw, 7rem);
-  line-height: 0.86;
+  font-size: clamp(2.2rem, 4.4vw, 4.9rem);
+  line-height: 0.92;
   font-weight: 400;
 }
 
@@ -692,6 +704,23 @@ html[data-lang="ar"] .hero-arabic-copy {
   max-width: 520px;
   margin: 0;
   color: rgba(255, 255, 255, 0.66);
+}
+
+.work-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 22px 0 0;
+  list-style: none;
+}
+
+.work-tags li {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 6px 9px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.7rem;
+  line-height: 1;
 }
 
 .work-preview {
@@ -1526,6 +1555,17 @@ html[data-lang="ar"] .hero-arabic-copy {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.88rem;
+}
+
+.form-status[data-state="error"] {
+  color: #fff;
+}
+
 .site-footer {
   padding: 56px var(--gutter) 36px;
   display: grid;
@@ -1624,7 +1664,7 @@ html[data-lang="ar"] .hero-arabic-copy {
     top: 82px;
     right: var(--gutter);
     left: auto;
-    width: min(270px, calc(100vw - (var(--gutter) * 2)));
+    width: min(230px, calc(100vw - (var(--gutter) * 2)));
     display: grid;
     gap: 0;
     padding: 8px 0;
@@ -1755,7 +1795,7 @@ html[data-lang="ar"] .hero-arabic-copy {
   }
 
   .hero-video {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center center;
   }
 

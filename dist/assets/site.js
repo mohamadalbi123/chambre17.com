@@ -23,6 +23,7 @@
       "nav.process": "Process",
       "nav.contact": "Contact",
       "nav.cta": "Start a project",
+      "hero.h1": "Tell us about your business. We'll build the digital solution around it.",
       "hero.line1": "Tell us about your business.",
       "hero.line2": "We'll build the digital solution around it.",
       "hero.cta": "Start a conversation",
@@ -30,15 +31,25 @@
       "services.kicker": "Our Services",
       "services.title": "Website. Web app. Management.",
       "services.website.title": "Custom Website Design",
-      "services.website.body": "We do not offer just a website. We offer business perspective. You explain your business, then we design the exact website you need with the right tools.",
+      "services.website.body": "We don't just build websites. We bring a business perspective to every project. You tell us about your business, and we design the digital solution around what you actually need.",
       "services.webapp.title": "Web App Development",
       "services.webapp.body": "For businesses that need more than a simple website: booking flows, client portals, dashboards, tools and custom digital systems.",
       "services.management.title": "Website Management",
       "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
       "work.kicker": "Selected Work",
       "work.title": "Real projects. Real businesses.",
-      "work.lazoya": "Brand and digital commerce experience for a product-led business.",
-      "work.jleilati": "A refined web presence built around clarity, trust and conversion.",
+      "work.lazoya.title": "LAZOYA — Beauty Centre",
+      "work.lazoya": "Service-focused website and digital experience with online booking integration, multilingual content and a customer journey designed around the beauty centre.",
+      "work.jleilati.title": "J. LEILATI — E-commerce",
+      "work.jleilati": "Multilingual e-commerce platform with product management, customer accounts, checkout and European delivery.",
+      "work.tags.website": "Website",
+      "work.tags.booking": "Booking",
+      "work.tags.multilingual": "Multilingual",
+      "work.tags.management": "Ongoing Management",
+      "work.tags.ecommerce": "E-commerce",
+      "work.tags.webapp": "Web App",
+      "work.tags.products": "Product Management",
+      "work.tags.checkout": "Checkout",
       "process.kicker": "Our Process",
       "process.title": "Business first.<br>Digital solution second.",
       "process.intro": "Every Chambre 17 project begins by understanding the business behind the screen.",
@@ -54,14 +65,13 @@
       "process.manage.body": "After launch, we can manage, maintain and continuously improve your digital solution as your business evolves.",
       "management.kicker": "Monthly Management",
       "management.title": "Your website keeps moving with your business.",
-      "management.body": "Your website can stay maintained, updated and improved every month.",
+      "management.body": "Monthly management is optional. After launch, Chambre 17 can continue handling content updates, new pages or features, technical maintenance, performance monitoring and continuous improvements.",
       "about.kicker": "About Us",
       "about.title": "We understand business before we design the website.",
       "about.body1": "Chambre 17 is an independent digital studio built on experience across business, retail, digital marketing, data, AI, e-commerce and graphic design.",
       "about.body2": "Our approach is simple: we don't start with a template. We start by understanding your business — your customers, your goals and what your website actually needs to achieve.",
       "about.body3": "Then we design and build around it.",
-      "about.sig1": "Design. Business. Technology.",
-      "about.sig2": "All in one room.",
+      "about.sig": "Design. Business. Technology. All in one room.",
       "contact.kicker": "Contact Us",
       "contact.title": "Start a project.",
       "form.name": "Name",
@@ -71,6 +81,13 @@
       "form.need": "What do you need?",
       "form.message": "Message",
       "form.submit": "Start a project",
+      "form.option.website": "Website design",
+      "form.option.webapp": "Web app development",
+      "form.option.management": "Website management",
+      "form.option.all": "Website, web app and management",
+      "form.option.unsure": "Not sure yet",
+      "form.status.mailto": "Your email app should open with the project message ready to send. Please press send there to complete the enquiry.",
+      "form.status.invalid": "Please complete the required fields with a valid email address.",
       "footer.location": "Digital studio",
       "footer.services": "Services",
       "footer.website": "Website Design",
@@ -84,67 +101,84 @@
     fr: {
       "nav.services": "Services",
       "nav.work": "Projets",
-      "nav.about": "A propos",
+      "nav.about": "À propos",
       "nav.process": "Processus",
       "nav.contact": "Contact",
-      "nav.cta": "Demarrer un projet",
-      "hero.line1": "Parlez-nous de votre business.",
+      "nav.cta": "Démarrer un projet",
+      "hero.h1": "Parlez-nous de votre activité. Nous construirons la solution digitale autour.",
+      "hero.line1": "Parlez-nous de votre activité.",
       "hero.line2": "Nous construisons la solution digitale autour.",
-      "hero.cta": "Demarrer la conversation",
-      "hero.support": "Nous commencons par comprendre votre business, vos clients et vos besoins. Ensuite, nous proposons et construisons la solution digitale qui a du sens pour vous.",
+      "hero.cta": "Démarrer la conversation",
+      "hero.support": "Nous commençons par comprendre votre activité, vos clients et vos besoins. Ensuite, nous proposons et construisons la solution digitale qui a du sens pour vous.",
       "services.kicker": "Nos Services",
       "services.title": "Site web. Web app. Gestion.",
       "services.website.title": "Site web sur mesure",
-      "services.website.body": "Nous ne livrons pas juste un site. Nous apportons une perspective business. Vous expliquez votre activite, puis nous concevons le site exact dont vous avez besoin avec les bons outils.",
-      "services.webapp.title": "Developpement web app",
-      "services.webapp.body": "Pour les entreprises qui ont besoin de plus qu'un simple site : reservations, portails clients, tableaux de bord, outils et systemes digitaux sur mesure.",
+      "services.website.body": "Nous ne construisons pas seulement des sites web. Nous apportons une perspective business à chaque projet. Vous nous parlez de votre activité, et nous concevons la solution digitale autour de vos vrais besoins.",
+      "services.webapp.title": "Développement web app",
+      "services.webapp.body": "Pour les entreprises qui ont besoin de plus qu'un simple site : réservations, portails clients, tableaux de bord, outils et systèmes digitaux sur mesure.",
       "services.management.title": "Gestion de site web",
-      "services.management.body": "Nous gerons votre site chaque mois : mises a jour, changements, maintenance technique et ameliorations continues apres le lancement.",
-      "work.kicker": "Projets selectionnes",
-      "work.title": "Des projets reels. Des entreprises reelles.",
-      "work.lazoya": "Experience de marque et de commerce digital pour une entreprise orientee produit.",
-      "work.jleilati": "Une presence web raffinee, construite autour de la clarte, de la confiance et de la conversion.",
+      "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
+      "work.kicker": "Projets sélectionnés",
+      "work.title": "Des projets réels. Des entreprises réelles.",
+      "work.lazoya.title": "LAZOYA — Centre de beauté",
+      "work.lazoya": "Site orienté service et expérience digitale avec réservation en ligne, contenu multilingue et parcours client pensé pour le centre de beauté.",
+      "work.jleilati.title": "J. LEILATI — E-commerce",
+      "work.jleilati": "Plateforme e-commerce multilingue avec gestion des produits, comptes clients, paiement et livraison en Europe.",
+      "work.tags.website": "Site web",
+      "work.tags.booking": "Réservation",
+      "work.tags.multilingual": "Multilingue",
+      "work.tags.management": "Gestion continue",
+      "work.tags.ecommerce": "E-commerce",
+      "work.tags.webapp": "Web app",
+      "work.tags.products": "Gestion produits",
+      "work.tags.checkout": "Paiement",
       "process.kicker": "Notre Processus",
       "process.title": "Le business d'abord.<br>La solution digitale ensuite.",
-      "process.intro": "Chaque projet Chambre 17 commence par comprendre l'entreprise derriere l'ecran.",
-      "process.understand.title": "Nous commencons par votre business.",
-      "process.understand.body": "Nous apprenons comment votre activite fonctionne, qui sont vos clients, ce dont vous avez besoin et ce que vous voulez atteindre.",
-      "process.build.title": "Nous transformons l'idee en experience digitale.",
-      "process.build.body": "Nous definissons la structure, concevons l'experience et construisons la solution autour de ce dont votre business a vraiment besoin.",
+      "process.intro": "Chaque projet Chambre 17 commence par comprendre l'entreprise derrière l'écran.",
+      "process.understand.title": "Nous commençons par votre business.",
+      "process.understand.body": "Nous apprenons comment votre activité fonctionne, qui sont vos clients, ce dont vous avez besoin et ce que vous voulez atteindre.",
+      "process.build.title": "Nous transformons l'idée en expérience digitale.",
+      "process.build.body": "Nous définissons la structure, concevons l'expérience et construisons la solution autour de ce dont votre business a vraiment besoin.",
       "process.review.title": "Nous la revoyons ensemble.",
-      "process.review.body": "Vous testez la solution, donnez votre retour et nous affinons les details ensemble avant le lancement.",
+      "process.review.body": "Vous testez la solution, donnez votre retour et nous affinons les détails ensemble avant le lancement.",
       "process.launch.title": "Nous mettons en ligne.",
-      "process.launch.body": "Nous testons, optimisons et lancons l'experience finale sur tous les appareils.",
+      "process.launch.body": "Nous testons, optimisons et lançons l'expérience finale sur tous les appareils.",
       "process.manage.title": "Nous restons avec elle.",
-      "process.manage.body": "Apres le lancement, nous pouvons gerer, maintenir et ameliorer continuellement votre solution digitale.",
+      "process.manage.body": "Après le lancement, nous pouvons gérer, maintenir et améliorer continuellement votre solution digitale.",
       "management.kicker": "Gestion mensuelle",
       "management.title": "Votre site avance avec votre business.",
-      "management.body": "Votre site peut rester maintenu, mis a jour et ameliore chaque mois.",
-      "about.kicker": "A propos",
+      "management.body": "La gestion mensuelle est optionnelle. Après le lancement, Chambre 17 peut continuer à gérer les contenus, nouvelles pages ou fonctionnalités, maintenance technique, suivi des performances et améliorations continues.",
+      "about.kicker": "À propos",
       "about.title": "Nous comprenons le business avant de designer le site.",
-      "about.body1": "Chambre 17 est un studio digital independant construit sur une experience en business, retail, marketing digital, data, IA, e-commerce et design graphique.",
-      "about.body2": "Notre approche est simple : nous ne commencons pas par un template. Nous commencons par comprendre votre business, vos clients, vos objectifs et ce que votre site doit vraiment accomplir.",
+      "about.body1": "Chambre 17 est un studio digital indépendant construit sur une expérience en business, retail, marketing digital, data, IA, e-commerce et design graphique.",
+      "about.body2": "Notre approche est simple : nous ne commençons pas par un template. Nous commençons par comprendre votre business, vos clients, vos objectifs et ce que votre site doit vraiment accomplir.",
       "about.body3": "Ensuite, nous designons et construisons autour.",
-      "about.sig1": "Design. Business. Technologie.",
-      "about.sig2": "Tout dans la meme piece.",
+      "about.sig": "Design. Business. Technologie. Tout dans la même pièce.",
       "contact.kicker": "Contact",
-      "contact.title": "Demarrer un projet.",
+      "contact.title": "Démarrer un projet.",
       "form.name": "Nom",
       "form.company": "Entreprise",
       "form.email": "Email",
-      "form.phone": "Telephone (optionnel)",
+      "form.phone": "Téléphone (optionnel)",
       "form.need": "De quoi avez-vous besoin ?",
       "form.message": "Message",
-      "form.submit": "Demarrer un projet",
+      "form.submit": "Démarrer un projet",
+      "form.option.website": "Site web",
+      "form.option.webapp": "Web app",
+      "form.option.management": "Gestion de site",
+      "form.option.all": "Site web, web app et gestion",
+      "form.option.unsure": "Je ne sais pas encore",
+      "form.status.mailto": "Votre application email devrait s'ouvrir avec le message prêt à envoyer. Appuyez sur envoyer dans votre email pour terminer la demande.",
+      "form.status.invalid": "Veuillez compléter les champs obligatoires avec une adresse email valide.",
       "footer.location": "Digital studio",
       "footer.services": "Services",
       "footer.website": "Site web",
       "footer.webapp": "Web app",
       "footer.management": "Gestion de site",
       "footer.contact": "Contact",
-      "footer.legal": "Legal",
-      "footer.legalNotice": "Mentions legales",
-      "footer.privacy": "Politique de confidentialite"
+      "footer.legal": "Légal",
+      "footer.legalNotice": "Mentions légales",
+      "footer.privacy": "Politique de confidentialité"
     },
     ar: {
       "nav.services": "الخدمات",
@@ -153,6 +187,7 @@
       "nav.process": "العملية",
       "nav.contact": "تواصل",
       "nav.cta": "ابدأ مشروعك",
+      "hero.h1": "أخبرنا عن مشروعك. وسنبني الحل الرقمي المناسب له.",
       "hero.line1": "اخبرنا عن عملك.",
       "hero.line2": "نبني الحل الرقمي حوله.",
       "hero.cta": "ابدأ المحادثة",
@@ -160,15 +195,25 @@
       "services.kicker": "خدماتنا",
       "services.title": "موقع. تطبيق ويب. إدارة.",
       "services.website.title": "تصميم مواقع مخصص",
-      "services.website.body": "لا نقدم مجرد موقع. نقدم منظوراً تجارياً. تشرح لنا عملك، ثم نصمم الموقع المناسب بالأدوات الصحيحة.",
+      "services.website.body": "نحن لا نبني مواقع فقط. نضيف منظوراً تجارياً لكل مشروع. تخبرنا عن عملك، ثم نصمم الحل الرقمي حول ما تحتاجه فعلاً.",
       "services.webapp.title": "تطوير تطبيقات ويب",
       "services.webapp.body": "للأعمال التي تحتاج أكثر من موقع بسيط: حجوزات، بوابات عملاء، لوحات تحكم، أدوات وأنظمة رقمية مخصصة.",
       "services.management.title": "إدارة الموقع",
       "services.management.body": "ندير موقعك شهرياً: تحديثات، تعديلات، عناية تقنية، صيانة وتحسين مستمر بعد الإطلاق.",
       "work.kicker": "أعمال مختارة",
       "work.title": "مشاريع حقيقية. أعمال حقيقية.",
-      "work.lazoya": "تجربة علامة وتجربة تجارة رقمية لعمل قائم على المنتجات.",
-      "work.jleilati": "حضور رقمي راق مبني على الوضوح والثقة والتحويل.",
+      "work.lazoya.title": "LAZOYA — مركز تجميل",
+      "work.lazoya": "موقع وتجربة رقمية للخدمات مع حجز إلكتروني، محتوى متعدد اللغات ورحلة عميل مصممة حول مركز التجميل.",
+      "work.jleilati.title": "J. LEILATI — تجارة إلكترونية",
+      "work.jleilati": "منصة تجارة إلكترونية متعددة اللغات مع إدارة المنتجات، حسابات العملاء، الدفع والتوصيل داخل أوروبا.",
+      "work.tags.website": "موقع",
+      "work.tags.booking": "حجز",
+      "work.tags.multilingual": "متعدد اللغات",
+      "work.tags.management": "إدارة مستمرة",
+      "work.tags.ecommerce": "تجارة إلكترونية",
+      "work.tags.webapp": "تطبيق ويب",
+      "work.tags.products": "إدارة المنتجات",
+      "work.tags.checkout": "الدفع",
       "process.kicker": "طريقتنا",
       "process.title": "الأعمال أولاً.<br>الحل الرقمي ثانياً.",
       "process.intro": "كل مشروع في Chambre 17 يبدأ بفهم العمل خلف الشاشة.",
@@ -184,14 +229,13 @@
       "process.manage.body": "بعد الإطلاق، يمكننا إدارة وصيانة وتحسين الحل الرقمي مع تطور عملك.",
       "management.kicker": "الإدارة الشهرية",
       "management.title": "موقعك يتطور مع عملك.",
-      "management.body": "يمكن أن يبقى موقعك محدثاً ومحسناً ومعتنى به كل شهر.",
+      "management.body": "الإدارة الشهرية اختيارية. بعد الإطلاق يمكن لـ Chambre 17 متابعة تحديث المحتوى، إضافة صفحات أو مزايا جديدة، الصيانة التقنية، مراقبة الأداء والتحسين المستمر.",
       "about.kicker": "من نحن",
       "about.title": "نفهم العمل قبل تصميم الموقع.",
       "about.body1": "Chambre 17 استوديو رقمي مستقل، مبني على خبرة في الأعمال، التجزئة، التسويق الرقمي، البيانات، الذكاء الاصطناعي، التجارة الإلكترونية والتصميم.",
       "about.body2": "طريقتنا بسيطة: لا نبدأ من قالب جاهز. نبدأ بفهم عملك، عملائك، أهدافك وما يجب أن يحققه موقعك فعلاً.",
       "about.body3": "بعد ذلك نصمم ونبني حوله.",
-      "about.sig1": "تصميم. أعمال. تقنية.",
-      "about.sig2": "كلها في غرفة واحدة.",
+      "about.sig": "تصميم. أعمال. تقنية. كلها في غرفة واحدة.",
       "contact.kicker": "تواصل معنا",
       "contact.title": "ابدأ مشروعك.",
       "form.name": "الاسم",
@@ -201,6 +245,13 @@
       "form.need": "ماذا تحتاج؟",
       "form.message": "الرسالة",
       "form.submit": "ابدأ مشروعك",
+      "form.option.website": "تصميم موقع",
+      "form.option.webapp": "تطوير تطبيق ويب",
+      "form.option.management": "إدارة موقع",
+      "form.option.all": "موقع، تطبيق ويب وإدارة",
+      "form.option.unsure": "لست متأكداً بعد",
+      "form.status.mailto": "يجب أن يفتح تطبيق البريد الإلكتروني مع الرسالة جاهزة للإرسال. اضغط إرسال من تطبيق البريد لإكمال الطلب.",
+      "form.status.invalid": "يرجى إكمال الحقول المطلوبة وإدخال بريد إلكتروني صحيح.",
       "footer.location": "استوديو رقمي",
       "footer.services": "الخدمات",
       "footer.website": "تصميم مواقع",
@@ -275,11 +326,40 @@
 
   var menuButton = document.querySelector("[data-menu-button]");
   var nav = document.querySelector("[data-nav]");
+  function closeNav() {
+    if (menuButton && nav) {
+      nav.setAttribute("data-open", "false");
+      menuButton.setAttribute("aria-expanded", "false");
+    }
+  }
+
   if (menuButton && nav) {
     menuButton.addEventListener("click", function () {
       var isOpen = nav.getAttribute("data-open") === "true";
       nav.setAttribute("data-open", String(!isOpen));
       menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (nav.getAttribute("data-open") === "true" && !nav.contains(event.target) && !menuButton.contains(event.target)) {
+        closeNav();
+      }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeNav();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 980) {
+        closeNav();
+      }
     });
   }
 
@@ -341,6 +421,19 @@
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
+      var selectedLanguage = document.documentElement.getAttribute("data-lang") || "en";
+      var activeDictionary = translations[selectedLanguage] || translations.en;
+      var statusNode = contactForm.querySelector("[data-form-status]");
+
+      if (!contactForm.checkValidity()) {
+        if (statusNode) {
+          statusNode.textContent = activeDictionary["form.status.invalid"];
+          statusNode.setAttribute("data-state", "error");
+        }
+        contactForm.reportValidity();
+        return;
+      }
+
       var data = new FormData(contactForm);
       var lines = [
         "Name: " + (data.get("name") || ""),
@@ -353,7 +446,13 @@
       ];
       var subject = encodeURIComponent("Project enquiry — CHAMBRE 17");
       var body = encodeURIComponent(lines.join("\n"));
-      window.location.href = "mailto:" + (config.email || "hello@chambre17.com") + "?subject=" + subject + "&body=" + body;
+      if (statusNode) {
+        statusNode.textContent = activeDictionary["form.status.mailto"];
+        statusNode.setAttribute("data-state", "success");
+      }
+      window.setTimeout(function () {
+        window.location.href = "mailto:" + (config.email || "hello@chambre17.com") + "?subject=" + subject + "&body=" + body;
+      }, 180);
     });
   }
 }());
