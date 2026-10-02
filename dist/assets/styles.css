@@ -1660,7 +1660,7 @@ select {
     top: 82px;
     right: var(--gutter);
     left: auto;
-    width: min(230px, calc(100vw - (var(--gutter) * 2)));
+    width: min(176px, calc(100vw - (var(--gutter) * 2)));
     display: grid;
     gap: 0;
     padding: 8px 0;
@@ -1680,7 +1680,7 @@ select {
 
   .main-nav a {
     text-align: right;
-    padding: 16px 18px;
+    padding: 13px 14px;
     border-bottom: 1px solid var(--line);
   }
 
