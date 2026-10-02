@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chambre17.com/sitemap.xml
