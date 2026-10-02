@@ -265,10 +265,19 @@
   };
 
   var heroVideoSources = {
-    en: "/assets/hero-chambre17.mp4",
-    fr: "/assets/hero-fr.mp4",
-    ar: "/assets/hero-ar.mp4"
+    desktop: {
+      en: "/assets/hero-chambre17.mp4",
+      fr: "/assets/hero-fr.mp4",
+      ar: "/assets/hero-ar-desktop.mp4"
+    },
+    mobile: {
+      en: "/assets/hero-mobile-en.mp4",
+      fr: "/assets/hero-mobile-fr.mp4",
+      ar: "/assets/hero-mobile-ar.mp4"
+    }
   };
+
+  var mobileHeroQuery = window.matchMedia("(max-width: 640px)");
 
   function setHeroVideo(lang) {
     var heroVideo = document.querySelector("[data-hero-video]");
@@ -276,7 +285,8 @@
       return;
     }
 
-    var nextSource = heroVideoSources[lang] || heroVideoSources.en;
+    var group = mobileHeroQuery.matches ? heroVideoSources.mobile : heroVideoSources.desktop;
+    var nextSource = group[lang] || group.en;
     if (heroVideo.getAttribute("data-current-src") === nextSource) {
       return;
     }
@@ -323,6 +333,16 @@
     savedLanguage = window.localStorage.getItem("chambre17-lang") || (navigator.language || "en").slice(0, 2);
   } catch (error) {}
   applyLanguage(savedLanguage);
+
+  if (typeof mobileHeroQuery.addEventListener === "function") {
+    mobileHeroQuery.addEventListener("change", function () {
+      applyLanguage(document.documentElement.getAttribute("data-lang") || "en");
+    });
+  } else if (typeof mobileHeroQuery.addListener === "function") {
+    mobileHeroQuery.addListener(function () {
+      applyLanguage(document.documentElement.getAttribute("data-lang") || "en");
+    });
+  }
 
   var menuButton = document.querySelector("[data-menu-button]");
   var nav = document.querySelector("[data-nav]");

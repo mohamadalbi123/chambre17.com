@@ -291,10 +291,6 @@ select {
   animation-delay: 420ms;
 }
 
-html[data-lang="ar"] .hero-arabic-copy {
-  display: block;
-}
-
 .reduced-motion .hero-video,
 .hero-video-missing .hero-video {
   display: none;
