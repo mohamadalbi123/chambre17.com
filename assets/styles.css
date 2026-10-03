@@ -128,8 +128,8 @@ select {
 }
 
 .brand-logo {
-  width: 56px;
-  height: 34px;
+  width: 74px;
+  height: 42px;
   flex: 0 0 auto;
   object-fit: cover;
 }
@@ -1744,8 +1744,8 @@ select {
   }
 
   .brand-logo {
-    width: 46px;
-    height: 30px;
+    width: 58px;
+    height: 34px;
   }
 
   .split,
