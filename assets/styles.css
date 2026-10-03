@@ -1608,10 +1608,10 @@ select {
   max-width: 100%;
   margin-top: 18px;
   padding: 9px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #ffffff;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--white);
+  background: #ffffff;
+  color: #050505;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -1619,8 +1619,8 @@ select {
 }
 
 .footer-credit-badge:hover {
-  border-color: rgba(255, 255, 255, 0.38);
-  background: rgba(255, 255, 255, 0.1);
+  background: #050505;
+  color: #ffffff;
 }
 
 .copyright {
