@@ -331,6 +331,8 @@
   document.querySelectorAll("[data-lang-switch]").forEach(function (button) {
     button.addEventListener("click", function () {
       applyLanguage(button.getAttribute("data-lang-switch"));
+      closeNav();
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
