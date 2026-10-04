@@ -11,10 +11,6 @@
     node.setAttribute("href", config.whatsappUrl || "#");
   });
 
-  document.querySelectorAll("[data-contact-x]").forEach(function (node) {
-    node.setAttribute("href", config.xUrl || "#");
-  });
-
   var translations = {
     en: {
       "nav.services": "Services",
