@@ -1917,28 +1917,6 @@ select {
   max-width: 100%;
 }
 
-.footer-credit-badge {
-  display: inline-flex;
-  align-items: center;
-  width: max-content;
-  max-width: 100%;
-  margin-top: 18px;
-  padding: 9px 14px;
-  border: 1px solid #ffffff;
-  border-radius: 999px;
-  background: #ffffff;
-  color: #050505;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
-  text-decoration: none;
-}
-
-.footer-credit-badge:hover {
-  background: #050505;
-  color: #ffffff;
-}
-
 .copyright {
   text-align: right;
 }
