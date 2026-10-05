@@ -46,6 +46,7 @@
       "work.tags.webapp": "Web App",
       "work.tags.products": "Product Management",
       "work.tags.checkout": "Checkout",
+      "work.view": "View project",
       "process.kicker": "Our Process",
       "process.title": "Business first.<br>Digital solution second.",
       "process.intro": "Every Chambre 17 project begins by understanding the business behind the screen.",
@@ -68,6 +69,13 @@
       "about.body2": "Our approach is simple: we don't start with a template. We start by understanding your business — your customers, your goals and what your website actually needs to achieve.",
       "about.body3": "Then we design and build around it.",
       "about.sig": "Design. Business. Technology. All in one room.",
+      "about.cap.business": "Business",
+      "about.cap.retail": "Retail",
+      "about.cap.marketing": "Digital marketing",
+      "about.cap.data": "Data",
+      "about.cap.ai": "AI",
+      "about.cap.ecommerce": "E-commerce",
+      "about.cap.design": "Graphic design",
       "contact.kicker": "Contact Us",
       "contact.title": "Start a project.",
       "form.name": "Name",
@@ -130,6 +138,7 @@
       "work.tags.webapp": "Web app",
       "work.tags.products": "Gestion produits",
       "work.tags.checkout": "Paiement",
+      "work.view": "Voir le projet",
       "process.kicker": "Notre Processus",
       "process.title": "Le business d'abord.<br>La solution digitale ensuite.",
       "process.intro": "Chaque projet Chambre 17 commence par comprendre l'entreprise derrière l'écran.",
@@ -152,6 +161,13 @@
       "about.body2": "Notre approche est simple : nous ne commençons pas par un template. Nous commençons par comprendre votre business, vos clients, vos objectifs et ce que votre site doit vraiment accomplir.",
       "about.body3": "Ensuite, nous designons et construisons autour.",
       "about.sig": "Design. Business. Technologie. Tout dans la même pièce.",
+      "about.cap.business": "Business",
+      "about.cap.retail": "Retail",
+      "about.cap.marketing": "Marketing digital",
+      "about.cap.data": "Data",
+      "about.cap.ai": "IA",
+      "about.cap.ecommerce": "E-commerce",
+      "about.cap.design": "Design graphique",
       "contact.kicker": "Contact",
       "contact.title": "Démarrer un projet.",
       "form.name": "Nom",
@@ -214,6 +230,7 @@
       "work.tags.webapp": "تطبيق ويب",
       "work.tags.products": "إدارة المنتجات",
       "work.tags.checkout": "الدفع",
+      "work.view": "عرض المشروع",
       "process.kicker": "طريقتنا",
       "process.title": "الأعمال أولاً.<br>الحل الرقمي ثانياً.",
       "process.intro": "كل مشروع في Chambre 17 يبدأ بفهم العمل خلف الشاشة.",
@@ -236,6 +253,13 @@
       "about.body2": "طريقتنا بسيطة: لا نبدأ من قالب جاهز. نبدأ بفهم عملك، عملائك، أهدافك وما يجب أن يحققه موقعك فعلاً.",
       "about.body3": "بعد ذلك نصمم ونبني حوله.",
       "about.sig": "تصميم. أعمال. تقنية. كلها في غرفة واحدة.",
+      "about.cap.business": "الأعمال",
+      "about.cap.retail": "التجزئة",
+      "about.cap.marketing": "التسويق الرقمي",
+      "about.cap.data": "البيانات",
+      "about.cap.ai": "الذكاء الاصطناعي",
+      "about.cap.ecommerce": "التجارة الإلكترونية",
+      "about.cap.design": "التصميم",
       "contact.kicker": "تواصل معنا",
       "contact.title": "ابدأ مشروعك.",
       "form.name": "الاسم",
@@ -420,6 +444,7 @@
   }
 
   var processSteps = document.querySelectorAll("[data-process-step]");
+  var processFlow = document.querySelector("[data-process-flow]");
   if (processSteps.length) {
     if (!prefersReducedMotion && "IntersectionObserver" in window) {
       var processObserver = new IntersectionObserver(function (entries) {
@@ -439,6 +464,45 @@
     } else {
       processSteps[0].setAttribute("data-active", "true");
     }
+  }
+
+  function updateScrollDepth() {
+    var scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
+    document.documentElement.style.setProperty("--page-progress", progress.toFixed(4));
+
+    if (processFlow) {
+      var rect = processFlow.getBoundingClientRect();
+      var start = window.innerHeight * 0.72;
+      var end = -rect.height * 0.18;
+      var processProgress = (start - rect.top) / Math.max(1, start - end);
+      document.documentElement.style.setProperty("--process-progress", Math.min(1, Math.max(0, processProgress)).toFixed(4));
+    }
+  }
+
+  updateScrollDepth();
+  window.addEventListener("scroll", updateScrollDepth, { passive: true });
+  window.addEventListener("resize", updateScrollDepth);
+
+  if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll("[data-tilt-card]").forEach(function (card) {
+      card.addEventListener("pointermove", function (event) {
+        var rect = card.getBoundingClientRect();
+        var x = (event.clientX - rect.left) / rect.width - 0.5;
+        var y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.setProperty("--tilt-x", (y * -5).toFixed(2) + "deg");
+        card.style.setProperty("--tilt-y", (x * 6).toFixed(2) + "deg");
+        card.style.setProperty("--glow-x", ((x + 0.5) * 100).toFixed(1) + "%");
+        card.style.setProperty("--glow-y", ((y + 0.5) * 100).toFixed(1) + "%");
+      });
+
+      card.addEventListener("pointerleave", function () {
+        card.style.removeProperty("--tilt-x");
+        card.style.removeProperty("--tilt-y");
+        card.style.removeProperty("--glow-x");
+        card.style.removeProperty("--glow-y");
+      });
+    });
   }
 
   var contactForm = document.querySelector("[data-project-form]");
