@@ -978,19 +978,9 @@ select {
   transition: transform 220ms ease, opacity 220ms ease;
 }
 
-.work-action::after {
-  content: "→";
-  margin-left: 10px;
-  transition: transform 220ms ease;
-}
-
 .work-card:hover .work-action {
   transform: translateY(0);
   opacity: 1;
-}
-
-.work-card:hover .work-action::after {
-  transform: translateX(5px);
 }
 
 .preview-stage {
