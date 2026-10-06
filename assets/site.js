@@ -505,6 +505,106 @@
     });
   }
 
+  var ambientCanvas = document.querySelector("[data-ambient-canvas]");
+  if (ambientCanvas && !prefersReducedMotion) {
+    var ambientContext = ambientCanvas.getContext("2d");
+    var ambientPoints = [];
+    var ambientPointer = { x: 0.5, y: 0.5, active: false };
+    var ambientFrame = 0;
+    var ambientDpr = 1;
+
+    function resizeAmbientCanvas() {
+      ambientDpr = Math.min(window.devicePixelRatio || 1, 2);
+      ambientCanvas.width = Math.floor(window.innerWidth * ambientDpr);
+      ambientCanvas.height = Math.floor(window.innerHeight * ambientDpr);
+      ambientCanvas.style.width = window.innerWidth + "px";
+      ambientCanvas.style.height = window.innerHeight + "px";
+      ambientContext.setTransform(ambientDpr, 0, 0, ambientDpr, 0, 0);
+
+      var pointCount = window.innerWidth < 720 ? 34 : 62;
+      ambientPoints = Array.from({ length: pointCount }, function (_, index) {
+        return {
+          x: (index * 0.61803398875 % 1) * window.innerWidth,
+          y: ((index * 0.41421356237 + 0.17) % 1) * window.innerHeight,
+          vx: ((index % 5) - 2) * 0.035,
+          vy: (((index + 2) % 7) - 3) * 0.025,
+          size: 0.6 + (index % 4) * 0.18
+        };
+      });
+    }
+
+    function drawAmbientCanvas() {
+      var width = window.innerWidth;
+      var height = window.innerHeight;
+      var pageProgress = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--page-progress")) || 0;
+      ambientFrame += 0.006;
+
+      ambientContext.clearRect(0, 0, width, height);
+      ambientContext.lineWidth = 1;
+
+      ambientPoints.forEach(function (point, index) {
+        point.x += point.vx + Math.sin(ambientFrame + index) * 0.018;
+        point.y += point.vy + Math.cos(ambientFrame * 0.8 + index) * 0.014 + (pageProgress - 0.5) * 0.018;
+
+        if (point.x < -20) point.x = width + 20;
+        if (point.x > width + 20) point.x = -20;
+        if (point.y < -20) point.y = height + 20;
+        if (point.y > height + 20) point.y = -20;
+
+        var pointerDistance = ambientPointer.active
+          ? Math.hypot(point.x - ambientPointer.x * width, point.y - ambientPointer.y * height)
+          : 9999;
+        var pointAlpha = pointerDistance < 190 ? 0.34 : 0.14;
+
+        ambientContext.beginPath();
+        ambientContext.fillStyle = "rgba(255, 255, 255, " + pointAlpha + ")";
+        ambientContext.arc(point.x, point.y, point.size, 0, Math.PI * 2);
+        ambientContext.fill();
+      });
+
+      for (var i = 0; i < ambientPoints.length; i += 1) {
+        for (var j = i + 1; j < ambientPoints.length; j += 1) {
+          var a = ambientPoints[i];
+          var b = ambientPoints[j];
+          var distance = Math.hypot(a.x - b.x, a.y - b.y);
+          if (distance < 142) {
+            var alpha = (1 - distance / 142) * 0.13;
+            ambientContext.strokeStyle = "rgba(255, 255, 255, " + alpha + ")";
+            ambientContext.beginPath();
+            ambientContext.moveTo(a.x, a.y);
+            ambientContext.lineTo(b.x, b.y);
+            ambientContext.stroke();
+          }
+        }
+      }
+
+      ambientContext.save();
+      ambientContext.translate(width * (0.22 + pageProgress * 0.56), height * 0.42);
+      ambientContext.rotate(-0.32);
+      var beam = ambientContext.createLinearGradient(-260, 0, 260, 0);
+      beam.addColorStop(0, "rgba(255,255,255,0)");
+      beam.addColorStop(0.5, "rgba(255,255,255,0.085)");
+      beam.addColorStop(1, "rgba(255,255,255,0)");
+      ambientContext.fillStyle = beam;
+      ambientContext.fillRect(-260, -1, 520, 2);
+      ambientContext.restore();
+
+      window.requestAnimationFrame(drawAmbientCanvas);
+    }
+
+    resizeAmbientCanvas();
+    drawAmbientCanvas();
+    window.addEventListener("resize", resizeAmbientCanvas);
+    window.addEventListener("pointermove", function (event) {
+      ambientPointer.x = event.clientX / Math.max(1, window.innerWidth);
+      ambientPointer.y = event.clientY / Math.max(1, window.innerHeight);
+      ambientPointer.active = true;
+    }, { passive: true });
+    window.addEventListener("pointerleave", function () {
+      ambientPointer.active = false;
+    });
+  }
+
   var contactForm = document.querySelector("[data-project-form]");
   if (contactForm) {
     contactForm.addEventListener("submit", async function (event) {
