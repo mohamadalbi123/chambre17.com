@@ -188,6 +188,11 @@ select {
   object-fit: cover;
 }
 
+.site-header .brand-logo {
+  width: 92px;
+  height: 52px;
+}
+
 .main-nav {
   justify-self: center;
   display: flex;
@@ -2077,6 +2082,11 @@ select {
   .brand-logo {
     width: 58px;
     height: 34px;
+  }
+
+  .site-header .brand-logo {
+    width: 70px;
+    height: 40px;
   }
 
   .split,
