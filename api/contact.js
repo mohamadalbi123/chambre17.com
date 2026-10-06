@@ -1,4 +1,4 @@
-const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "mohalbi123@icloud.com";
+const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || "chambre17@icloud.com";
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "CHAMBRE 17 <contact@chambre17.com>";
 
 function sendJson(response, statusCode, payload) {
