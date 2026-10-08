@@ -724,6 +724,15 @@ select {
   border-top: 1px solid var(--line);
 }
 
+.local-seo-line {
+  max-width: 760px;
+  margin: 28px auto 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: clamp(0.98rem, 1.4vw, 1.18rem);
+  line-height: 1.7;
+  text-align: center;
+}
+
 .service-panel {
   position: relative;
   overflow: hidden;
