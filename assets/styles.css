@@ -1813,6 +1813,16 @@ select {
 .capability-band span:nth-child(5) { --cap-index: 5; }
 .capability-band span:nth-child(6) { --cap-index: 6; }
 .capability-band span:nth-child(7) { --cap-index: 7; }
+.capability-band span:nth-child(8) { --cap-index: 8; }
+.capability-band span:nth-child(9) { --cap-index: 9; }
+.capability-band span:nth-child(10) { --cap-index: 10; }
+.capability-band span:nth-child(11) { --cap-index: 11; }
+.capability-band span:nth-child(12) { --cap-index: 12; }
+.capability-band span:nth-child(13) { --cap-index: 13; }
+.capability-band span:nth-child(14) { --cap-index: 14; }
+.capability-band span:nth-child(15) { --cap-index: 15; }
+.capability-band span:nth-child(16) { --cap-index: 16; }
+.capability-band span:nth-child(17) { --cap-index: 17; }
 
 .contact-layout {
   display: grid;
