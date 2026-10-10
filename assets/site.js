@@ -32,7 +32,7 @@
       "services.webapp.body": "For businesses that need more than a simple website: booking flows, client portals, dashboards, tools and custom digital systems.",
       "services.management.title": "Website Management",
       "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
-      "services.local": "Based near La Rochelle, Chambre 17 helps businesses in Lagord, La Rochelle and beyond turn their ideas into clear digital experiences.",
+      "services.local": "Chambre 17 helps businesses turn their ideas, services and operations into clear digital experiences built around real business needs.",
       "work.kicker": "Selected Work",
       "work.title": "Real projects. Real businesses.",
       "work.lazoya.title": "LAZOYA — Beauty Centre",
@@ -135,7 +135,7 @@
       "services.webapp.body": "Pour les entreprises qui ont besoin de plus qu'un simple site : réservations, portails clients, tableaux de bord, outils et systèmes digitaux sur mesure.",
       "services.management.title": "Gestion de site web",
       "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
-      "services.local": "Basé près de La Rochelle, Chambre 17 aide les entreprises à Lagord, La Rochelle et au-delà à transformer leurs idées en expériences digitales claires.",
+      "services.local": "Chambre 17 aide les entreprises à transformer leurs idées, services et opérations en expériences digitales claires, construites autour de vrais besoins business.",
       "work.kicker": "Projets sélectionnés",
       "work.title": "Des projets réels. Des entreprises réelles.",
       "work.lazoya.title": "LAZOYA — Centre de beauté",
@@ -238,7 +238,7 @@
       "services.webapp.body": "للأعمال التي تحتاج أكثر من موقع بسيط: حجوزات، بوابات عملاء، لوحات تحكم، أدوات وأنظمة رقمية مخصصة.",
       "services.management.title": "إدارة الموقع",
       "services.management.body": "ندير موقعك شهرياً: تحديثات، تعديلات، عناية تقنية، صيانة وتحسين مستمر بعد الإطلاق.",
-      "services.local": "من قرب لا روشيل، يساعد Chambre 17 الأعمال في Lagord وLa Rochelle وخارجها على تحويل الأفكار إلى تجارب رقمية واضحة.",
+      "services.local": "يساعد Chambre 17 الشركات على تحويل أفكارها وخدماتها وعملياتها إلى تجارب رقمية واضحة مبنية حول احتياجات العمل الحقيقية.",
       "work.kicker": "أعمال مختارة",
       "work.title": "مشاريع حقيقية. أعمال حقيقية.",
       "work.lazoya.title": "LAZOYA — مركز تجميل",
@@ -338,6 +338,30 @@
 
   var mobileHeroQuery = window.matchMedia("(max-width: 640px)");
 
+  function playHeroVideo(heroVideo) {
+    if (!heroVideo) {
+      return;
+    }
+
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.loop = true;
+    heroVideo.autoplay = true;
+    heroVideo.playsInline = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.setAttribute("loop", "");
+    heroVideo.setAttribute("autoplay", "");
+    heroVideo.setAttribute("playsinline", "");
+    heroVideo.setAttribute("webkit-playsinline", "");
+
+    if (heroVideo.paused || heroVideo.readyState < 2) {
+      var playPromise = heroVideo.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(function () {});
+      }
+    }
+  }
+
   function setHeroVideo(lang) {
     var heroVideo = document.querySelector("[data-hero-video]");
     if (!heroVideo) {
@@ -353,11 +377,10 @@
     heroVideo.setAttribute("data-current-src", nextSource);
     heroVideo.innerHTML = '<source src="' + nextSource + '" type="video/mp4">';
     heroVideo.load();
-
-    var playPromise = heroVideo.play();
-    if (playPromise && typeof playPromise.catch === "function") {
-      playPromise.catch(function () {});
-    }
+    playHeroVideo(heroVideo);
+    window.setTimeout(function () {
+      playHeroVideo(heroVideo);
+    }, 250);
   }
 
   function applyLanguage(lang) {
@@ -454,6 +477,25 @@
     heroVideo.addEventListener("error", function () {
       document.documentElement.classList.add("hero-video-missing");
     }, true);
+    ["loadeddata", "canplay", "stalled", "suspend", "waiting", "ended", "pause"].forEach(function (eventName) {
+      heroVideo.addEventListener(eventName, function () {
+        playHeroVideo(heroVideo);
+      });
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) {
+        playHeroVideo(heroVideo);
+      }
+    });
+    window.addEventListener("pageshow", function () {
+      playHeroVideo(heroVideo);
+    });
+    window.setInterval(function () {
+      if (!document.hidden) {
+        playHeroVideo(heroVideo);
+      }
+    }, 3000);
+    playHeroVideo(heroVideo);
   }
 
   var revealItems = document.querySelectorAll("[data-reveal]");
