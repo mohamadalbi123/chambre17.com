@@ -320,15 +320,29 @@ select {
 
 .hero {
   position: relative;
+  min-height: 178svh;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  background: #000;
+  perspective: 1200px;
+  perspective-origin: 50% 46%;
+  --hero-progress: 0;
+}
+
+.hero-depth-scene {
+  position: sticky;
+  top: 0;
   min-height: 100svh;
   display: grid;
   align-items: center;
   overflow: hidden;
-  padding: 0;
   background: #000;
+  transform-style: preserve-3d;
 }
 
-.hero::after {
+.hero-depth-scene::before,
+.hero-depth-scene::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -336,11 +350,20 @@ select {
   pointer-events: none;
 }
 
-.hero::after {
+.hero-depth-scene::before {
   background:
     linear-gradient(to bottom, rgba(0, 0, 0, 0.18), transparent 36%, rgba(0, 0, 0, 0.96) 96%, #000),
     radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.095), transparent 42%),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 12vw);
+}
+
+.hero-depth-scene::after {
+  opacity: calc(0.08 + (var(--hero-progress) * 0.46));
+  background:
+    radial-gradient(circle at 50% 52%, rgba(255, 255, 255, 0.12), transparent 0 12%, rgba(0, 0, 0, 0.2) 42%, rgba(0, 0, 0, 0.92) 100%),
+    linear-gradient(90deg, transparent 0 48%, rgba(255, 255, 255, 0.16) 50%, transparent 52%),
+    linear-gradient(0deg, transparent 0 48%, rgba(255, 255, 255, 0.1) 50%, transparent 52%);
+  mix-blend-mode: screen;
 }
 
 .hero-video {
@@ -352,11 +375,146 @@ select {
   object-fit: cover;
   opacity: 1;
   filter: grayscale(1) contrast(1.08) brightness(0.98);
+  transform: translate3d(0, 0, calc(var(--hero-progress) * -220px)) scale(calc(1 + (var(--hero-progress) * 0.32)));
+  transition: filter 180ms linear;
+  will-change: transform, filter;
+}
+
+.hero-depth-field {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  opacity: calc(0.24 + (var(--hero-progress) * 0.58));
+  transform: translateZ(calc(var(--hero-progress) * 120px));
+}
+
+.hero-depth-field::before,
+.hero-depth-field::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(calc(0.74 + (var(--hero-progress) * 0.5)));
+}
+
+.hero-depth-field::before {
+  width: min(52vw, 620px);
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  opacity: calc(0.08 + (var(--hero-progress) * 0.42));
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), transparent 28%, rgba(255, 255, 255, 0.08) 52%, transparent 76%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.16), transparent 56%);
+  box-shadow: 0 0 70px rgba(255, 255, 255, 0.08), inset 0 0 60px rgba(255, 255, 255, 0.05);
+  rotate: 45deg;
+}
+
+.hero-depth-field::after {
+  width: min(34vw, 420px);
+  height: 1px;
+  opacity: calc(0.18 + (var(--hero-progress) * 0.62));
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.88), transparent);
+  box-shadow: 0 0 34px rgba(255, 255, 255, 0.35);
+}
+
+.depth-frame {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(76vw, 980px);
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transform: translate(-50%, -50%) translateZ(var(--z, 0)) scale(var(--s, 1));
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.025), inset 0 0 38px rgba(255, 255, 255, 0.028);
+}
+
+.frame-a {
+  --z: calc(-460px + (var(--hero-progress) * 620px));
+  --s: calc(0.54 + (var(--hero-progress) * 0.22));
+}
+
+.frame-b {
+  --z: calc(-260px + (var(--hero-progress) * 520px));
+  --s: calc(0.72 + (var(--hero-progress) * 0.34));
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.frame-c {
+  --z: calc(-80px + (var(--hero-progress) * 440px));
+  --s: calc(0.92 + (var(--hero-progress) * 0.52));
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.depth-line {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 58vh;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.42), transparent);
+  transform-origin: center;
+  opacity: calc(0.24 + (var(--hero-progress) * 0.46));
+}
+
+.line-a {
+  transform: translate(-50%, -50%) rotate(56deg) translateY(calc(var(--hero-progress) * -120px));
+}
+
+.line-b {
+  transform: translate(-50%, -50%) rotate(-56deg) translateY(calc(var(--hero-progress) * -120px));
+}
+
+.line-c {
+  transform: translate(-50%, -50%) rotate(124deg) translateY(calc(var(--hero-progress) * 120px));
+}
+
+.line-d {
+  transform: translate(-50%, -50%) rotate(-124deg) translateY(calc(var(--hero-progress) * 120px));
+}
+
+.hero-depth-words {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  opacity: calc(0.16 + (var(--hero-progress) * 0.42));
+}
+
+.hero-depth-words span {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: clamp(0.66rem, 0.9vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.16);
+  transform: translate3d(var(--x), var(--y), calc(-260px + (var(--hero-progress) * 520px))) scale(calc(0.72 + (var(--hero-progress) * 0.56)));
+}
+
+.hero-depth-words span:nth-child(1) { --x: 14vw; --y: 24vh; }
+.hero-depth-words span:nth-child(2) { --x: 70vw; --y: 26vh; }
+.hero-depth-words span:nth-child(3) { --x: 12vw; --y: 70vh; }
+.hero-depth-words span:nth-child(4) { --x: 76vw; --y: 68vh; }
+
+.hero + .section {
+  margin-top: -18svh;
+  z-index: 3;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.74), #000 96px),
+    #000;
+}
+
+.hero[data-depth-complete="true"] .scroll-indicator {
+  opacity: 0;
 }
 
 .hero-arabic-copy {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: none;
   width: min(100% - (var(--gutter) * 2), 980px);
   margin: auto;
@@ -383,6 +541,19 @@ select {
 
 .reduced-motion .hero-video,
 .hero-video-missing .hero-video {
+  display: none;
+}
+
+.reduced-motion .hero {
+  min-height: 100svh;
+}
+
+.reduced-motion .hero-depth-scene {
+  position: relative;
+}
+
+.reduced-motion .hero-depth-field,
+.reduced-motion .hero-depth-words {
   display: none;
 }
 
@@ -583,6 +754,7 @@ select {
   text-transform: none;
   animation: ctaFloat 3.8s ease-in-out infinite;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 0 32px rgba(255, 255, 255, 0.12);
+  opacity: calc(1 - (var(--hero-progress) * 0.58));
 }
 
 .hero-floating-cta {
@@ -590,7 +762,7 @@ select {
   left: 50%;
   bottom: clamp(28px, 5vw, 58px);
   z-index: 3;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(calc(var(--hero-progress) * 20px)) scale(calc(1 - (var(--hero-progress) * 0.06)));
 }
 
 .scroll-indicator {
@@ -602,6 +774,7 @@ select {
   height: 86px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.16);
+  transition: opacity 220ms ease;
 }
 
 .scroll-indicator span {
@@ -2196,18 +2369,39 @@ select {
 
 @media (max-width: 640px) {
   .hero {
+    min-height: 142svh;
+  }
+
+  .hero-depth-scene {
     min-height: 100svh;
   }
 
   .hero-video {
     object-fit: cover;
     object-position: center center;
+    transform: translate3d(0, 0, calc(var(--hero-progress) * -110px)) scale(calc(1 + (var(--hero-progress) * 0.18)));
   }
 
-  html:not([data-lang="ar"]) .hero::after {
+  html:not([data-lang="ar"]) .hero-depth-scene::before {
     background:
       linear-gradient(to top, rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0) 42%, rgba(0, 0, 0, 0.28)),
       repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.012) 0 1px, transparent 1px 12vw);
+  }
+
+  .hero-depth-field {
+    opacity: calc(0.16 + (var(--hero-progress) * 0.38));
+  }
+
+  .depth-frame {
+    width: 84vw;
+  }
+
+  .depth-line {
+    height: 42vh;
+  }
+
+  .hero-depth-words {
+    display: none;
   }
 
   .hero-arabic-copy {

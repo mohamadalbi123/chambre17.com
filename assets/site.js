@@ -504,6 +504,19 @@
     var progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
     document.documentElement.style.setProperty("--page-progress", progress.toFixed(4));
 
+    var heroDepth = document.querySelector("[data-hero-depth]");
+    if (heroDepth) {
+      var heroRect = heroDepth.getBoundingClientRect();
+      var heroScrollable = Math.max(1, heroRect.height - window.innerHeight);
+      var heroProgress = Math.min(1, Math.max(0, -heroRect.top / heroScrollable));
+      heroDepth.style.setProperty("--hero-progress", heroProgress.toFixed(4));
+      if (heroProgress > 0.86) {
+        heroDepth.setAttribute("data-depth-complete", "true");
+      } else {
+        heroDepth.removeAttribute("data-depth-complete");
+      }
+    }
+
     if (processFlow) {
       var rect = processFlow.getBoundingClientRect();
       var start = window.innerHeight * 0.72;
