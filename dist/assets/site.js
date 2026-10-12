@@ -9,6 +9,9 @@
   document.querySelectorAll("[data-contact-whatsapp]").forEach(function (node) {
     node.textContent = config.whatsapp || "WhatsApp";
     node.setAttribute("href", config.whatsappUrl || "#");
+    node.setAttribute("dir", "ltr");
+    node.setAttribute("unicode-bidi", "isolate");
+    node.setAttribute("aria-label", "WhatsApp " + (config.whatsapp || ""));
   });
 
   var translations = {
@@ -113,7 +116,79 @@
       "footer.contact": "Contact",
       "footer.legal": "Legal",
       "footer.legalNotice": "Legal Notice",
-      "footer.privacy": "Privacy Policy"
+      "footer.privacy": "Privacy Policy",
+      "legal.nav.privacy": "Privacy Policy",
+      "legal.nav.notice": "Legal Notice",
+      "legal.notice.titleTag": "Legal Notice | CHAMBRE 17",
+      "legal.notice.description": "Legal notice for CHAMBRE 17.",
+      "legal.notice.h1": "Legal Notice",
+      "legal.notice.intro": "This legal notice applies to the CHAMBRE 17 website and its service presentation pages.",
+      "legal.notice.publisher.title": "Website publisher",
+      "legal.notice.publisher.body": "CHAMBRE 17 is the trading name used by Mohamad Albi, entrepreneur individuel, for website design, web app development and website management services.",
+      "legal.notice.publisher.location": "Registered establishment: 17140 Lagord, France.",
+      "legal.notice.publisher.contact": "Publisher contact:",
+      "legal.notice.registration.title": "Business registration",
+      "legal.notice.registration.legalForm": "Legal form: entrepreneur individuel, micro-enterprise.",
+      "legal.notice.registration.trade": "Trading name / commercial name: Chambre 17.",
+      "legal.notice.registration.company": "Company name: Mohamad Albi.",
+      "legal.notice.registration.siren": "SIREN: 131 127 979.",
+      "legal.notice.registration.siret": "SIRET: 131 127 979 00014.",
+      "legal.notice.registration.ape": "APE code: 62.01Z - Computer programming activities.",
+      "legal.notice.registration.rne": "Registered with the RNE on 06 October 2026.",
+      "legal.notice.registration.department": "Department: 17 - Charente-Maritime.",
+      "legal.notice.registration.formality": "Creation formality: J00288470180, deposited on 06 October 2026 with INSEE / URSSAF.",
+      "legal.notice.registration.activity": "Main declared activity: design and development of websites and web applications; maintenance, updates and technical management of websites and web applications.",
+      "legal.notice.registration.vat": "VAT status: franchise en base de TVA.",
+      "legal.notice.registration.vat293": "In accordance with article 293 B of the French General Tax Code, VAT is not applicable.",
+      "legal.notice.contact.title": "Contact",
+      "legal.notice.contact.email": "Email:",
+      "legal.notice.contact.phone": "WhatsApp / phone:",
+      "legal.notice.hosting.title": "Hosting",
+      "legal.notice.hosting.body": "This website is hosted by Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States. Website:",
+      "legal.notice.sales.title": "Services and online sales",
+      "legal.notice.sales.body1": "This website presents CHAMBRE 17 services and allows visitors to contact CHAMBRE 17. No products or services are sold directly through an online checkout on this website.",
+      "legal.notice.sales.body2": "Project scope, pricing, payment terms and any applicable service conditions are confirmed directly with the client before work begins.",
+      "legal.notice.ip.title": "Intellectual property",
+      "legal.notice.ip.body": "The CHAMBRE 17 name, visual identity, text, layout, interface elements, videos and other creative materials on this website are protected. Any reproduction, distribution or reuse without prior written permission is prohibited.",
+      "legal.notice.links.title": "External links",
+      "legal.notice.links.body": "This website may link to third-party websites, including selected client projects. CHAMBRE 17 is not responsible for the content, availability or privacy practices of third-party websites.",
+      "legal.notice.liability.title": "Liability",
+      "legal.notice.liability.body": "CHAMBRE 17 aims to keep the information on this website accurate and up to date. However, errors or omissions may occur. Visitors should contact CHAMBRE 17 directly for project-specific information, quotes or service conditions.",
+      "legal.notice.law.title": "Applicable law",
+      "legal.notice.law.body": "Unless otherwise required by mandatory law, this website is governed by French law.",
+      "privacy.titleTag": "Privacy Policy | CHAMBRE 17",
+      "privacy.description": "Privacy policy for CHAMBRE 17.",
+      "privacy.h1": "Privacy Policy",
+      "privacy.intro": "This policy explains how CHAMBRE 17 handles personal information submitted through this website or direct contact channels.",
+      "privacy.controller.title": "Who is responsible",
+      "privacy.controller.body": "Mohamad Albi, entrepreneur individuel trading as CHAMBRE 17, is responsible for the personal information received through this website and its contact channels.",
+      "privacy.controller.contact": "Contact:",
+      "privacy.data.title": "Data you may send",
+      "privacy.data.body": "When you contact CHAMBRE 17, you may provide your name, company name, email address, phone number, project needs and message content.",
+      "privacy.use.title": "How the data is used",
+      "privacy.use.body": "Your information is used to understand your request, reply to you, prepare project discussions, provide quotes where relevant, and manage the commercial relationship if you decide to work with CHAMBRE 17.",
+      "privacy.form.title": "Contact form status",
+      "privacy.form.body": "The form on this website sends project enquiries to CHAMBRE 17 by email through a secure server-side email service. The visitor's email address is used as the reply-to address so CHAMBRE 17 can respond directly.",
+      "privacy.basis.title": "Legal basis",
+      "privacy.basis.body1": "Contact and project enquiry data is processed because you request information or services from CHAMBRE 17, or because communication is necessary before entering into a service agreement.",
+      "privacy.basis.body2": "Client, project and administrative records may also be processed where necessary for legitimate business follow-up, performance of agreed services, legal obligations, invoicing, accounting and the establishment or defence of legal claims.",
+      "privacy.retention.title": "Retention",
+      "privacy.retention.body1": "Project enquiries that do not become client work are normally kept for up to 24 months after the last meaningful exchange, unless you ask for deletion earlier or a longer period is necessary to manage a dispute or legal claim.",
+      "privacy.retention.body2": "Client, project, invoicing and accounting records are kept for the periods required by applicable French law and for the time necessary to manage the service relationship.",
+      "privacy.sharing.title": "Sharing",
+      "privacy.sharing.body1": "CHAMBRE 17 does not sell personal data. Information may be processed through normal technical service providers such as website hosting, email delivery, email inbox, messaging or business tools, only as needed to operate the service.",
+      "privacy.sharing.body2": "The current website uses Vercel for hosting and server-side functions, Resend for contact-form email delivery, and iCloud email for receiving enquiries. If you contact CHAMBRE 17 through WhatsApp, WhatsApp's own terms and privacy practices also apply.",
+      "privacy.cookies.title": "Cookies and local storage",
+      "privacy.cookies.body": "This website does not use advertising cookies or analytics trackers. It may store your language preference locally in your browser so the website can remember your selected language. This preference is used only to display the website in the selected language.",
+      "privacy.external.title": "External websites",
+      "privacy.external.body": "Links to external websites, including portfolio examples, are subject to the privacy policies of those websites.",
+      "privacy.rights.title": "Your rights",
+      "privacy.rights.body1": "You may request access, correction, deletion, restriction, portability where applicable, or object to certain processing of your personal data by contacting",
+      "privacy.rights.body2": "If you believe your data protection rights have not been respected, you may submit a complaint to the CNIL:",
+      "privacy.security.title": "Security",
+      "privacy.security.body": "CHAMBRE 17 takes reasonable technical and organisational measures to protect enquiry data and limit access to the people and providers needed to respond to requests and manage services.",
+      "privacy.automated.title": "Automated decisions",
+      "privacy.automated.body": "CHAMBRE 17 does not use the information submitted through this website for automated decision-making or profiling."
     },
     fr: {
       "nav.services": "Services",
@@ -216,7 +291,79 @@
       "footer.contact": "Contact",
       "footer.legal": "Légal",
       "footer.legalNotice": "Mentions légales",
-      "footer.privacy": "Politique de confidentialité"
+      "footer.privacy": "Politique de confidentialité",
+      "legal.nav.privacy": "Politique de confidentialité",
+      "legal.nav.notice": "Mentions légales",
+      "legal.notice.titleTag": "Mentions légales | CHAMBRE 17",
+      "legal.notice.description": "Mentions légales du site CHAMBRE 17.",
+      "legal.notice.h1": "Mentions légales",
+      "legal.notice.intro": "Ces mentions légales s'appliquent au site CHAMBRE 17 et aux pages de présentation de ses services.",
+      "legal.notice.publisher.title": "Éditeur du site",
+      "legal.notice.publisher.body": "CHAMBRE 17 est le nom commercial utilisé par Mohamad Albi, entrepreneur individuel, pour des services de création de sites web, développement de web apps et gestion de sites web.",
+      "legal.notice.publisher.location": "Établissement enregistré : 17140 Lagord, France.",
+      "legal.notice.publisher.contact": "Contact de l'éditeur :",
+      "legal.notice.registration.title": "Immatriculation",
+      "legal.notice.registration.legalForm": "Forme juridique : entrepreneur individuel, micro-entreprise.",
+      "legal.notice.registration.trade": "Nom commercial : Chambre 17.",
+      "legal.notice.registration.company": "Nom de l'entreprise : Mohamad Albi.",
+      "legal.notice.registration.siren": "SIREN : 131 127 979.",
+      "legal.notice.registration.siret": "SIRET : 131 127 979 00014.",
+      "legal.notice.registration.ape": "Code APE : 62.01Z - Programmation informatique.",
+      "legal.notice.registration.rne": "Immatriculé au RNE le 06 octobre 2026.",
+      "legal.notice.registration.department": "Département : 17 - Charente-Maritime.",
+      "legal.notice.registration.formality": "Formalité de création : J00288470180, déposée le 06 octobre 2026 auprès de l'INSEE / URSSAF.",
+      "legal.notice.registration.activity": "Activité principale déclarée : conception et développement de sites web et web apps ; maintenance, mises à jour et gestion technique de sites web et web apps.",
+      "legal.notice.registration.vat": "Statut TVA : franchise en base de TVA.",
+      "legal.notice.registration.vat293": "Conformément à l'article 293 B du Code général des impôts, la TVA n'est pas applicable.",
+      "legal.notice.contact.title": "Contact",
+      "legal.notice.contact.email": "Email :",
+      "legal.notice.contact.phone": "WhatsApp / téléphone :",
+      "legal.notice.hosting.title": "Hébergement",
+      "legal.notice.hosting.body": "Ce site est hébergé par Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis. Site web :",
+      "legal.notice.sales.title": "Services et vente en ligne",
+      "legal.notice.sales.body1": "Ce site présente les services de CHAMBRE 17 et permet aux visiteurs de contacter CHAMBRE 17. Aucun produit ou service n'est vendu directement via un paiement en ligne sur ce site.",
+      "legal.notice.sales.body2": "Le périmètre du projet, les prix, les conditions de paiement et les conditions de service applicables sont confirmés directement avec le client avant le début du travail.",
+      "legal.notice.ip.title": "Propriété intellectuelle",
+      "legal.notice.ip.body": "Le nom CHAMBRE 17, l'identité visuelle, les textes, la mise en page, les éléments d'interface, les vidéos et les autres contenus créatifs du site sont protégés. Toute reproduction, diffusion ou réutilisation sans autorisation écrite préalable est interdite.",
+      "legal.notice.links.title": "Liens externes",
+      "legal.notice.links.body": "Ce site peut contenir des liens vers des sites tiers, notamment des projets clients sélectionnés. CHAMBRE 17 n'est pas responsable du contenu, de la disponibilité ou des pratiques de confidentialité de ces sites tiers.",
+      "legal.notice.liability.title": "Responsabilité",
+      "legal.notice.liability.body": "CHAMBRE 17 s'efforce de maintenir les informations de ce site exactes et à jour. Des erreurs ou omissions peuvent toutefois exister. Les visiteurs sont invités à contacter CHAMBRE 17 directement pour toute information spécifique, devis ou condition de service.",
+      "legal.notice.law.title": "Droit applicable",
+      "legal.notice.law.body": "Sauf disposition impérative contraire, ce site est soumis au droit français.",
+      "privacy.titleTag": "Politique de confidentialité | CHAMBRE 17",
+      "privacy.description": "Politique de confidentialité du site CHAMBRE 17.",
+      "privacy.h1": "Politique de confidentialité",
+      "privacy.intro": "Cette politique explique comment CHAMBRE 17 traite les informations personnelles transmises via ce site ou les canaux de contact directs.",
+      "privacy.controller.title": "Responsable du traitement",
+      "privacy.controller.body": "Mohamad Albi, entrepreneur individuel exerçant sous le nom commercial CHAMBRE 17, est responsable des informations personnelles reçues via ce site et ses canaux de contact.",
+      "privacy.controller.contact": "Contact :",
+      "privacy.data.title": "Données que vous pouvez transmettre",
+      "privacy.data.body": "Lorsque vous contactez CHAMBRE 17, vous pouvez transmettre votre nom, le nom de votre entreprise, votre adresse email, votre numéro de téléphone, vos besoins de projet et le contenu de votre message.",
+      "privacy.use.title": "Utilisation des données",
+      "privacy.use.body": "Vos informations sont utilisées pour comprendre votre demande, vous répondre, préparer les échanges autour du projet, établir un devis si nécessaire et gérer la relation commerciale si vous décidez de travailler avec CHAMBRE 17.",
+      "privacy.form.title": "Statut du formulaire de contact",
+      "privacy.form.body": "Le formulaire du site envoie les demandes de projet à CHAMBRE 17 par email via un service d'envoi côté serveur. L'adresse email du visiteur est utilisée comme adresse de réponse afin que CHAMBRE 17 puisse répondre directement.",
+      "privacy.basis.title": "Base légale",
+      "privacy.basis.body1": "Les données de contact et de demande de projet sont traitées parce que vous demandez des informations ou des services à CHAMBRE 17, ou parce que la communication est nécessaire avant la conclusion éventuelle d'un contrat de service.",
+      "privacy.basis.body2": "Les dossiers clients, projets et administratifs peuvent aussi être traités lorsque cela est nécessaire au suivi commercial légitime, à l'exécution des services convenus, aux obligations légales, à la facturation, à la comptabilité et à la constatation ou défense de droits.",
+      "privacy.retention.title": "Conservation",
+      "privacy.retention.body1": "Les demandes de projet qui ne deviennent pas des missions client sont normalement conservées jusqu'à 24 mois après le dernier échange significatif, sauf demande de suppression plus tôt ou nécessité de conservation plus longue pour gérer un litige ou une réclamation.",
+      "privacy.retention.body2": "Les dossiers clients, projets, facturation et comptabilité sont conservés pendant les durées requises par le droit français applicable et pendant le temps nécessaire à la gestion de la relation de service.",
+      "privacy.sharing.title": "Partage",
+      "privacy.sharing.body1": "CHAMBRE 17 ne vend pas de données personnelles. Les informations peuvent être traitées par des prestataires techniques habituels, comme l'hébergement du site, l'envoi d'emails, la messagerie ou les outils professionnels, uniquement lorsque cela est nécessaire au fonctionnement du service.",
+      "privacy.sharing.body2": "Le site utilise actuellement Vercel pour l'hébergement et les fonctions serveur, Resend pour l'envoi des emails du formulaire de contact, et iCloud email pour recevoir les demandes. Si vous contactez CHAMBRE 17 via WhatsApp, les conditions et pratiques de confidentialité propres à WhatsApp s'appliquent également.",
+      "privacy.cookies.title": "Cookies et stockage local",
+      "privacy.cookies.body": "Ce site n'utilise pas de cookies publicitaires ni de traceurs analytics. Il peut stocker localement votre préférence de langue dans votre navigateur afin de mémoriser la langue sélectionnée. Cette préférence sert uniquement à afficher le site dans la langue choisie.",
+      "privacy.external.title": "Sites externes",
+      "privacy.external.body": "Les liens vers des sites externes, y compris les exemples de portfolio, sont soumis aux politiques de confidentialité de ces sites.",
+      "privacy.rights.title": "Vos droits",
+      "privacy.rights.body1": "Vous pouvez demander l'accès, la rectification, la suppression, la limitation, la portabilité lorsque cela s'applique, ou vous opposer à certains traitements de vos données personnelles en contactant",
+      "privacy.rights.body2": "Si vous estimez que vos droits en matière de protection des données n'ont pas été respectés, vous pouvez adresser une réclamation à la CNIL :",
+      "privacy.security.title": "Sécurité",
+      "privacy.security.body": "CHAMBRE 17 prend des mesures techniques et organisationnelles raisonnables pour protéger les données de demande et limiter leur accès aux personnes et prestataires nécessaires pour répondre aux demandes et gérer les services.",
+      "privacy.automated.title": "Décisions automatisées",
+      "privacy.automated.body": "CHAMBRE 17 n'utilise pas les informations transmises via ce site pour des décisions automatisées ou du profilage."
     },
     ar: {
       "nav.services": "الخدمات",
@@ -319,7 +466,79 @@
       "footer.contact": "تواصل",
       "footer.legal": "قانوني",
       "footer.legalNotice": "الإشعار القانوني",
-      "footer.privacy": "سياسة الخصوصية"
+      "footer.privacy": "سياسة الخصوصية",
+      "legal.nav.privacy": "سياسة الخصوصية",
+      "legal.nav.notice": "الإشعار القانوني",
+      "legal.notice.titleTag": "الإشعار القانوني | CHAMBRE 17",
+      "legal.notice.description": "الإشعار القانوني لموقع CHAMBRE 17.",
+      "legal.notice.h1": "الإشعار القانوني",
+      "legal.notice.intro": "ينطبق هذا الإشعار القانوني على موقع CHAMBRE 17 وصفحات عرض خدماته.",
+      "legal.notice.publisher.title": "ناشر الموقع",
+      "legal.notice.publisher.body": "CHAMBRE 17 هو الاسم التجاري المستخدم من قبل Mohamad Albi، بصفته رائد أعمال فردي، لخدمات تصميم المواقع، تطوير تطبيقات الويب وإدارة المواقع.",
+      "legal.notice.publisher.location": "المقر المسجل: 17140 Lagord، فرنسا.",
+      "legal.notice.publisher.contact": "تواصل مع الناشر:",
+      "legal.notice.registration.title": "معلومات التسجيل",
+      "legal.notice.registration.legalForm": "الشكل القانوني: رائد أعمال فردي، micro-enterprise.",
+      "legal.notice.registration.trade": "الاسم التجاري: Chambre 17.",
+      "legal.notice.registration.company": "اسم الشركة: Mohamad Albi.",
+      "legal.notice.registration.siren": "SIREN: 131 127 979.",
+      "legal.notice.registration.siret": "SIRET: 131 127 979 00014.",
+      "legal.notice.registration.ape": "رمز APE: 62.01Z - أنشطة البرمجة المعلوماتية.",
+      "legal.notice.registration.rne": "مسجل في RNE بتاريخ 06 أكتوبر 2026.",
+      "legal.notice.registration.department": "القسم: 17 - Charente-Maritime.",
+      "legal.notice.registration.formality": "إجراء الإنشاء: J00288470180، أودع بتاريخ 06 أكتوبر 2026 لدى INSEE / URSSAF.",
+      "legal.notice.registration.activity": "النشاط الرئيسي المعلن: تصميم وتطوير المواقع وتطبيقات الويب؛ الصيانة، التحديثات والإدارة التقنية للمواقع وتطبيقات الويب.",
+      "legal.notice.registration.vat": "حالة ضريبة القيمة المضافة: franchise en base de TVA.",
+      "legal.notice.registration.vat293": "وفقاً للمادة 293 B من قانون الضرائب الفرنسي العام، لا تطبق ضريبة القيمة المضافة.",
+      "legal.notice.contact.title": "التواصل",
+      "legal.notice.contact.email": "البريد الإلكتروني:",
+      "legal.notice.contact.phone": "واتساب / الهاتف:",
+      "legal.notice.hosting.title": "الاستضافة",
+      "legal.notice.hosting.body": "تتم استضافة هذا الموقع لدى Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, United States. الموقع:",
+      "legal.notice.sales.title": "الخدمات والبيع عبر الإنترنت",
+      "legal.notice.sales.body1": "يعرض هذا الموقع خدمات CHAMBRE 17 ويتيح للزوار التواصل معنا. لا يتم بيع المنتجات أو الخدمات مباشرة عبر دفع إلكتروني داخل هذا الموقع.",
+      "legal.notice.sales.body2": "يتم تأكيد نطاق المشروع، الأسعار، شروط الدفع وأي شروط خدمة مطبقة مباشرة مع العميل قبل بدء العمل.",
+      "legal.notice.ip.title": "الملكية الفكرية",
+      "legal.notice.ip.body": "اسم CHAMBRE 17، الهوية البصرية، النصوص، التخطيط، عناصر الواجهة، الفيديوهات والمواد الإبداعية الأخرى في هذا الموقع محمية. يمنع أي نسخ أو توزيع أو إعادة استخدام دون إذن كتابي مسبق.",
+      "legal.notice.links.title": "الروابط الخارجية",
+      "legal.notice.links.body": "قد يحتوي هذا الموقع على روابط لمواقع خارجية، بما في ذلك مشاريع عملاء مختارة. CHAMBRE 17 غير مسؤول عن محتوى أو توفر أو ممارسات الخصوصية الخاصة بهذه المواقع.",
+      "legal.notice.liability.title": "المسؤولية",
+      "legal.notice.liability.body": "يسعى CHAMBRE 17 إلى إبقاء معلومات هذا الموقع دقيقة ومحدثة. ومع ذلك قد تحدث أخطاء أو نواقص. يرجى التواصل مع CHAMBRE 17 مباشرة للحصول على معلومات أو عروض أسعار أو شروط خدمة خاصة بمشروعكم.",
+      "legal.notice.law.title": "القانون المطبق",
+      "legal.notice.law.body": "ما لم ينص قانون إلزامي على خلاف ذلك، يخضع هذا الموقع للقانون الفرنسي.",
+      "privacy.titleTag": "سياسة الخصوصية | CHAMBRE 17",
+      "privacy.description": "سياسة الخصوصية لموقع CHAMBRE 17.",
+      "privacy.h1": "سياسة الخصوصية",
+      "privacy.intro": "توضح هذه السياسة كيف يتعامل CHAMBRE 17 مع المعلومات الشخصية المرسلة عبر هذا الموقع أو قنوات التواصل المباشر.",
+      "privacy.controller.title": "المسؤول عن البيانات",
+      "privacy.controller.body": "Mohamad Albi، رائد أعمال فردي يعمل تحت الاسم التجاري CHAMBRE 17، هو المسؤول عن المعلومات الشخصية المستلمة عبر هذا الموقع وقنوات التواصل الخاصة به.",
+      "privacy.controller.contact": "التواصل:",
+      "privacy.data.title": "البيانات التي قد ترسلها",
+      "privacy.data.body": "عند التواصل مع CHAMBRE 17، قد ترسل اسمك، اسم شركتك، بريدك الإلكتروني، رقم هاتفك، احتياجات مشروعك ومحتوى رسالتك.",
+      "privacy.use.title": "كيفية استخدام البيانات",
+      "privacy.use.body": "تُستخدم معلوماتك لفهم طلبك، الرد عليك، تحضير نقاشات المشروع، إعداد عرض سعر عند الحاجة، وإدارة العلاقة التجارية إذا قررت العمل مع CHAMBRE 17.",
+      "privacy.form.title": "حالة نموذج التواصل",
+      "privacy.form.body": "يرسل نموذج التواصل في هذا الموقع طلبات المشاريع إلى CHAMBRE 17 عبر البريد الإلكتروني من خلال خدمة إرسال آمنة من جهة الخادم. يتم استخدام بريد الزائر كعنوان للرد حتى يتمكن CHAMBRE 17 من الرد مباشرة.",
+      "privacy.basis.title": "الأساس القانوني",
+      "privacy.basis.body1": "تتم معالجة بيانات التواصل وطلبات المشاريع لأنك تطلب معلومات أو خدمات من CHAMBRE 17، أو لأن التواصل ضروري قبل الدخول المحتمل في اتفاقية خدمة.",
+      "privacy.basis.body2": "قد تتم أيضاً معالجة سجلات العملاء والمشاريع والسجلات الإدارية عند الحاجة للمتابعة التجارية المشروعة، تنفيذ الخدمات المتفق عليها، الالتزامات القانونية، الفوترة، المحاسبة أو إثبات الحقوق والدفاع عنها.",
+      "privacy.retention.title": "مدة الاحتفاظ",
+      "privacy.retention.body1": "عادةً يتم الاحتفاظ بطلبات المشاريع التي لا تتحول إلى عمل فعلي لمدة تصل إلى 24 شهراً بعد آخر تبادل مهم، ما لم تطلب الحذف قبل ذلك أو تكون هناك حاجة لفترة أطول لإدارة نزاع أو مطالبة قانونية.",
+      "privacy.retention.body2": "يتم الاحتفاظ بسجلات العملاء والمشاريع والفوترة والمحاسبة للمدد المطلوبة بموجب القانون الفرنسي المعمول به وللمدة اللازمة لإدارة علاقة الخدمة.",
+      "privacy.sharing.title": "مشاركة البيانات",
+      "privacy.sharing.body1": "لا يبيع CHAMBRE 17 البيانات الشخصية. قد تتم معالجة المعلومات عبر مزودي خدمات تقنية عاديين مثل استضافة الموقع، إرسال البريد الإلكتروني، صندوق البريد، أدوات المراسلة أو أدوات العمل، فقط عند الحاجة لتشغيل الخدمة.",
+      "privacy.sharing.body2": "يستخدم الموقع حالياً Vercel للاستضافة ووظائف الخادم، وResend لإرسال رسائل نموذج التواصل، وiCloud email لاستلام الطلبات. إذا تواصلت مع CHAMBRE 17 عبر WhatsApp، فإن شروط وممارسات الخصوصية الخاصة بواتساب تنطبق أيضاً.",
+      "privacy.cookies.title": "ملفات تعريف الارتباط والتخزين المحلي",
+      "privacy.cookies.body": "لا يستخدم هذا الموقع ملفات تعريف ارتباط إعلانية أو أدوات تتبع تحليلية. قد يخزن تفضيل اللغة محلياً في متصفحك حتى يتذكر الموقع اللغة التي اخترتها. يُستخدم هذا التفضيل فقط لعرض الموقع باللغة المختارة.",
+      "privacy.external.title": "المواقع الخارجية",
+      "privacy.external.body": "تخضع الروابط إلى المواقع الخارجية، بما في ذلك أمثلة الأعمال، لسياسات الخصوصية الخاصة بتلك المواقع.",
+      "privacy.rights.title": "حقوقك",
+      "privacy.rights.body1": "يمكنك طلب الوصول إلى بياناتك، تصحيحها، حذفها، تقييدها، نقلها عند التطبيق، أو الاعتراض على بعض عمليات المعالجة من خلال التواصل عبر",
+      "privacy.rights.body2": "إذا كنت تعتقد أن حقوقك المتعلقة بحماية البيانات لم تُحترم، يمكنك تقديم شكوى إلى CNIL:",
+      "privacy.security.title": "الأمان",
+      "privacy.security.body": "يتخذ CHAMBRE 17 تدابير تقنية وتنظيمية معقولة لحماية بيانات الطلبات وتقييد الوصول إليها للأشخاص ومزودي الخدمة اللازمين للرد على الطلبات وإدارة الخدمات.",
+      "privacy.automated.title": "القرارات الآلية",
+      "privacy.automated.body": "لا يستخدم CHAMBRE 17 المعلومات المرسلة عبر هذا الموقع لاتخاذ قرارات آلية أو لإنشاء ملفات تعريف شخصية."
     }
   };
 
@@ -386,14 +605,30 @@
   function applyLanguage(lang) {
     var selected = translations[lang] ? lang : "en";
     var dict = translations[selected];
+    var page = document.body.getAttribute("data-page");
     document.documentElement.lang = selected;
     document.documentElement.dir = selected === "ar" ? "rtl" : "ltr";
     document.documentElement.setAttribute("data-lang", selected);
     setHeroVideo(selected);
+    if (page && dict[page + ".titleTag"]) {
+      document.title = dict[page + ".titleTag"];
+    }
+    var metaDescription = document.querySelector('meta[name="description"]');
+    if (page && metaDescription && dict[page + ".description"]) {
+      metaDescription.setAttribute("content", dict[page + ".description"]);
+    }
     document.querySelectorAll("[data-i18n]").forEach(function (node) {
       var key = node.getAttribute("data-i18n");
       if (dict[key]) {
         node.innerHTML = dict[key];
+      }
+    });
+    document.querySelectorAll('a[href^="/mentions-legales/"], a[href^="/politique-confidentialite/"], a[href="/"], a[href^="/?lang="]').forEach(function (link) {
+      var href = link.getAttribute("href").split("?")[0];
+      if (href === "/") {
+        link.setAttribute("href", selected === "en" ? "/" : "/?lang=" + selected);
+      } else {
+        link.setAttribute("href", selected === "en" ? href : href + "?lang=" + selected);
       }
     });
     document.querySelectorAll("[data-lang-switch]").forEach(function (button) {
@@ -414,7 +649,8 @@
 
   var savedLanguage = "en";
   try {
-    savedLanguage = window.localStorage.getItem("chambre17-lang") || (navigator.language || "en").slice(0, 2);
+    var urlLanguage = new URLSearchParams(window.location.search).get("lang");
+    savedLanguage = urlLanguage || window.localStorage.getItem("chambre17-lang") || (navigator.language || "en").slice(0, 2);
   } catch (error) {}
   applyLanguage(savedLanguage);
 
@@ -734,7 +970,8 @@
             email: data.get("email") || "",
             phone: data.get("phone") || "",
             need: data.get("need") || "",
-            message: data.get("message") || ""
+            message: data.get("message") || "",
+            website: data.get("website") || ""
           })
         });
 
