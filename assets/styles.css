@@ -893,7 +893,7 @@ select {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line);
 }
 
@@ -975,6 +975,71 @@ select {
 .service-panel p {
   max-width: 560px;
   font-size: clamp(1rem, 1.35vw, 1.18rem);
+}
+
+.service-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 0 0 8px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.52);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.service-more::after {
+  content: "+";
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.service-more[aria-expanded="true"]::after {
+  content: "-";
+}
+
+.service-details {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.service-details[hidden] {
+  display: none;
+}
+
+.service-details ul {
+  display: grid;
+  gap: 11px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.service-details li {
+  position: relative;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.service-details li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.64);
+  transform: rotate(45deg);
 }
 
 .service-panel span,
@@ -2208,6 +2273,10 @@ select {
   transition-delay: 220ms;
 }
 
+.service-panel[data-reveal]:nth-child(4) {
+  transition-delay: 330ms;
+}
+
 @keyframes scrollTrace {
   0% {
     transform: translateY(-110%);
@@ -2237,6 +2306,20 @@ select {
 
   78%, 100% {
     transform: translateX(120%);
+  }
+}
+
+@media (max-width: 1180px) {
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-panel:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .service-panel:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
   }
 }
 
@@ -2334,6 +2417,10 @@ select {
   .service-panel {
     border-right: 0;
     border-bottom: 1px solid var(--line);
+  }
+
+  .service-panel:last-child {
+    border-bottom: 0;
   }
 
   .work-card {
@@ -2517,6 +2604,16 @@ a[href^="tel:"] {
 html[dir="rtl"] [data-contact-whatsapp],
 html[dir="rtl"] a[href^="tel:"] {
   text-align: left;
+}
+
+html[dir="rtl"] .service-details li {
+  padding-right: 18px;
+  padding-left: 0;
+}
+
+html[dir="rtl"] .service-details li::before {
+  right: 0;
+  left: auto;
 }
 
 .trap-field {

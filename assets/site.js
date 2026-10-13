@@ -28,11 +28,19 @@
       "hero.cta": "Start a conversation",
       "hero.support": "We start by understanding your business, your customers and your needs. Then we propose and build the digital solution that makes sense for you.",
       "services.kicker": "Our Services",
-      "services.title": "Website. Web app. Management.",
+      "services.title": "Website. Web app. Launch. Management.",
       "services.website.title": "Custom Website Design",
       "services.website.body": "We don't just build websites. We bring a business perspective to every project. You tell us about your business, and we design the digital solution around what you actually need.",
       "services.webapp.title": "Web App Development",
       "services.webapp.body": "For businesses that need more than a simple website: booking flows, client portals, dashboards, tools and custom digital systems.",
+      "services.launch.title": "Digital Launch Setup",
+      "services.launch.body": "We help your business get ready to be found and contacted online with the essential setup around your website.",
+      "services.launch.toggle": "See what is included",
+      "services.launch.item1": "Google Business Profile setup",
+      "services.launch.item2": "WhatsApp Business setup",
+      "services.launch.item3": "Google Ads setup and launch support",
+      "services.launch.item4": "Basic tracking and conversion direction",
+      "services.launch.item5": "Launch checklist for visibility and contact",
       "services.management.title": "Website Management",
       "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
       "services.local": "Chambre 17 helps businesses turn their ideas, services and operations into clear digital experiences built around real business needs.",
@@ -101,6 +109,7 @@
       "form.submit": "Start a project",
       "form.option.website": "Website design",
       "form.option.webapp": "Web app development",
+      "form.option.launch": "Digital launch setup",
       "form.option.management": "Website management",
       "form.option.all": "Website, web app and management",
       "form.option.unsure": "Not sure yet",
@@ -112,6 +121,7 @@
       "footer.services": "Services",
       "footer.website": "Website Design",
       "footer.webapp": "Web App Development",
+      "footer.launch": "Digital Launch Setup",
       "footer.management": "Website Management",
       "footer.contact": "Contact",
       "footer.legal": "Legal",
@@ -203,11 +213,19 @@
       "hero.cta": "Démarrer la conversation",
       "hero.support": "Nous commençons par comprendre votre activité, vos clients et vos besoins. Ensuite, nous proposons et construisons la solution digitale qui a du sens pour vous.",
       "services.kicker": "Nos Services",
-      "services.title": "Site web. Web app. Gestion.",
+      "services.title": "Site web. Web app. Lancement. Gestion.",
       "services.website.title": "Site web sur mesure",
       "services.website.body": "Nous ne construisons pas seulement des sites web. Nous apportons une perspective business à chaque projet. Vous nous parlez de votre activité, et nous concevons la solution digitale autour de vos vrais besoins.",
       "services.webapp.title": "Développement web app",
       "services.webapp.body": "Pour les entreprises qui ont besoin de plus qu'un simple site : réservations, portails clients, tableaux de bord, outils et systèmes digitaux sur mesure.",
+      "services.launch.title": "Configuration de lancement digital",
+      "services.launch.body": "Nous aidons votre business à être prêt à être trouvé et contacté en ligne avec les réglages essentiels autour de votre site.",
+      "services.launch.toggle": "Voir ce qui est inclus",
+      "services.launch.item1": "Configuration Google Business Profile",
+      "services.launch.item2": "Configuration WhatsApp Business",
+      "services.launch.item3": "Configuration Google Ads et accompagnement au lancement",
+      "services.launch.item4": "Bases du suivi et de la conversion",
+      "services.launch.item5": "Checklist de lancement pour visibilité et contact",
       "services.management.title": "Gestion de site web",
       "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
       "services.local": "Chambre 17 aide les entreprises à transformer leurs idées, services et opérations en expériences digitales claires, construites autour de vrais besoins business.",
@@ -276,6 +294,7 @@
       "form.submit": "Démarrer un projet",
       "form.option.website": "Site web",
       "form.option.webapp": "Web app",
+      "form.option.launch": "Configuration de lancement digital",
       "form.option.management": "Gestion de site",
       "form.option.all": "Site web, web app et gestion",
       "form.option.unsure": "Je ne sais pas encore",
@@ -287,6 +306,7 @@
       "footer.services": "Services",
       "footer.website": "Site web",
       "footer.webapp": "Web app",
+      "footer.launch": "Lancement digital",
       "footer.management": "Gestion de site",
       "footer.contact": "Contact",
       "footer.legal": "Légal",
@@ -378,11 +398,19 @@
       "hero.cta": "ابدأ المحادثة",
       "hero.support": "نبدأ بفهم عملك وعملائك واحتياجاتك. ثم نقترح ونبني الحل الرقمي المناسب لك.",
       "services.kicker": "خدماتنا",
-      "services.title": "موقع. تطبيق ويب. إدارة.",
+      "services.title": "موقع. تطبيق ويب. إطلاق. إدارة.",
       "services.website.title": "تصميم مواقع مخصص",
       "services.website.body": "نحن لا نبني مواقع فقط. نضيف منظوراً تجارياً لكل مشروع. تخبرنا عن عملك، ثم نصمم الحل الرقمي حول ما تحتاجه فعلاً.",
       "services.webapp.title": "تطوير تطبيقات ويب",
       "services.webapp.body": "للأعمال التي تحتاج أكثر من موقع بسيط: حجوزات، بوابات عملاء، لوحات تحكم، أدوات وأنظمة رقمية مخصصة.",
+      "services.launch.title": "إعداد الإطلاق الرقمي",
+      "services.launch.body": "نساعد عملك ليكون جاهزاً للظهور والتواصل عبر الإنترنت من خلال الإعدادات الأساسية حول موقعك.",
+      "services.launch.toggle": "اعرض ما يشمله",
+      "services.launch.item1": "إعداد Google Business Profile",
+      "services.launch.item2": "إعداد WhatsApp Business",
+      "services.launch.item3": "إعداد Google Ads ودعم الإطلاق",
+      "services.launch.item4": "أساسيات التتبع وتوجيه التحويلات",
+      "services.launch.item5": "قائمة إطلاق للظهور والتواصل",
       "services.management.title": "إدارة الموقع",
       "services.management.body": "ندير موقعك شهرياً: تحديثات، تعديلات، عناية تقنية، صيانة وتحسين مستمر بعد الإطلاق.",
       "services.local": "يساعد Chambre 17 الشركات على تحويل أفكارها وخدماتها وعملياتها إلى تجارب رقمية واضحة مبنية حول احتياجات العمل الحقيقية.",
@@ -451,6 +479,7 @@
       "form.submit": "ابدأ مشروعك",
       "form.option.website": "تصميم موقع",
       "form.option.webapp": "تطوير تطبيق ويب",
+      "form.option.launch": "إعداد الإطلاق الرقمي",
       "form.option.management": "إدارة موقع",
       "form.option.all": "موقع، تطبيق ويب وإدارة",
       "form.option.unsure": "لست متأكداً بعد",
@@ -462,6 +491,7 @@
       "footer.services": "الخدمات",
       "footer.website": "تصميم مواقع",
       "footer.webapp": "تطبيقات ويب",
+      "footer.launch": "إعداد الإطلاق الرقمي",
       "footer.management": "إدارة الموقع",
       "footer.contact": "تواصل",
       "footer.legal": "قانوني",
@@ -807,6 +837,18 @@
   updateScrollDepth();
   window.addEventListener("scroll", updateScrollDepth, { passive: true });
   window.addEventListener("resize", updateScrollDepth);
+
+  document.querySelectorAll("[data-service-toggle]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      var detailsId = button.getAttribute("aria-controls");
+      var details = detailsId ? document.getElementById(detailsId) : null;
+      var isOpen = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!isOpen));
+      if (details) {
+        details.hidden = isOpen;
+      }
+    });
+  });
 
   if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
     document.querySelectorAll("[data-tilt-card]").forEach(function (card) {
