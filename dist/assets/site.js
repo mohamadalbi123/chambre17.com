@@ -16,13 +16,16 @@
 
   var translations = {
     en: {
+      "home.titleTag": "Web Design in La Rochelle & Lagord | CHAMBRE 17",
+      "home.description": "Based in Lagord, CHAMBRE 17 creates custom websites and web applications for businesses in La Rochelle, with optional ongoing website maintenance.",
       "nav.services": "Services",
       "nav.work": "Work",
       "nav.about": "About",
       "nav.process": "Process",
       "nav.contact": "Contact",
       "nav.cta": "Start a project",
-      "hero.h1": "Website design, web apps and monthly website management in La Rochelle.",
+      "hero.h1": "Website design in La Rochelle and Lagord",
+      "services.learn": "Explore our services",
       "hero.line1": "Tell us about your business.",
       "hero.line2": "We'll build the digital solution around it.",
       "hero.cta": "Start a conversation",
@@ -43,13 +46,13 @@
       "services.launch.item5": "Launch checklist for visibility and contact",
       "services.management.title": "Website Management",
       "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
-      "services.local": "Chambre 17 helps businesses turn their ideas, services and operations into clear digital experiences built around real business needs.",
+      "services.local": "Based in Lagord, CHAMBRE 17 helps businesses in La Rochelle and the surrounding area with custom websites, web applications and optional monthly maintenance.",
       "work.kicker": "Selected Work",
       "work.title": "Real projects. Real businesses.",
       "work.lazoya.title": "LAZOYA — Beauty Centre",
-      "work.lazoya": "Service-focused website and digital experience with online booking integration, multilingual content and a customer journey designed around the beauty centre.",
+      "work.lazoya": "A multilingual website for presenting the beauty centre’s services and helping visitors book online. We designed the service pages and customer journey, integrated online booking and provide ongoing website management.",
       "work.jleilati.title": "J. LEILATI — E-commerce",
-      "work.jleilati": "Multilingual e-commerce platform with product management, customer accounts, checkout and European delivery.",
+      "work.jleilati": "A multilingual online shop that brings product browsing, customer accounts and checkout into one journey. The platform includes product management and European delivery options.",
       "work.tags.website": "Website",
       "work.tags.booking": "Booking",
       "work.tags.multilingual": "Multilingual",
@@ -117,7 +120,7 @@
       "form.status.success": "Message sent. We will get back to you soon.",
       "form.status.error": "Something went wrong. Please email us directly at chambre17@icloud.com.",
       "form.status.invalid": "Please complete the required fields with a valid email address.",
-      "footer.location": "Website, Web App & Management",
+      "footer.location": "Based in Lagord · Serving La Rochelle and the surrounding area",
       "footer.services": "Services",
       "footer.website": "Website Design",
       "footer.webapp": "Web App Development",
@@ -201,40 +204,43 @@
       "privacy.automated.body": "CHAMBRE 17 does not use the information submitted through this website for automated decision-making or profiling."
     },
     fr: {
+      "home.titleTag": "Création de site internet à La Rochelle & Lagord | CHAMBRE 17",
+      "home.description": "CHAMBRE 17, basé à Lagord : création de sites internet, applications web sur mesure et maintenance pour les entreprises de La Rochelle. Parlons de votre projet.",
       "nav.services": "Services",
       "nav.work": "Projets",
       "nav.about": "À propos",
       "nav.process": "Processus",
       "nav.contact": "Contact",
       "nav.cta": "Démarrer un projet",
-      "hero.h1": "Création de sites web, web apps et gestion mensuelle de site à La Rochelle.",
+      "hero.h1": "Création de sites internet à La Rochelle et Lagord",
+      "services.learn": "Découvrir nos services",
       "hero.line1": "Parlez-nous de votre activité.",
       "hero.line2": "Nous construisons la solution digitale autour.",
       "hero.cta": "Démarrer la conversation",
       "hero.support": "Nous commençons par comprendre votre activité, vos clients et vos besoins. Ensuite, nous proposons et construisons la solution digitale qui a du sens pour vous.",
       "services.kicker": "Nos Services",
       "services.title": "Site web. Web app. Lancement. Gestion.",
-      "services.website.title": "Site web sur mesure",
-      "services.website.body": "Nous ne construisons pas seulement des sites web. Nous apportons une perspective business à chaque projet. Vous nous parlez de votre activité, et nous concevons la solution digitale autour de vos vrais besoins.",
-      "services.webapp.title": "Développement web app",
+      "services.website.title": "Création de sites internet",
+      "services.website.body": "Un site internet sur mesure commence par votre activité. Nous construisons sa structure, son design et ses contenus autour de vos services, de vos clients et de vos objectifs.",
+      "services.webapp.title": "Applications web sur mesure",
       "services.webapp.body": "Pour les entreprises qui ont besoin de plus qu'un simple site : réservations, portails clients, tableaux de bord, outils et systèmes digitaux sur mesure.",
       "services.launch.title": "Configuration de lancement digital",
-      "services.launch.body": "Nous aidons votre business à être prêt à être trouvé et contacté en ligne avec les réglages essentiels autour de votre site.",
+      "services.launch.body": "Nous préparons les outils essentiels autour de votre site pour aider les clients à trouver votre entreprise et à vous contacter en ligne.",
       "services.launch.toggle": "Voir ce qui est inclus",
       "services.launch.item1": "Configuration Google Business Profile",
       "services.launch.item2": "Configuration WhatsApp Business",
       "services.launch.item3": "Configuration Google Ads et accompagnement au lancement",
       "services.launch.item4": "Bases du suivi et de la conversion",
       "services.launch.item5": "Checklist de lancement pour visibilité et contact",
-      "services.management.title": "Gestion de site web",
+      "services.management.title": "Maintenance de sites web",
       "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
-      "services.local": "Chambre 17 aide les entreprises à transformer leurs idées, services et opérations en expériences digitales claires, construites autour de vrais besoins business.",
+      "services.local": "Basé à Lagord, CHAMBRE 17 accompagne les entreprises de La Rochelle et des environs : création de sites internet, développement d’applications web et maintenance mensuelle en option.",
       "work.kicker": "Projets sélectionnés",
       "work.title": "Des projets réels. Des entreprises réelles.",
       "work.lazoya.title": "LAZOYA — Centre de beauté",
-      "work.lazoya": "Site orienté service et expérience digitale avec réservation en ligne, contenu multilingue et parcours client pensé pour le centre de beauté.",
+      "work.lazoya": "Un site multilingue pour présenter les prestations du centre de beauté et faciliter la réservation en ligne. Nous avons conçu les pages de services et le parcours client, intégré la réservation et assurons la gestion du site.",
       "work.jleilati.title": "J. LEILATI — E-commerce",
-      "work.jleilati": "Plateforme e-commerce multilingue avec gestion des produits, comptes clients, paiement et livraison en Europe.",
+      "work.jleilati": "Une boutique en ligne multilingue qui réunit la découverte des produits, le compte client et le paiement dans un même parcours. La plateforme comprend la gestion des produits et des options de livraison en Europe.",
       "work.tags.website": "Site web",
       "work.tags.booking": "Réservation",
       "work.tags.multilingual": "Multilingue",
@@ -302,7 +308,7 @@
       "form.status.success": "Message envoyé. Nous vous répondrons bientôt.",
       "form.status.error": "Une erreur est survenue. Veuillez nous écrire directement à chambre17@icloud.com.",
       "form.status.invalid": "Veuillez compléter les champs obligatoires avec une adresse email valide.",
-      "footer.location": "Site Web, Web App & Gestion",
+      "footer.location": "Basé à Lagord · La Rochelle et ses environs",
       "footer.services": "Services",
       "footer.website": "Site web",
       "footer.webapp": "Web app",
@@ -386,13 +392,16 @@
       "privacy.automated.body": "CHAMBRE 17 n'utilise pas les informations transmises via ce site pour des décisions automatisées ou du profilage."
     },
     ar: {
+      "home.titleTag": "تصميم مواقع في لا روشيل ولاغور | CHAMBRE 17",
+      "home.description": "CHAMBRE 17 في لاغور: تصميم مواقع وتطبيقات ويب مخصصة للشركات في لا روشيل والمناطق المحيطة، مع صيانة شهرية اختيارية. تواصل معنا لمناقشة مشروعك.",
+      "services.learn": "اكتشف خدماتنا باللغة الفرنسية",
       "nav.services": "الخدمات",
       "nav.work": "الأعمال",
       "nav.about": "من نحن",
       "nav.process": "العملية",
       "nav.contact": "تواصل",
       "nav.cta": "ابدأ مشروعك",
-      "hero.h1": "تصميم مواقع، تطبيقات ويب وإدارة شهرية للمواقع في لا روشيل.",
+      "hero.h1": "تصميم مواقع في لا روشيل ولاغور",
       "hero.line1": "اخبرنا عن عملك.",
       "hero.line2": "نبني الحل الرقمي حوله.",
       "hero.cta": "ابدأ المحادثة",
@@ -618,7 +627,16 @@
     }
 
     var group = mobileHeroQuery.matches ? heroVideoSources.mobile : heroVideoSources.desktop;
-    var nextSource = group[lang] || group.en;
+    var nextSource = heroVideo.getAttribute(mobileHeroQuery.matches ? "data-mobile-src" : "data-desktop-src") || group[lang] || group.en;
+    var nextPoster = heroVideo.getAttribute(mobileHeroQuery.matches ? "data-mobile-poster" : "data-desktop-poster");
+    if (nextPoster && heroVideo.getAttribute("poster") !== nextPoster) heroVideo.setAttribute("poster", nextPoster);
+    // The static page already selects its initial source with media queries.
+    // Do not restart that download when the deferred script initializes.
+    if (heroVideo.hasAttribute("data-desktop-src") && !heroVideo.hasAttribute("data-current-src")) {
+      heroVideo.setAttribute("data-current-src", nextSource);
+      playHeroVideo(heroVideo);
+      return;
+    }
     if (heroVideo.getAttribute("data-current-src") === nextSource) {
       return;
     }
@@ -653,7 +671,7 @@
         node.innerHTML = dict[key];
       }
     });
-    document.querySelectorAll('a[href^="/mentions-legales/"], a[href^="/politique-confidentialite/"], a[href="/"], a[href^="/?lang="]').forEach(function (link) {
+    if (!document.body.hasAttribute("data-static-lang")) document.querySelectorAll('a[href^="/mentions-legales/"], a[href^="/politique-confidentialite/"], a[href="/"], a[href^="/?lang="]').forEach(function (link) {
       var href = link.getAttribute("href").split("?")[0];
       if (href === "/") {
         link.setAttribute("href", selected === "en" ? "/" : "/?lang=" + selected);
@@ -669,7 +687,7 @@
     } catch (error) {}
   }
 
-  document.querySelectorAll("[data-lang-switch]").forEach(function (button) {
+  document.querySelectorAll("button[data-lang-switch]").forEach(function (button) {
     button.addEventListener("click", function () {
       applyLanguage(button.getAttribute("data-lang-switch"));
       closeNav();
@@ -677,11 +695,22 @@
     });
   });
 
-  var savedLanguage = "en";
-  try {
-    var urlLanguage = new URLSearchParams(window.location.search).get("lang");
-    savedLanguage = urlLanguage || window.localStorage.getItem("chambre17-lang") || (navigator.language || "en").slice(0, 2);
-  } catch (error) {}
+  var savedLanguage = document.body.getAttribute("data-static-lang") || "en";
+  // Preserve old shared ?lang= links while keeping each new URL's language stable.
+  var legacyParams = new URLSearchParams(window.location.search);
+  var legacyLanguage = legacyParams.get("lang");
+  if (["fr", "en", "ar"].indexOf(legacyLanguage) !== -1) {
+    var alternate = document.querySelector('link[rel="alternate"][hreflang="' + legacyLanguage + '"]');
+    if (alternate) {
+      legacyParams.delete("lang");
+      var legacyTarget = new URL(alternate.href).pathname + (legacyParams.toString() ? "?" + legacyParams.toString() : "") + window.location.hash;
+      if (legacyLanguage !== savedLanguage) {
+        window.location.replace(legacyTarget);
+        return;
+      }
+      window.history.replaceState(null, "", legacyTarget);
+    }
+  }
   applyLanguage(savedLanguage);
 
   if (typeof mobileHeroQuery.addEventListener === "function") {
@@ -721,8 +750,9 @@
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && nav.getAttribute("data-open") === "true") {
         closeNav();
+        menuButton.focus();
       }
     });
 
@@ -807,9 +837,11 @@
     }
   }
 
+  var currentPageProgress = 0;
   function updateScrollDepth() {
     var scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     var progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
+    currentPageProgress = progress;
     document.documentElement.style.setProperty("--page-progress", progress.toFixed(4));
 
     var heroDepth = document.querySelector("[data-hero-depth]");
@@ -835,8 +867,17 @@
   }
 
   updateScrollDepth();
-  window.addEventListener("scroll", updateScrollDepth, { passive: true });
-  window.addEventListener("resize", updateScrollDepth);
+  var scrollFramePending = false;
+  function scheduleScrollDepth() {
+    if (scrollFramePending) return;
+    scrollFramePending = true;
+    window.requestAnimationFrame(function () {
+      scrollFramePending = false;
+      updateScrollDepth();
+    });
+  }
+  window.addEventListener("scroll", scheduleScrollDepth, { passive: true });
+  window.addEventListener("resize", scheduleScrollDepth);
 
   document.querySelectorAll("[data-service-toggle]").forEach(function (button) {
     button.addEventListener("click", function () {
@@ -902,7 +943,7 @@
     function drawAmbientCanvas() {
       var width = window.innerWidth;
       var height = window.innerHeight;
-      var pageProgress = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--page-progress")) || 0;
+      var pageProgress = currentPageProgress;
       ambientFrame += 0.006;
 
       ambientContext.clearRect(0, 0, width, height);

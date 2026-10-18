@@ -1,0 +1,137 @@
+[
+  {
+    "slug": "creation-site-internet-la-rochelle",
+    "title": "Création de site internet à La Rochelle | CHAMBRE 17",
+    "description": "CHAMBRE 17, à Lagord, crée des sites internet sur mesure pour les entreprises de La Rochelle : présentation des services, parcours client et mise en ligne.",
+    "h1": "Création de site internet à La Rochelle",
+    "intro": "Votre site doit aider vos clients à comprendre votre activité et à passer à l'étape suivante : vous contacter, découvrir vos prestations ou réserver. CHAMBRE 17, entreprise enregistrée à Lagord, accompagne les professionnels de La Rochelle dans la création d'un site adapté à leurs besoins.",
+    "sections": [
+      {
+        "heading": "Un site construit autour de votre activité",
+        "paragraphs": [
+          "Nous commençons par comprendre vos clients, vos services et les questions qu'ils se posent avant de vous contacter. Ce travail permet de définir les pages utiles, leur contenu et les actions à mettre en avant.",
+          "Pour un commerce, un indépendant ou une entreprise de services, les priorités peuvent être différentes : expliquer une offre, présenter des réalisations ou faciliter la prise de rendez-vous. La structure et le design découlent de ces objectifs."
+        ]
+      },
+      {
+        "heading": "Des parcours simples, du premier regard au contact",
+        "paragraphs": [
+          "Nous concevons l'expérience et développons le site en tenant compte de son utilisation sur téléphone et ordinateur. Les fonctionnalités sont choisies avec vous en fonction de votre activité."
+        ],
+        "bullets": [
+          "Pages de présentation pour expliquer vos services et votre entreprise.",
+          "Parcours de contact ou intégration de réservation selon le projet.",
+          "Contenus multilingues lorsque votre clientèle le justifie."
+        ]
+      },
+      {
+        "heading": "Une revue commune avant la mise en ligne",
+        "paragraphs": [
+          "Vous découvrez le site, testez les parcours et partagez vos retours. Nous affinons ensemble les détails avant le lancement, puis testons et optimisons l'expérience sur les différents appareils.",
+          "Pour préparer notre premier échange, vous pouvez réunir votre logo, une présentation de vos prestations, quelques visuels et les coordonnées que vos clients doivent trouver. Un site existant peut aussi servir de point de départ pour expliquer ce que vous souhaitez améliorer."
+        ]
+      },
+      {
+        "heading": "Préparer le lancement et la suite",
+        "paragraphs": [
+          "L'accompagnement au lancement digital peut compléter le site avec la configuration de Google Business Profile, de WhatsApp Business ou les bases du suivi des conversions. Nous précisons avec vous les éléments utiles à votre projet.",
+          "Après la mise en ligne, une gestion mensuelle optionnelle permet de faire évoluer les contenus, d'ajouter des pages et de suivre les performances. Votre site peut ainsi accompagner les changements de votre activité."
+        ]
+      }
+    ],
+    "relatedProject": {
+      "name": "LAZOYA — Centre de beauté",
+      "url": "https://www.lazoya.fr",
+      "description": "Un site de services avec réservation en ligne, contenus multilingues et parcours client pensé pour le centre de beauté."
+    }
+  },
+  {
+    "slug": "developpement-application-web",
+    "title": "Application web à La Rochelle et Lagord | CHAMBRE 17",
+    "description": "Développement d'applications web pour les entreprises de La Rochelle et Lagord : réservations, portails clients, tableaux de bord et outils sur mesure.",
+    "h1": "Développement d'applications web à La Rochelle",
+    "intro": "Une application web permet à vos clients ou à votre équipe d'accomplir des tâches en ligne. Depuis Lagord, CHAMBRE 17 accompagne les entreprises de La Rochelle qui ont besoin de réservations, d'un portail client, d'un tableau de bord ou d'un outil adapté à leur fonctionnement.",
+    "sections": [
+      {
+        "heading": "Partir des tâches à simplifier",
+        "paragraphs": [
+          "Le projet commence par votre manière de travailler : qui utilise l'outil, quelles informations circulent et quelles étapes demandent aujourd'hui du temps ? Nous identifions avec vous les besoins auxquels l'application doit répondre.",
+          "Une description concrète est souvent le meilleur point de départ. Par exemple : permettre à un client de réserver une prestation, consulter des informations dans son espace ou gérer des produits depuis une interface dédiée."
+        ]
+      },
+      {
+        "heading": "Choisir les fonctionnalités qui servent le parcours",
+        "paragraphs": [
+          "Nous définissons la structure et l'expérience avant de construire la solution. Chaque fonctionnalité doit correspondre à un usage identifié ; la liste précise dépend de votre projet."
+        ],
+        "bullets": [
+          "Parcours de réservation pour organiser une demande ou une prestation.",
+          "Portail et comptes clients pour proposer un espace dédié.",
+          "Tableau de bord ou outil interne pour consulter et gérer des informations.",
+          "Fonctionnalités e-commerce : produits, comptes clients et parcours de paiement."
+        ]
+      },
+      {
+        "heading": "Examiner l'application avec ses futurs utilisateurs en tête",
+        "paragraphs": [
+          "Lors de la revue, vous testez la solution et nous précisez les ajustements nécessaires. Nous reprenons les parcours prévus pour vérifier qu'ils correspondent à votre activité, puis affinons les détails avant la mise en ligne.",
+          "L'expérience est testée et optimisée sur différents appareils. Pour un outil utilisé aussi bien au bureau qu'en déplacement, cette étape permet d'examiner la lisibilité des informations et l'utilisation des principales actions."
+        ]
+      },
+      {
+        "heading": "Prévoir les évolutions après le lancement",
+        "paragraphs": [
+          "De nouveaux besoins peuvent apparaître avec l'usage : une information supplémentaire, un parcours à ajuster ou une fonctionnalité à ajouter. La gestion mensuelle optionnelle peut accompagner ces évolutions, la maintenance technique et le suivi des performances.",
+          "Pour discuter de votre application, décrivez les personnes qui l'utiliseront, les tâches qu'elles doivent accomplir et vos outils actuels. Ces éléments nous aident à comprendre le périmètre et à construire une proposition autour de votre fonctionnement."
+        ]
+      }
+    ],
+    "relatedProject": {
+      "name": "J. LEILATI — E-commerce",
+      "url": "https://www.jleilati.com",
+      "description": "Une plateforme e-commerce multilingue avec gestion des produits, comptes clients, paiement et livraison en Europe."
+    }
+  },
+  {
+    "slug": "maintenance-site-web",
+    "title": "Maintenance de site web à La Rochelle | CHAMBRE 17",
+    "description": "Gestion et maintenance de site web pour les entreprises de La Rochelle et Lagord : contenus, mises à jour, suivi des performances et évolutions.",
+    "h1": "Maintenance et gestion de site web à La Rochelle",
+    "intro": "Votre activité évolue après la mise en ligne : nouvelles prestations, informations à corriger, pages à compléter. CHAMBRE 17, entreprise enregistrée à Lagord, propose une gestion mensuelle optionnelle pour accompagner les sites et applications web des entreprises de La Rochelle.",
+    "sections": [
+      {
+        "heading": "Garder vos contenus utiles et à jour",
+        "paragraphs": [
+          "Une prestation qui change ou une nouvelle offre doit pouvoir trouver sa place sur votre site. La gestion des contenus permet d'actualiser les informations que vos clients consultent et de faire évoluer la présentation de votre activité.",
+          "Selon les besoins convenus, les interventions peuvent concerner des textes, des contenus existants ou de nouvelles pages. L'objectif est de conserver un parcours compréhensible lorsque votre offre s'enrichit."
+        ]
+      },
+      {
+        "heading": "Associer maintenance technique et suivi des performances",
+        "paragraphs": [
+          "La gestion d'un site comprend aussi sa dimension technique. CHAMBRE 17 peut prendre en charge les mises à jour, la maintenance et le suivi des performances dans le cadre de l'accompagnement défini avec vous.",
+          "Les besoins dépendent du site et de ses fonctionnalités. Un site de présentation, un parcours de réservation et une application avec comptes clients demandent d'examiner des usages différents. Nous partons de votre solution pour préciser les interventions utiles."
+        ]
+      },
+      {
+        "heading": "Faire évoluer le site avec votre entreprise",
+        "paragraphs": [
+          "L'accompagnement peut aussi porter sur des améliorations continues après le lancement. Vos retours et les changements de votre activité permettent d'identifier les prochaines évolutions."
+        ],
+        "bullets": [
+          "Actualiser les contenus et la présentation de vos prestations.",
+          "Ajouter une page pour une nouvelle offre ou un nouveau besoin.",
+          "Faire évoluer une fonctionnalité ou un parcours existant.",
+          "Suivre les performances et identifier les améliorations possibles."
+        ]
+      },
+      {
+        "heading": "Définir un accompagnement adapté à votre site",
+        "paragraphs": [
+          "La gestion mensuelle est optionnelle après la création du site. Nous échangeons sur les contenus à maintenir, les évolutions envisagées et la partie technique pour préciser le périmètre de l'accompagnement.",
+          "Pour préparer cet échange, transmettez l'adresse de votre site et décrivez les changements que vous souhaitez apporter. Si un parcours pose problème, indiquez la page concernée et ce que vous attendiez. Ces informations permettent de partir d'un besoin concret et de distinguer les mises à jour courantes des évolutions plus importantes."
+        ]
+      }
+    ]
+  }
+]

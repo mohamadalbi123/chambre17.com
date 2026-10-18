@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.chambre17.com/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.chambre17.com/mentions-legales/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://www.chambre17.com/politique-confidentialite/</loc>
-    <lastmod>2026-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
+  <url><loc>https://www.chambre17.com/</loc></url>
+  <url><loc>https://www.chambre17.com/ar/</loc></url>
+  <url><loc>https://www.chambre17.com/ar/mentions-legales/</loc></url>
+  <url><loc>https://www.chambre17.com/ar/politique-confidentialite/</loc></url>
+  <url><loc>https://www.chambre17.com/creation-site-internet-la-rochelle/</loc></url>
+  <url><loc>https://www.chambre17.com/developpement-application-web/</loc></url>
+  <url><loc>https://www.chambre17.com/en/</loc></url>
+  <url><loc>https://www.chambre17.com/en/creation-site-internet-la-rochelle/</loc></url>
+  <url><loc>https://www.chambre17.com/en/developpement-application-web/</loc></url>
+  <url><loc>https://www.chambre17.com/en/maintenance-site-web/</loc></url>
+  <url><loc>https://www.chambre17.com/en/mentions-legales/</loc></url>
+  <url><loc>https://www.chambre17.com/en/politique-confidentialite/</loc></url>
+  <url><loc>https://www.chambre17.com/maintenance-site-web/</loc></url>
+  <url><loc>https://www.chambre17.com/mentions-legales/</loc></url>
+  <url><loc>https://www.chambre17.com/politique-confidentialite/</loc></url>
 </urlset>

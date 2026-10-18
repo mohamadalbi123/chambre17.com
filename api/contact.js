@@ -85,8 +85,11 @@ export default async function handler(request, response) {
     </div>
   `;
 
-  const resendResponse = await fetch("https://api.resend.com/emails", {
+  let resendResponse;
+  try {
+    resendResponse = await fetch("https://api.resend.com/emails", {
     method: "POST",
+    signal: AbortSignal.timeout(15000),
     headers: {
       Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       "Content-Type": "application/json"
@@ -99,7 +102,13 @@ export default async function handler(request, response) {
       text,
       html
     })
-  });
+    });
+  } catch (error) {
+    return sendJson(response, 502, {
+      ok: false,
+      message: "Email delivery is temporarily unavailable. Please try again or contact us directly."
+    });
+  }
 
   if (!resendResponse.ok) {
     let details = "Resend request failed.";
