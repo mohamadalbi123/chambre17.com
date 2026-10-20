@@ -97,6 +97,8 @@ def localized_page(template_name, lang, slug, page_key):
         video = (f'<video class="hero-video" data-hero-video data-desktop-src="{desktop_path}" data-mobile-src="{mobile_path}" data-desktop-poster="{poster}" data-mobile-poster="{mobile_poster}" autoplay muted loop playsinline preload="metadata"{poster_attr}>\n'
                  f'            <source src="{mobile_path}" media="(max-width: 640px)" type="video/mp4">\n'
                  f'            <source src="{desktop_path}" type="video/mp4">\n          </video>')
+        play_label = {"fr": "Lire la vidéo", "en": "Play video", "ar": "تشغيل الفيديو"}[lang]
+        video += f'\n          <button class="hero-video-play" type="button" data-hero-play hidden aria-label="{play_label}"><span aria-hidden="true">▶</span></button>'
         page = re.sub(r'<video class="hero-video".*?</video>', lambda m: video, page, flags=re.S)
         match = re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S)
         graph = json.loads(match[1])

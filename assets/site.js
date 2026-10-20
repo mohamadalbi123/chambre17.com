@@ -615,7 +615,11 @@
     if (heroVideo.paused || heroVideo.readyState < 2) {
       var playPromise = heroVideo.play();
       if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(function () {});
+        playPromise.catch(function (error) {
+          // Low Power Mode and autoplay policies may require an explicit tap.
+          var playButton = document.querySelector("[data-hero-play]");
+          if (playButton && error.name !== "AbortError") playButton.hidden = false;
+        });
       }
     }
   }
@@ -630,19 +634,18 @@
     var nextSource = heroVideo.getAttribute(mobileHeroQuery.matches ? "data-mobile-src" : "data-desktop-src") || group[lang] || group.en;
     var nextPoster = heroVideo.getAttribute(mobileHeroQuery.matches ? "data-mobile-poster" : "data-desktop-poster");
     if (nextPoster && heroVideo.getAttribute("poster") !== nextPoster) heroVideo.setAttribute("poster", nextPoster);
-    // The static page already selects its initial source with media queries.
-    // Do not restart that download when the deferred script initializes.
-    if (heroVideo.hasAttribute("data-desktop-src") && !heroVideo.hasAttribute("data-current-src")) {
+    // Some browsers ignore media conditions on video source elements. Check
+    // the resource actually selected before assuming the initial source is right.
+    var selectedSource = heroVideo.currentSrc || heroVideo.getAttribute("src");
+    var expectedSource = new URL(nextSource, window.location.href).href;
+    if (selectedSource && new URL(selectedSource, window.location.href).href === expectedSource) {
       heroVideo.setAttribute("data-current-src", nextSource);
       playHeroVideo(heroVideo);
       return;
     }
-    if (heroVideo.getAttribute("data-current-src") === nextSource) {
-      return;
-    }
 
     heroVideo.setAttribute("data-current-src", nextSource);
-    heroVideo.innerHTML = '<source src="' + nextSource + '" type="video/mp4">';
+    heroVideo.src = nextSource;
     heroVideo.load();
     playHeroVideo(heroVideo);
     window.setTimeout(function () {
@@ -771,8 +774,28 @@
   var heroVideo = document.querySelector("[data-hero-video]");
   if (heroVideo) {
     heroVideo.addEventListener("error", function () {
-      document.documentElement.classList.add("hero-video-missing");
+      // A rejected child <source> does not mean the entire video failed.
+      if (heroVideo.error) document.documentElement.classList.add("hero-video-missing");
     }, true);
+    ["loadeddata", "canplay", "playing"].forEach(function (eventName) {
+      heroVideo.addEventListener(eventName, function () {
+        document.documentElement.classList.remove("hero-video-missing");
+        var playButton = document.querySelector("[data-hero-play]");
+        if (playButton) playButton.hidden = true;
+      });
+    });
+    var heroPlayButton = document.querySelector("[data-hero-play]");
+    if (heroPlayButton) {
+      heroPlayButton.addEventListener("click", function () {
+        playHeroVideo(heroVideo);
+      });
+    }
+    // Retry in the user-activation callback rather than only in a timer.
+    ["pointerup", "touchend", "keydown"].forEach(function (eventName) {
+      document.addEventListener(eventName, function () {
+        if (!document.hidden && heroVideo.paused) playHeroVideo(heroVideo);
+      });
+    });
     ["loadeddata", "canplay", "stalled", "suspend", "waiting", "ended", "pause"].forEach(function (eventName) {
       heroVideo.addEventListener(eventName, function () {
         playHeroVideo(heroVideo);
