@@ -13,6 +13,8 @@ import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://www.chambre17.com"
+LOGO_PATH = "/assets/chambre17-logo.png"
+LOGO_URL = ORIGIN + LOGO_PATH + "?v=" + hashlib.sha256((ROOT / LOGO_PATH.lstrip("/")).read_bytes()).hexdigest()[:12]
 LANGUAGES = ("fr", "en", "ar")
 LOCALES = {"fr": "fr_FR", "en": "en_GB", "ar": "ar"}
 source_js = (ROOT / "assets/site.js").read_text()
@@ -39,11 +41,11 @@ def metadata(title, description, path, alternates):
     if alternates:
         lines.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{alternates["fr"]}">')
     for key, value in {"title": title, "description": description, "type": "website", "url": ORIGIN + path,
-                       "site_name": "CHAMBRE 17", "image": ORIGIN + "/assets/chambre17-logo.png",
+                       "site_name": "CHAMBRE 17", "image": LOGO_URL,
                        "image:alt": "CHAMBRE 17"}.items():
         lines.append(f'<meta property="og:{key}" content="{html.escape(value, quote=True)}">')
     for key, value in {"card": "summary", "title": title, "description": description,
-                       "image": ORIGIN + "/assets/chambre17-logo.png", "image:alt": "CHAMBRE 17"}.items():
+                       "image": LOGO_URL, "image:alt": "CHAMBRE 17"}.items():
         lines.append(f'<meta name="twitter:{key}" content="{html.escape(value, quote=True)}">')
     return "\n    ".join(lines)
 
@@ -180,12 +182,13 @@ def version_asset(match):
     return match[1] + asset + '?v=' + ASSET_VERSIONS[asset] + '"'
 
 for path, page in PAGES.items():
+    page = page.replace(ORIGIN + LOGO_PATH + '"', LOGO_URL + '"')
     page = page.replace('src="/assets/chambre17-logo.png"', 'src="/assets/optimized/chambre17-logo.webp" width="256" height="256"')
     page = page.replace('<img class="brand-logo"', '<img decoding="async" class="brand-logo"')
     # Keep one translation dictionary per page instead of downloading all three.
     page_language = re.search(r'<html lang="([^"]+)"', page)[1]
     page = page.replace('/assets/site.js', f'/assets/site.{page_language}.js')
-    page = re.sub(r'((?:src|href|poster|data-desktop-src|data-mobile-src|data-desktop-poster|data-mobile-poster)=")(/assets/[^"?]+)"', version_asset, page)
+    page = re.sub(r'((?:src|href|poster|data-desktop-src|data-mobile-src|data-desktop-poster|data-mobile-poster)=")(/assets/[^"?]+|/favicon.png|/apple-touch-icon.png)"', version_asset, page)
     page = '\n'.join(line.rstrip() for line in page.splitlines()) + '\n'
     destination = ROOT / path.strip("/") / "index.html"
     destination.parent.mkdir(parents=True, exist_ok=True)
