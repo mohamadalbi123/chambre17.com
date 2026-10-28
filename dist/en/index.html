@@ -8,9 +8,9 @@
     <meta name="geo.placename" content="La Rochelle, Lagord">
     <link rel="icon" href="/favicon.png?v=6de0fc5c12ce" type="image/png" sizes="96x96">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=1425f059b0db">
-    <link rel="stylesheet" href="/assets/styles.css?v=efe223f262b6">
+    <link rel="stylesheet" href="/assets/styles.css?v=e848660da248">
     <script src="/assets/contact-config.js?v=5f0305bd7377" defer></script>
-    <script src="/assets/site.en.js?v=793d3ca413a9" defer></script>
+    <script src="/assets/site.en.js?v=38022cdf857e" defer></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -176,7 +176,7 @@
   <title>Custom Websites &amp; Web Applications | CHAMBRE 17</title>
     <meta name="description" content="A French digital studio creating custom websites and web applications, with optional ongoing maintenance. For businesses in France and internationally.">
     <link rel="canonical" href="https://www.chambre17.com/en/">
-    <link rel="alternate" hreflang="fr" href="https://www.chambre17.com/">
+    <link rel="alternate" hreflang="fr" href="https://www.chambre17.com/fr/">
     <link rel="alternate" hreflang="en" href="https://www.chambre17.com/en/">
     <link rel="alternate" hreflang="ar" href="https://www.chambre17.com/ar/">
     <link rel="alternate" hreflang="x-default" href="https://www.chambre17.com/">
@@ -210,7 +210,7 @@
       </nav>
       <div class="header-actions">
         <div class="language-switcher" aria-label="Language switcher">
-          <a href="/" hreflang="fr" lang="fr" data-lang-switch="fr">FR</a>
+          <a href="/fr/" hreflang="fr" lang="fr" data-lang-switch="fr">FR</a>
           <a href="/en/" hreflang="en" lang="en" data-lang-switch="en" aria-current="page">EN</a>
           <a href="/ar/" hreflang="ar" lang="ar" data-lang-switch="ar" aria-label="العربية">عربي</a>
         </div>
@@ -237,10 +237,10 @@
             <span class="depth-line line-d"></span>
           </div>
           <div class="hero-depth-words" aria-hidden="true">
-            <span>Business</span>
-            <span>Design</span>
-            <span>Technology</span>
-            <span>AI</span>
+            <span data-i18n="hero.word.business">Business</span>
+            <span data-i18n="hero.word.design">Design</span>
+            <span data-i18n="hero.word.technology">Technology</span>
+            <span data-i18n="hero.word.ai">AI</span>
           </div>
           <div class="hero-arabic-copy" data-arabic-hero aria-hidden="true">
             <span>أخبرنا عن مشروعك.</span>
@@ -378,7 +378,7 @@
 
           <div class="process-flow" data-process-flow>
             <article class="process-item" data-process-step data-active="true">
-              <div class="process-visual" data-mp4="/assets/process/01-understand.mp4" data-webm="/assets/process/01-understand.webm" aria-label="Process visual for Understand">
+              <div class="process-visual" data-mp4="/assets/process/01-understand.mp4" data-webm="/assets/process/01-understand.webm" aria-hidden="true">
                 <div class="visual-placeholder icon-understand" aria-hidden="true">
                   <span class="person person-left"></span>
                   <span class="person person-right"></span>
@@ -390,14 +390,14 @@
                 </div>
               </div>
               <div class="process-copy">
-                <span class="process-index">01 — Understand</span>
+                <span class="process-index" data-i18n="process.understand.label">01 — Understand</span>
                 <h3 data-i18n="process.understand.title">We start with your business.</h3>
                 <p data-i18n="process.understand.body">We learn how your business works, who your customers are, what you need and what you want to achieve.</p>
               </div>
             </article>
 
             <article class="process-item" data-process-step>
-              <div class="process-visual" data-mp4="/assets/process/02-design-build.mp4" data-webm="/assets/process/02-design-build.webm" aria-label="Process visual for Design and Build">
+              <div class="process-visual" data-mp4="/assets/process/02-design-build.mp4" data-webm="/assets/process/02-design-build.webm" aria-hidden="true">
                 <div class="visual-placeholder icon-build" aria-hidden="true">
                   <span class="desk-person"></span>
                   <span class="desk-line"></span>
@@ -409,14 +409,14 @@
                 </div>
               </div>
               <div class="process-copy">
-                <span class="process-index">02 — Design &amp; Build</span>
+                <span class="process-index" data-i18n="process.build.label">02 — Design &amp; build</span>
                 <h3 data-i18n="process.build.title">We turn the idea into a digital experience.</h3>
                 <p data-i18n="process.build.body">We define the structure, design the experience and build the solution around what your business actually needs.</p>
               </div>
             </article>
 
             <article class="process-item" data-process-step>
-              <div class="process-visual" data-mp4="/assets/process/03-review.mp4" data-webm="/assets/process/03-review.webm" aria-label="Process visual for Review">
+              <div class="process-visual" data-mp4="/assets/process/03-review.mp4" data-webm="/assets/process/03-review.webm" aria-hidden="true">
                 <div class="visual-placeholder icon-review" aria-hidden="true">
                   <span class="review-person person-left"></span>
                   <span class="review-person person-right"></span>
@@ -427,14 +427,14 @@
                 </div>
               </div>
               <div class="process-copy">
-                <span class="process-index">03 — Review</span>
+                <span class="process-index" data-i18n="process.review.label">03 — Review</span>
                 <h3 data-i18n="process.review.title">We review it together.</h3>
                 <p data-i18n="process.review.body">You experience the solution, give feedback and we refine the details together before launch.</p>
               </div>
             </article>
 
             <article class="process-item" data-process-step>
-              <div class="process-visual" data-mp4="/assets/process/04-launch.mp4" data-webm="/assets/process/04-launch.webm" aria-label="Process visual for Launch">
+              <div class="process-visual" data-mp4="/assets/process/04-launch.mp4" data-webm="/assets/process/04-launch.webm" aria-hidden="true">
                 <div class="visual-placeholder icon-launch" aria-hidden="true">
                   <span class="launch-window"></span>
                   <span class="launch-plane plane-back"></span>
@@ -444,14 +444,14 @@
                 </div>
               </div>
               <div class="process-copy">
-                <span class="process-index">04 — Launch</span>
+                <span class="process-index" data-i18n="process.launch.label">04 — Launch</span>
                 <h3 data-i18n="process.launch.title">We put it live.</h3>
                 <p data-i18n="process.launch.body">We test, optimize and launch the final experience across devices.</p>
               </div>
             </article>
 
             <article class="process-item" data-process-step>
-              <div class="process-visual" data-mp4="/assets/process/05-manage.mp4" data-webm="/assets/process/05-manage.webm" aria-label="Process visual for Manage">
+              <div class="process-visual" data-mp4="/assets/process/05-manage.mp4" data-webm="/assets/process/05-manage.webm" aria-hidden="true">
                 <div class="visual-placeholder icon-manage" aria-hidden="true">
                   <span class="manage-site"></span>
                   <span class="manage-node node-one"></span>
@@ -463,7 +463,7 @@
                 </div>
               </div>
               <div class="process-copy">
-                <span class="process-index">05 — Manage</span>
+                <span class="process-index" data-i18n="process.manage.label">05 — Manage</span>
                 <h3 data-i18n="process.manage.title">We stay with it.</h3>
                 <p data-i18n="process.manage.body">After launch, we can manage, maintain and continuously improve your digital solution as your business evolves.</p>
               </div>
@@ -595,7 +595,7 @@
         </div>
         <div>
           <span data-i18n="footer.contact">Contact</span>
-          <a data-contact-email href="mailto:chambre17@icloud.com">Email</a>
+          <a data-contact-email href="mailto:chambre17@icloud.com">chambre17@icloud.com</a>
           <a data-contact-whatsapp href="https://wa.me/33763734372">WhatsApp</a>
         </div>
         <div>

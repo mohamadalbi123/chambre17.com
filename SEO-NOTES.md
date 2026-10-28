@@ -2,7 +2,7 @@
 
 ## Source and build
 
-Edit `templates/` for shared markup, `assets/site.js` for translated copy and interactions, `content/services.fr.json` and `content/services.en.json` for service content, and `assets/styles.css` for styles. Public HTML and language-specific JavaScript are generated files.
+Edit `templates/` for shared markup, `content/translations.{fr,en,ar}.json` for copy, `assets/site.js` for interactions, `content/services.{fr,en,ar}.json` for service content, and `assets/styles.css` for styles. Public HTML and language-specific JavaScript are generated files.
 
 Run:
 
@@ -12,18 +12,20 @@ python3 scripts/check_site.py
 node --check assets/site.js
 node --check api/contact.js
 node scripts/check_contact.mjs
+node scripts/check_hero.mjs
+node scripts/check_language.mjs
 git diff --check
 ```
 
-There is no package manifest, framework build, TypeScript project, or existing lint configuration. The build uses Python's standard library. `dist/` remains the deployed static directory; the existing root `api/contact.js` remains the Vercel function.
+The site is static, not Next.js. The build uses Python's standard library. `package.json` pins the Vercel routing helper; install it with `npm ci --ignore-scripts` before running routing checks. `dist/` remains the deployed static directory; the existing root `api/contact.js` remains the Vercel function.
 
 `node scripts/preview.mjs` serves `http://127.0.0.1:8766` with email delivery mocked. It is a development-only tool. It never sends messages or proves production email delivery.
 
 ## Implemented
 
-- French homepage at `/`; English at `/en/`; existing Arabic preserved at `/ar/`. The URL fixes the language, regardless of saved preferences or browser settings. Old `?lang=` links navigate to the matching canonical language page.
-- Three substantive service pages in French and English: website creation, web applications, website maintenance. Header, footer, related-service, contact, and language links connect the pages.
-- All 15 public content pages have unique titles and descriptions, one H1, canonical URLs on `https://www.chambre17.com`, reciprocal language alternates, and social metadata. Legal and privacy pages are translated too.
+- Dedicated `/fr/`, `/en/` and `/ar/` URLs always honour the requested language. `/` negotiates via a manual preference cookie, weighted Accept-Language, Vercel country, then English. Its 302 response is private/no-store. Only manual selector clicks set the one-year `chambre17-language` cookie. Old `?lang=` links remain supported. Old unprefixed French subpages redirect permanently to `/fr/...`.
+- Three substantive service pages in French, English and Arabic: website creation, web applications, website maintenance. Header, footer, related-service, contact, and language links connect the pages.
+- All 18 public content pages have unique titles and descriptions, one H1, canonical URLs on `https://www.chambre17.com`, reciprocal language alternates, and social metadata. Legal and privacy pages are translated too.
 - Visible local service introduction, accurate Lagord location, La Rochelle service coverage, and fuller descriptions of the existing LAZOYA and J. LEILATI projects.
 - Existing Organization / ProfessionalService and WebSite data retained; localized WebPage, Service and BreadcrumbList data added. No invented reviews, ratings, prices, physical offices, testimonials, results or client statistics.
 - Sitemap lists every generated content page. It omits unverifiable modification dates. Robots and the existing Search Console verification file remain available.
@@ -55,3 +57,11 @@ After publication:
 - Google Ads: current verified offering is setup and launch support. Confirm ongoing campaign management, reporting and deliverables before publishing a management page or performance claims.
 
 Avoid repeated near-identical location pages. La Rochelle and Lagord are naturally covered in the existing service content.
+
+## Language routing verification
+
+`proxy.js` is Vercel platform middleware, matched only at `/`; it does not intercept media or `/api/contact`. `lib/language.mjs` contains the tested selection rules. Explicit language URLs ignore browser/country preferences and do not overwrite a saved manual choice. Missing or blocked cookies leave normal localized links working. No geolocation service or translation API is called.
+
+Arabic content includes the three service pages, legal/privacy pages, forms, process labels and accessibility text. All six existing hero videos/posters are selected by language and viewport; no video assets were changed. The neutral root has a noindex language-link fallback for hosts that do not run middleware. Sitemap and canonical checks cover the 18 localized pages.
+
+The pinned zod override patches a transitive dependency in the Vercel helper. The dependency audit is clean.

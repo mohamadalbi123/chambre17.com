@@ -1,0 +1,11 @@
+{
+  "name": "chambre17",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@vercel/functions": "3.10.4"
+  },
+  "overrides": {
+    "zod": "4.6.6"
+  }
+}

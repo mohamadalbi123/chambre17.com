@@ -3,7 +3,10 @@
     {
       "source": "/assets/:path*",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
       ]
     }
   ],
@@ -11,6 +14,39 @@
     {
       "source": "/:path*",
       "destination": "/dist/:path*"
+    }
+  ],
+  "proxy": {
+    "entrypoint": "proxy.js",
+    "matcher": [
+      "/"
+    ]
+  },
+  "redirects": [
+    {
+      "source": "/mentions-legales/:path*",
+      "destination": "/fr/mentions-legales/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/politique-confidentialite/:path*",
+      "destination": "/fr/politique-confidentialite/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/creation-site-internet-la-rochelle/:path*",
+      "destination": "/fr/creation-site-internet-la-rochelle/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/developpement-application-web/:path*",
+      "destination": "/fr/developpement-application-web/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/maintenance-site-web/:path*",
+      "destination": "/fr/maintenance-site-web/:path*",
+      "permanent": true
     }
   ]
 }

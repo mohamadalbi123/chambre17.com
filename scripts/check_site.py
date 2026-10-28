@@ -40,6 +40,9 @@ pages = {urlsplit(url).path: Page((ROOT / urlsplit(url).path.strip('/') / 'index
 titles, descriptions = set(), set()
 for path, page in pages.items():
     assert page.lang in ("fr", "en", "ar"), path
+    assert path.startswith("/" + page.lang + "/"), path
+    assert len(page.attributes("a", **{"data-lang-switch":"ar"})) == 1, path
+    assert {a["hreflang"] for a in page.attributes("link", rel="alternate")} == {"fr","en","ar","x-default"}, path
     assert page.h1 == 1, f"{path}: expected one H1, got {page.h1}"
     assert page.title and page.title not in titles, f"Duplicate/missing title: {path}"
     titles.add(page.title)
@@ -52,6 +55,7 @@ for path, page in pages.items():
     assert not any('noindex' in a.get('content', '').lower() for a in page.attributes('meta', name='robots'))
     for alternate in page.attributes('link', rel='alternate'):
         target = urlsplit(alternate['href']).path
+        if alternate.get('hreflang') == 'x-default' and target == '/': continue
         assert target in pages, f"Missing alternate: {path} -> {target}"
         assert any(a['href'] == ORIGIN + path for a in pages[target].attributes('link', rel='alternate')), f"Nonreciprocal hreflang: {path}"
     for property in ('og:title', 'og:description', 'og:url', 'og:image'):
@@ -63,6 +67,7 @@ for path, page in pages.items():
             url = urlsplit(value)
             if url.netloc and url.netloc != 'www.chambre17.com': continue
             target = unquote(url.path) or path
+            if target == "/" and not url.fragment: continue
             if target in pages:
                 if url.fragment: assert url.fragment in pages[target].ids, f"Broken anchor: {path} -> {value}"
             else:
@@ -76,5 +81,6 @@ assert 'Allow: /' in (ROOT / 'robots.txt').read_text()
 assert ORIGIN + '/sitemap.xml' in (ROOT / 'robots.txt').read_text()
 public = {'/' + str(p.relative_to(ROOT).parent).replace('.', '').strip('/') + '/' for p in ROOT.rglob('index.html')}
 public = {'/' if p == '//' else p for p in public}
+public.discard("/")  # The neutral entry is a noindex fallback; Vercel negotiates its language.
 assert public == set(pages), f"Public pages missing from sitemap: {public.symmetric_difference(pages)}"
 print(f"PASS: {len(pages)} pages; unique titles/descriptions; one H1 each; canonicals; reciprocal hreflang; JSON-LD; social metadata; links/assets; sitemap and robots.")

@@ -19,14 +19,12 @@ LOGO_URL = ORIGIN + LOGO_PATH + "?v=" + hashlib.sha256((ROOT / LOGO_PATH.lstrip(
 LANGUAGES = ("fr", "en", "ar")
 LOCALES = {"fr": "fr_FR", "en": "en_GB", "ar": "ar"}
 source_js = (ROOT / "assets/site.js").read_text()
-dictionary = re.search(r"var translations = (\{.*?\n  \});", source_js, re.S).group(1)
-dictionary = re.sub(r"^(    )(en|fr|ar):", r'\1"\2":', dictionary, flags=re.M)
-TRANSLATIONS = json.loads(dictionary)
+TRANSLATIONS = {lang: json.loads((ROOT / f"content/translations.{lang}.json").read_text()) for lang in LANGUAGES}
 PAGES = {}
 
 
 def path_for(lang, slug=""):
-    return ("/" if lang == "fr" else f"/{lang}/") + (slug + "/" if slug else "")
+    return f"/{lang}/" + (slug + "/" if slug else "")
 
 
 def json_ld(data):
@@ -40,7 +38,8 @@ def metadata(title, description, path, alternates):
     for lang, alternate in alternates.items():
         lines.append(f'<link rel="alternate" hreflang="{lang}" href="{ORIGIN}{alternate}">')
     if alternates:
-        lines.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{alternates["fr"]}">')
+        default = "/" if all(value == path_for(code) for code, value in alternates.items()) else alternates["en"]
+        lines.append(f'<link rel="alternate" hreflang="x-default" href="{ORIGIN}{default}">')
     for key, value in {"title": title, "description": description, "type": "website", "url": ORIGIN + path,
                        "site_name": "CHAMBRE 17", "image": LOGO_URL,
                        "image:alt": "CHAMBRE 17"}.items():
@@ -83,7 +82,7 @@ def localized_page(template_name, lang, slug, page_key):
                   lambda m: m[1] + "\n          " + switcher(lang, alternates) + "\n        " + m[2], page, flags=re.S)
     for legal_slug in ("mentions-legales", "politique-confidentialite"):
         page = page.replace(f'href="/{legal_slug}/"', f'href="{path_for(lang, legal_slug)}"')
-    page = page.replace('href="/"', f'href="{path_for(lang)}"') if lang != "fr" else page
+    page = page.replace('href="/"', f'href="{path_for(lang)}"')
     # The above homepage link replacement must not alter the French language link.
     page = re.sub(r'(<a href=")[^"]+(" hreflang="fr")', r'\g<1>' + path_for("fr", slug) + r'\2', page)
     page = apply_metadata(page, TRANSLATIONS[lang][page_key + ".titleTag"],
@@ -118,7 +117,7 @@ def localized_page(template_name, lang, slug, page_key):
 def service_page(service, lang):
     home = PAGES[path_for(lang)]
     path = path_for(lang, service["slug"])
-    alternates = {code: path_for(code, service["slug"]) for code in ("fr", "en")}
+    alternates = {code: path_for(code, service["slug"]) for code in LANGUAGES}
     head = home[:home.index("<body")]
     head = re.sub(r'<script type="application/ld\+json">.*?</script>', "", head, flags=re.S)
     head = apply_metadata(head, service["title"], service["description"], path, lang, alternates)
@@ -133,9 +132,10 @@ def service_page(service, lang):
     for other in SERVICES[lang]:
         footer = footer.replace(f'href="/{other["slug"]}/"', f'href="{path_for(lang, other["slug"])}"')
     labels = {"fr": ("Accueil", "Parlons de votre projet", "Présentez-nous votre activité et vos besoins pour définir ensemble le périmètre de votre projet.", "Démarrer un projet", "Projet associé", "Autres services"),
-              "en": ("Home", "Let's discuss your project", "Tell us about your business and your needs so we can define the scope of your project together.", "Start a project", "Related project", "Other services")}[lang]
+              "en": ("Home", "Let's discuss your project", "Tell us about your business and your needs so we can define the scope of your project together.", "Start a project", "Related project", "Other services"),
+              "ar": ("الرئيسية", "لنتحدث عن مشروعك", "أخبرنا عن نشاطك واحتياجاتك لنحدّد معاً نطاق المشروع.", "ابدأ مشروعك", "مشروع ذو صلة", "خدمات أخرى")}[lang]
     local_service = service["slug"] == "creation-site-internet-la-rochelle"
-    service_location = "Lagord / La Rochelle" if local_service else "France"
+    service_location = ("لاغور / لا روشيل" if local_service else "فرنسا") if lang == "ar" else ("Lagord / La Rochelle" if local_service else "France")
     blocks = []
     for section in service["sections"]:
         block = '<section><h2>' + html.escape(section["heading"]) + '</h2>'
@@ -167,16 +167,15 @@ for language in LANGUAGES:
                                  ("politique-confidentialite.html", "politique-confidentialite", "privacy")):
         PAGES[path_for(language, slug)] = localized_page(template, language, slug, key)
 
-SERVICES = {lang: json.loads((ROOT / f"content/services.{lang}.json").read_text()) for lang in ("fr", "en")}
+SERVICES = {lang: json.loads((ROOT / f"content/services.{lang}.json").read_text()) for lang in LANGUAGES}
 for language, services in SERVICES.items():
     for service in services:
         PAGES[path_for(language, service["slug"])] = service_page(service, language)
-    if language != "fr":
-        for service in services:
-            PAGES[path_for(language)] = PAGES[path_for(language)].replace(f'href="/{service["slug"]}/"', f'href="{path_for(language, service["slug"])}"')
+    for service in services:
+        PAGES[path_for(language)] = PAGES[path_for(language)].replace(f'href="/{service["slug"]}/"', f'href="{path_for(language, service["slug"])}"')
 
 for language in LANGUAGES:
-    localized_js = re.sub(r"var translations = (\{.*?\n  \});", lambda m: "var translations = " + json.dumps({language: TRANSLATIONS[language]}, ensure_ascii=False) + ";", source_js, flags=re.S)
+    localized_js = re.sub(r"var translations = \{\};", lambda m: "var translations = " + json.dumps({language: TRANSLATIONS[language]}, ensure_ascii=False) + ";", source_js, flags=re.S)
     (ROOT / "assets" / f"site.{language}.js").write_text(localized_js)
 
 ASSET_VERSIONS = {}
@@ -186,7 +185,15 @@ def version_asset(match):
         ASSET_VERSIONS[asset] = hashlib.sha256((ROOT / asset.lstrip('/')).read_bytes()).hexdigest()[:12]
     return match[1] + asset + '?v=' + ASSET_VERSIONS[asset] + '"'
 
+for slug in ("mentions-legales", "politique-confidentialite", *[service["slug"] for service in SERVICES["fr"]]):
+    for base in (ROOT, ROOT / "dist"):
+        (base / slug / "index.html").unlink(missing_ok=True)
+
 for path, page in PAGES.items():
+    language = re.search(r'<html lang="([^"]+)"', page)[1]
+    for original, translated in TRANSLATIONS[language]["a11y.labels"].items():
+        page = page.replace(f'aria-label="{original}"', f'aria-label="{html.escape(translated, quote=True)}"')
+    page = re.sub(r'aria-label="Process visual for [^"]+"', 'aria-hidden="true"', page)
     page = page.replace(ORIGIN + LOGO_PATH + '"', LOGO_URL + '"')
     page = page.replace('src="/assets/chambre17-logo.png"', 'src="/assets/optimized/chambre17-logo.webp" width="256" height="256"')
     page = page.replace('<img class="brand-logo"', '<img decoding="async" class="brand-logo"')
@@ -201,6 +208,10 @@ for path, page in PAGES.items():
     deployed = ROOT / "dist" / path.strip("/") / "index.html"
     deployed.parent.mkdir(parents=True, exist_ok=True)
     deployed.write_text(page)
+
+fallback = '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CHAMBRE 17 — Choose your language</title><meta name="robots" content="noindex,follow"></head><body><nav aria-label="Language"><a href="/fr/" lang="fr">FR</a> · <a href="/en/" lang="en">EN</a> · <a href="/ar/" lang="ar">عربي</a></nav></body></html>\n'
+for base in (ROOT, ROOT / "dist"):
+    (base / 'index.html').write_text(fallback)
 
 # No invented modification dates; Google does not require lastmod.
 sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

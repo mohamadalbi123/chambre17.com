@@ -2802,3 +2802,9 @@ html[dir="rtl"] .service-details li::before {
   [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
   .local-intro { margin-bottom: 20px; }
 }
+
+/* Keep contact identifiers readable within Arabic forms. */
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="tel"] { direction: ltr; text-align: left; }
+html[dir="rtl"] .language-switcher { direction: ltr; }
+html[dir="rtl"] .copyright { text-align: right; }
