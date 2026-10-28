@@ -8,7 +8,7 @@ const functions = source.slice(source.indexOf('  var heroVideoSources ='), sourc
 const start = source.indexOf('  var heroVideo = document.querySelector', source.indexOf('  var prefersReducedMotion'));
 const listeners = source.slice(start, source.indexOf('  var revealItems =', start));
 
-function browser({ mobile = false, currentSrc = '', blocked = false } = {}) {
+function browser({ mobile = false, currentSrc = '', blocked = false, reduced = false } = {}) {
   const attributes = new Map([
     ['data-desktop-src', '/assets/optimized/en-desktop.mp4?v=desktop'],
     ['data-mobile-src', '/assets/optimized/en-mobile.mp4?v=mobile'],
@@ -17,7 +17,7 @@ function browser({ mobile = false, currentSrc = '', blocked = false } = {}) {
   ]);
   const events = new Map(), gestures = new Map(), classes = new Set();
   const button = { hidden: true, addEventListener: (event, callback) => gestures.set('button:' + event, callback) };
-  let loads = 0, plays = 0;
+  let loads = 0, plays = 0, visibilityCallback;
   const video = {
     currentSrc, paused: true, readyState: 4, error: null,
     getAttribute: name => attributes.get(name) || null,
@@ -25,11 +25,14 @@ function browser({ mobile = false, currentSrc = '', blocked = false } = {}) {
     hasAttribute: name => attributes.has(name),
     addEventListener: (name, fn) => { if (!events.has(name)) events.set(name, []); events.get(name).push(fn); },
     load() { loads++; this.currentSrc = new URL(this.src, 'https://www.chambre17.com/en/').href; },
+    pause() { this.paused = true; },
     play() { plays++; return blocked ? Promise.reject(Object.assign(new Error('Autoplay denied'), {name:'NotAllowedError'})) : Promise.resolve(); }
   };
-  const context = vm.createContext({ URL, window: {
+  const context = vm.createContext({ URL, prefersReducedMotion: reduced,
+    IntersectionObserver: class { constructor(callback) { visibilityCallback = callback; } observe() {} }, window: {
+    IntersectionObserver: true,
     location: { href: 'https://www.chambre17.com/en/' },
-    matchMedia: () => ({ matches: mobile }),
+    matchMedia: query => ({ matches: query.includes("reduced-motion") ? reduced : mobile }),
     setTimeout() {}, setInterval() {}, addEventListener() {}
   }, document: {
     hidden: false,
@@ -41,6 +44,7 @@ function browser({ mobile = false, currentSrc = '', blocked = false } = {}) {
   return { video, button, context, events, gestures, classes, attributes,
     select: () => vm.runInContext('setHeroVideo("en")', context),
     listen: () => vm.runInContext(listeners, context),
+    setVisible: visible => visibilityCallback([{isIntersecting:visible}]),
     emit: name => (events.get(name) || []).forEach(fn => fn()),
     get loads() { return loads; }, get plays() { return plays; }
   };
@@ -82,4 +86,18 @@ assert.equal(autoplay.plays, plays + 2, 'Retry during real user activation');
 await Promise.resolve();
 autoplay.emit('playing');
 assert.equal(autoplay.button.hidden, true);
-console.log('PASS: correct initial source, unsupported source media, mobile selection, recoverable source errors, blocked autoplay and tap-to-play recovery.');
+const offscreen = browser();
+offscreen.listen();
+offscreen.setVisible(false);
+const offscreenPlays = offscreen.plays;
+offscreen.emit('pause');
+offscreen.gestures.get('touchend')();
+assert.equal(offscreen.plays, offscreenPlays, 'Offscreen video must stay paused despite recovery events and touches');
+offscreen.setVisible(true);
+assert.equal(offscreen.plays, offscreenPlays + 1, 'Resume when the hero returns into view');
+const reduced = browser({reduced:true});
+reduced.select();
+reduced.listen();
+reduced.gestures.get('button:click')();
+assert.equal(reduced.plays, 0, 'Reduced motion must not start the hidden video');
+console.log('PASS: correct initial source, unsupported source media, mobile selection, recoverable source errors, blocked autoplay and tap-to-play recovery, offscreen pause/resume and reduced motion.');

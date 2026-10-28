@@ -16,15 +16,15 @@
 
   var translations = {
     en: {
-      "home.titleTag": "Web Design in La Rochelle & Lagord | CHAMBRE 17",
-      "home.description": "Based in Lagord, CHAMBRE 17 creates custom websites and web applications for businesses in La Rochelle, with optional ongoing website maintenance.",
+      "home.titleTag": "Custom Websites & Web Applications | CHAMBRE 17",
+      "home.description": "A French digital studio creating custom websites and web applications, with optional ongoing maintenance. For businesses in France and internationally.",
       "nav.services": "Services",
       "nav.work": "Work",
       "nav.about": "About",
       "nav.process": "Process",
       "nav.contact": "Contact",
       "nav.cta": "Start a project",
-      "hero.h1": "Website design in La Rochelle and Lagord",
+      "hero.h1": "Custom websites and web applications for your business.",
       "services.learn": "Explore our services",
       "hero.line1": "Tell us about your business.",
       "hero.line2": "We'll build the digital solution around it.",
@@ -47,7 +47,7 @@
       "services.launch.item5": "Launch checklist for visibility and contact",
       "services.management.title": "Website Management",
       "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
-      "services.local": "Based in Lagord, CHAMBRE 17 helps businesses in La Rochelle and the surrounding area with custom websites, web applications and optional monthly maintenance.",
+      "services.local": "Based in France, CHAMBRE 17 works with businesses in France and internationally. We design and build around your needs, with remote collaboration and optional ongoing maintenance.",
       "work.kicker": "Selected Work",
       "work.title": "Real projects. Real businesses.",
       "work.lazoya.title": "LAZOYA — Beauty Centre",
@@ -121,7 +121,7 @@
       "form.status.success": "Message sent. We will get back to you soon.",
       "form.status.error": "Something went wrong. Please email us directly at chambre17@icloud.com.",
       "form.status.invalid": "Please complete the required fields with a valid email address.",
-      "footer.location": "Based in Lagord · Serving La Rochelle and the surrounding area",
+      "footer.location": "Based in Lagord, France · Projects in France and internationally",
       "footer.services": "Services",
       "footer.website": "Website Design",
       "footer.webapp": "Web App Development",
@@ -205,15 +205,15 @@
       "privacy.automated.body": "CHAMBRE 17 does not use the information submitted through this website for automated decision-making or profiling."
     },
     fr: {
-      "home.titleTag": "Création de site internet à La Rochelle & Lagord | CHAMBRE 17",
-      "home.description": "CHAMBRE 17, basé à Lagord : création de sites internet, applications web sur mesure et maintenance pour les entreprises de La Rochelle. Parlons de votre projet.",
+      "home.titleTag": "Sites internet & applications web sur mesure | CHAMBRE 17",
+      "home.description": "Studio digital français : création de sites internet et applications web sur mesure, avec maintenance en option. Pour les entreprises en France et à l’international.",
       "nav.services": "Services",
       "nav.work": "Projets",
       "nav.about": "À propos",
       "nav.process": "Processus",
       "nav.contact": "Contact",
       "nav.cta": "Démarrer un projet",
-      "hero.h1": "Création de sites internet à La Rochelle et Lagord",
+      "hero.h1": "Des sites internet et applications web au service de votre entreprise.",
       "services.learn": "Découvrir nos services",
       "hero.line1": "Parlez-nous de votre activité.",
       "hero.line2": "Nous construisons la solution digitale autour.",
@@ -236,7 +236,7 @@
       "services.launch.item5": "Checklist de lancement pour visibilité et contact",
       "services.management.title": "Maintenance de sites web",
       "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
-      "services.local": "Basé à Lagord, CHAMBRE 17 accompagne les entreprises de La Rochelle et des environs : création de sites internet, développement d’applications web et maintenance mensuelle en option.",
+      "services.local": "Basé en France, CHAMBRE 17 accompagne les entreprises en France et à l’international. Nous concevons des solutions sur mesure, avec une collaboration à distance et une maintenance en option.",
       "work.kicker": "Projets sélectionnés",
       "work.title": "Des projets réels. Des entreprises réelles.",
       "work.lazoya.title": "LAZOYA — Centre de beauté",
@@ -310,7 +310,7 @@
       "form.status.success": "Message envoyé. Nous vous répondrons bientôt.",
       "form.status.error": "Une erreur est survenue. Veuillez nous écrire directement à chambre17@icloud.com.",
       "form.status.invalid": "Veuillez compléter les champs obligatoires avec une adresse email valide.",
-      "footer.location": "Basé à Lagord · La Rochelle et ses environs",
+      "footer.location": "Basé à Lagord, France · Projets en France et à l’international",
       "footer.services": "Services",
       "footer.website": "Site web",
       "footer.webapp": "Web app",
@@ -394,8 +394,8 @@
       "privacy.automated.body": "CHAMBRE 17 n'utilise pas les informations transmises via ce site pour des décisions automatisées ou du profilage."
     },
     ar: {
-      "home.titleTag": "تصميم مواقع في لا روشيل ولاغور | CHAMBRE 17",
-      "home.description": "CHAMBRE 17 في لاغور: تصميم مواقع وتطبيقات ويب مخصصة للشركات في لا روشيل والمناطق المحيطة، مع صيانة شهرية اختيارية. تواصل معنا لمناقشة مشروعك.",
+      "home.titleTag": "مواقع وتطبيقات ويب مخصصة لأعمالك | CHAMBRE 17",
+      "home.description": "استوديو رقمي فرنسي يصمم مواقع وتطبيقات ويب مخصصة للشركات في فرنسا وخارجها، مع التعاون عن بُعد والصيانة الاختيارية.",
       "services.learn": "اكتشف خدماتنا باللغة الفرنسية",
       "nav.services": "الخدمات",
       "nav.work": "الأعمال",
@@ -403,7 +403,7 @@
       "nav.process": "العملية",
       "nav.contact": "تواصل",
       "nav.cta": "ابدأ مشروعك",
-      "hero.h1": "تصميم مواقع في لا روشيل ولاغور",
+      "hero.h1": "مواقع وتطبيقات ويب مصممة لخدمة أعمالك.",
       "hero.line1": "اخبرنا عن عملك.",
       "hero.line2": "نبني الحل الرقمي حوله.",
       "hero.cta": "ابدأ المحادثة",
@@ -425,7 +425,7 @@
       "services.launch.item5": "قائمة إطلاق للظهور والتواصل",
       "services.management.title": "إدارة الموقع",
       "services.management.body": "ندير موقعك شهرياً: تحديثات، تعديلات، عناية تقنية، صيانة وتحسين مستمر بعد الإطلاق.",
-      "services.local": "يساعد Chambre 17 الشركات على تحويل أفكارها وخدماتها وعملياتها إلى تجارب رقمية واضحة مبنية حول احتياجات العمل الحقيقية.",
+      "services.local": "من مقرنا في فرنسا، نتعاون مع الشركات في فرنسا وخارجها لتصميم حلول رقمية تناسب احتياجاتها، مع التعاون عن بُعد والصيانة الاختيارية.",
       "work.kicker": "أعمال مختارة",
       "work.title": "مشاريع حقيقية. أعمال حقيقية.",
       "work.lazoya.title": "LAZOYA — مركز تجميل",
@@ -499,7 +499,7 @@
       "form.status.success": "تم إرسال الرسالة. سنعود إليك قريباً.",
       "form.status.error": "حدث خطأ. يرجى مراسلتنا مباشرة على chambre17@icloud.com.",
       "form.status.invalid": "يرجى إكمال الحقول المطلوبة وإدخال بريد إلكتروني صحيح.",
-      "footer.location": "مواقع، تطبيقات ويب وإدارة",
+      "footer.location": "مقرنا في لاغور، فرنسا · مشاريع في فرنسا وخارجها",
       "footer.services": "الخدمات",
       "footer.website": "تصميم مواقع",
       "footer.webapp": "تطبيقات ويب",
@@ -600,7 +600,7 @@
   var mobileHeroQuery = window.matchMedia("(max-width: 640px)");
 
   function playHeroVideo(heroVideo) {
-    if (!heroVideo) {
+    if (!heroVideo || document.hidden || heroVideo.getAttribute("data-playback-suspended") === "true" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }
 
@@ -774,6 +774,52 @@
     document.documentElement.classList.add("reduced-motion");
   }
 
+  var lightweightEffects = window.matchMedia("(max-width: 980px), (pointer: coarse), (prefers-reduced-motion: reduce)");
+
+  // Keep section links usable without JavaScript, but share a clean page URL.
+  function sectionTarget(hash) {
+    if (!hash || hash === "#") return null;
+    try {
+      var id = decodeURIComponent(hash.slice(1));
+      return document.getElementById(id.toLowerCase() === "top" ? "top" : id);
+    }
+    catch (error) { return null; }
+  }
+  function cleanSectionUrl() {
+    window.history.replaceState(window.history.state, "", window.location.pathname + window.location.search);
+  }
+  function restoreSharedSection() {
+    var target = sectionTarget(window.location.hash);
+    if (target) {
+      cleanSectionUrl();
+      window.requestAnimationFrame(function () {
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+      });
+    } else if (window.location.href.endsWith("#")) {
+      cleanSectionUrl();
+    }
+  }
+  document.addEventListener("click", function (event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var link = event.target.closest("a[href]");
+    if (!link || link.hasAttribute("download") || (link.target && link.target !== "_self")) return;
+    var url = new URL(link.href, window.location.href);
+    if (url.origin !== window.location.origin || url.pathname !== window.location.pathname || url.search !== window.location.search) return;
+    var target = sectionTarget(url.hash);
+    if (!target) return;
+    event.preventDefault();
+    closeNav();
+    target.scrollIntoView({ behavior: lightweightEffects.matches ? "auto" : "smooth", block: "start" });
+    if (!target.hasAttribute("tabindex")) {
+      target.setAttribute("tabindex", "-1");
+      target.addEventListener("blur", function () { target.removeAttribute("tabindex"); }, { once: true });
+    }
+    target.focus({ preventScroll: true });
+    if (window.location.hash) cleanSectionUrl();
+  });
+  restoreSharedSection();
+  window.addEventListener("hashchange", restoreSharedSection);
+
   var heroVideo = document.querySelector("[data-hero-video]");
   if (heroVideo) {
     heroVideo.addEventListener("error", function () {
@@ -805,9 +851,8 @@
       });
     });
     document.addEventListener("visibilitychange", function () {
-      if (!document.hidden) {
-        playHeroVideo(heroVideo);
-      }
+      if (document.hidden) heroVideo.pause();
+      else playHeroVideo(heroVideo);
     });
     window.addEventListener("pageshow", function () {
       playHeroVideo(heroVideo);
@@ -817,7 +862,17 @@
         playHeroVideo(heroVideo);
       }
     }, 3000);
-    playHeroVideo(heroVideo);
+    if ("IntersectionObserver" in window) {
+      var heroVisibilityObserver = new IntersectionObserver(function (entries) {
+        var visible = entries[0].isIntersecting;
+        heroVideo.setAttribute("data-playback-suspended", String(!visible));
+        if (visible) playHeroVideo(heroVideo);
+        else heroVideo.pause();
+      }, { rootMargin: "-88px 0px 0px 0px" });
+      heroVisibilityObserver.observe(heroVideo);
+    }
+    if (prefersReducedMotion) heroVideo.pause();
+    else playHeroVideo(heroVideo);
   }
 
   var revealItems = document.querySelectorAll("[data-reveal]");
@@ -865,6 +920,7 @@
 
   var currentPageProgress = 0;
   function updateScrollDepth() {
+    if (lightweightEffects.matches) return;
     var scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
     var progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
     currentPageProgress = progress;
@@ -895,7 +951,7 @@
   updateScrollDepth();
   var scrollFramePending = false;
   function scheduleScrollDepth() {
-    if (scrollFramePending) return;
+    if (lightweightEffects.matches || scrollFramePending) return;
     scrollFramePending = true;
     window.requestAnimationFrame(function () {
       scrollFramePending = false;
@@ -945,6 +1001,7 @@
     var ambientPointer = { x: 0.5, y: 0.5, active: false };
     var ambientFrame = 0;
     var ambientDpr = 1;
+    var ambientAnimationId = 0;
 
     function resizeAmbientCanvas() {
       ambientDpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -967,6 +1024,8 @@
     }
 
     function drawAmbientCanvas() {
+      ambientAnimationId = 0;
+      if (document.hidden || lightweightEffects.matches) return;
       var width = window.innerWidth;
       var height = window.innerHeight;
       var pageProgress = currentPageProgress;
@@ -1022,12 +1081,18 @@
       ambientContext.fillRect(-260, -1, 520, 2);
       ambientContext.restore();
 
-      window.requestAnimationFrame(drawAmbientCanvas);
+      ambientAnimationId = window.requestAnimationFrame(drawAmbientCanvas);
     }
 
-    resizeAmbientCanvas();
-    drawAmbientCanvas();
-    window.addEventListener("resize", resizeAmbientCanvas);
+    function syncAmbientCanvas() {
+      window.cancelAnimationFrame(ambientAnimationId);
+      if (document.hidden || lightweightEffects.matches) return;
+      resizeAmbientCanvas();
+      drawAmbientCanvas();
+    }
+    syncAmbientCanvas();
+    window.addEventListener("resize", syncAmbientCanvas);
+    document.addEventListener("visibilitychange", syncAmbientCanvas);
     window.addEventListener("pointermove", function (event) {
       ambientPointer.x = event.clientX / Math.max(1, window.innerWidth);
       ambientPointer.y = event.clientY / Math.max(1, window.innerHeight);

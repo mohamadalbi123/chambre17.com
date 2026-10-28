@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://www.chambre17.com"
@@ -56,9 +57,11 @@ def translate(template, lang):
 
 
 def switcher(lang, alternates):
+    labels = {"fr": "FR", "en": "EN", "ar": "ع"}
     return "\n          ".join(
         f'<a href="{path}" hreflang="{code}" lang="{code}" data-lang-switch="{code}"'
-        + (' aria-current="page"' if code == lang else '') + f'>{code.upper()}</a>'
+        + (' aria-label="العربية"' if code == "ar" else '')
+        + (' aria-current="page"' if code == lang else '') + f'>{labels[code]}</a>'
         for code, path in alternates.items())
 
 
@@ -131,6 +134,8 @@ def service_page(service, lang):
         footer = footer.replace(f'href="/{other["slug"]}/"', f'href="{path_for(lang, other["slug"])}"')
     labels = {"fr": ("Accueil", "Parlons de votre projet", "Présentez-nous votre activité et vos besoins pour définir ensemble le périmètre de votre projet.", "Démarrer un projet", "Projet associé", "Autres services"),
               "en": ("Home", "Let's discuss your project", "Tell us about your business and your needs so we can define the scope of your project together.", "Start a project", "Related project", "Other services")}[lang]
+    local_service = service["slug"] == "creation-site-internet-la-rochelle"
+    service_location = "Lagord / La Rochelle" if local_service else "France"
     blocks = []
     for section in service["sections"]:
         block = '<section><h2>' + html.escape(section["heading"]) + '</h2>'
@@ -145,14 +150,14 @@ def service_page(service, lang):
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "Service", "@id": ORIGIN + path + "#service", "url": ORIGIN + path, "name": service["h1"],
          "description": service["description"], "provider": {"@id": ORIGIN + "/#business", "@type": "Organization", "name": "CHAMBRE 17", "url": ORIGIN + "/"},
-         "areaServed": [{"@type": "City", "name": "La Rochelle"}, {"@type": "City", "name": "Lagord"}]},
+         "areaServed": ([{"@type": "City", "name": "La Rochelle"}, {"@type": "City", "name": "Lagord"}] if local_service else ["France", "International"])},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": labels[0], "item": ORIGIN + path_for(lang)},
             {"@type": "ListItem", "position": 2, "name": service["h1"], "item": ORIGIN + path}]}]}
     head = head.replace("</head>", json_ld(schema) + "\n  </head>")
     return (head + f'<body data-static-lang="{lang}">\n' + header +
             f'<main class="service-document" id="top"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{path_for(lang)}">{labels[0]}</a><span aria-hidden="true"> / </span><span aria-current="page">{html.escape(service["h1"])}</span></nav>' +
-            f'<article><p class="section-kicker">CHAMBRE 17 · Lagord / La Rochelle</p><h1>{html.escape(service["h1"])}</h1><p class="service-intro">{html.escape(service["intro"])}</p>' +
+            f'<article><p class="section-kicker">CHAMBRE 17 · {service_location}</p><h1>{html.escape(service["h1"])}</h1><p class="service-intro">{html.escape(service["intro"])}</p>' +
             ''.join(blocks) + f'<section class="service-contact"><h2>{labels[1]}</h2><p>{labels[2]}</p><a class="button" href="{path_for(lang)}#contact">{labels[3]}</a></section></article>' +
             f'<nav class="service-page-links" aria-label="{labels[5]}"><p>{labels[5]}</p>{related}</nav></main>' + footer + '</body></html>\n')
 
@@ -203,5 +208,18 @@ sitemap += ''.join(f'  <url><loc>{ORIGIN}{path}</loc></url>\n' for path in sorte
 (ROOT / "sitemap.xml").write_text(sitemap)
 for filename in ("sitemap.xml", "robots.txt", "favicon.svg", "favicon.png", "apple-touch-icon.png", "google4b9b87ef974dde9f.html"):
     shutil.copy2(ROOT / filename, ROOT / "dist" / filename)
-shutil.copytree(ROOT / "assets", ROOT / "dist/assets", dirs_exist_ok=True)
+def copy_public_asset(source, destination):
+    # Copy content only: macOS compression xattrs must not be transplanted to
+    # an ordinary file. Replace atomically so an interrupted build stays safe.
+    with tempfile.NamedTemporaryFile(dir=Path(destination).parent, delete=False) as temp:
+        temporary = Path(temp.name)
+    try:
+        shutil.copyfile(source, temporary)
+        temporary.chmod(0o644)
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return str(destination)
+
+shutil.copytree(ROOT / "assets", ROOT / "dist/assets", dirs_exist_ok=True, copy_function=copy_public_asset)
 print(f"Generated {len(PAGES)} public pages, sitemap.xml, and synchronized dist/.")

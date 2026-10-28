@@ -19,7 +19,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   background: var(--black);
 }
 
@@ -168,6 +168,10 @@ select {
 .language-switcher button:last-child,
 .language-switcher a:last-child {
   border-right: 0;
+}
+
+.language-switcher [data-lang-switch="ar"] {
+  letter-spacing: 0;
 }
 
 .language-switcher button[data-active="true"],
@@ -525,6 +529,8 @@ select {
 .hero-depth-words span:nth-child(2) { --x: 70vw; --y: 26vh; }
 .hero-depth-words span:nth-child(3) { --x: 12vw; --y: 70vh; }
 .hero-depth-words span:nth-child(4) { --x: 76vw; --y: 68vh; }
+
+.section[id] { scroll-margin-top: 88px; }
 
 .hero + .section {
   margin-top: -6svh;
@@ -2777,4 +2783,22 @@ html[dir="rtl"] .service-details li::before {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* Keep touch scrolling native and avoid repainting full-screen effects on phones. */
+@media (max-width: 980px), (pointer: coarse) {
+  body { background: #000; }
+  body::before, body::after, .ambient-canvas { display: none; }
+  .site-header { backdrop-filter: none; background: rgba(0, 0, 0, 0.96); }
+  .hero-depth-scene { position: relative; transform-style: flat; }
+  .hero-video { transform: none; filter: none; will-change: auto; }
+  .hero-depth-field, .hero-depth-scene::after { display: none; }
+  .section-depth::after { transform: none; }
+  .process-flow::after { height: 100%; transition: none; }
+  .section-title, .lead, .process-intro h2, .hero-floating-cta,
+  .process-visual *, .process-visual *::before, .process-visual *::after,
+  .capability-band span::after { animation: none; }
+  .kinetic-title::after { display: none; }
+  [data-reveal] { opacity: 1; transform: none; filter: none; transition: none; }
+  .local-intro { margin-bottom: 20px; }
 }
