@@ -51,3 +51,11 @@ for(const lang of ['fr','en','ar']) {
  assert.ok(page.includes('dir="'+(lang==='ar'?'rtl':'ltr')+'"'));
 }
 console.log(`PASS: ${checked} detection cases, manual-cookie priority, explicit URLs, legacy links, cache isolation and all six language/device hero variants.`);
+
+const routing=JSON.parse(await readFile(new URL('../vercel.json',import.meta.url),'utf8'));
+for(const slug of ['mentions-legales','politique-confidentialite','creation-site-internet-la-rochelle','developpement-application-web','maintenance-site-web']) {
+ for(const suffix of ['', '/']) {
+  assert.ok(routing.redirects.some(rule=>rule.source==='/'+slug+suffix && rule.destination==='/fr/'+slug+'/' && rule.permanent));
+ }
+}
+console.log('PASS: explicit permanent redirects for both forms of every legacy French URL.');

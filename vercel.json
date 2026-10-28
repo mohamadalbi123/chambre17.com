@@ -24,28 +24,53 @@
   },
   "redirects": [
     {
-      "source": "/mentions-legales/:path*",
-      "destination": "/fr/mentions-legales/:path*",
+      "source": "/mentions-legales",
+      "destination": "/fr/mentions-legales/",
       "permanent": true
     },
     {
-      "source": "/politique-confidentialite/:path*",
-      "destination": "/fr/politique-confidentialite/:path*",
+      "source": "/mentions-legales/",
+      "destination": "/fr/mentions-legales/",
       "permanent": true
     },
     {
-      "source": "/creation-site-internet-la-rochelle/:path*",
-      "destination": "/fr/creation-site-internet-la-rochelle/:path*",
+      "source": "/politique-confidentialite",
+      "destination": "/fr/politique-confidentialite/",
       "permanent": true
     },
     {
-      "source": "/developpement-application-web/:path*",
-      "destination": "/fr/developpement-application-web/:path*",
+      "source": "/politique-confidentialite/",
+      "destination": "/fr/politique-confidentialite/",
       "permanent": true
     },
     {
-      "source": "/maintenance-site-web/:path*",
-      "destination": "/fr/maintenance-site-web/:path*",
+      "source": "/creation-site-internet-la-rochelle",
+      "destination": "/fr/creation-site-internet-la-rochelle/",
+      "permanent": true
+    },
+    {
+      "source": "/creation-site-internet-la-rochelle/",
+      "destination": "/fr/creation-site-internet-la-rochelle/",
+      "permanent": true
+    },
+    {
+      "source": "/developpement-application-web",
+      "destination": "/fr/developpement-application-web/",
+      "permanent": true
+    },
+    {
+      "source": "/developpement-application-web/",
+      "destination": "/fr/developpement-application-web/",
+      "permanent": true
+    },
+    {
+      "source": "/maintenance-site-web",
+      "destination": "/fr/maintenance-site-web/",
+      "permanent": true
+    },
+    {
+      "source": "/maintenance-site-web/",
+      "destination": "/fr/maintenance-site-web/",
       "permanent": true
     }
   ]
