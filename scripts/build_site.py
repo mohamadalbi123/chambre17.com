@@ -57,7 +57,7 @@ def translate(template, lang):
 
 
 def switcher(lang, alternates):
-    labels = {"fr": "FR", "en": "EN", "ar": "ع"}
+    labels = {"fr": "FR", "en": "EN", "ar": "عربي"}
     return "\n          ".join(
         f'<a href="{path}" hreflang="{code}" lang="{code}" data-lang-switch="{code}"'
         + (' aria-label="العربية"' if code == "ar" else '')
