@@ -2808,3 +2808,19 @@ html[dir="rtl"] input[type="email"],
 html[dir="rtl"] input[type="tel"] { direction: ltr; text-align: left; }
 html[dir="rtl"] .language-switcher { direction: ltr; }
 html[dir="rtl"] .copyright { text-align: right; }
+
+.work-card .work-built-label {
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.work-features {
+  margin: 0 0 24px;
+  padding-inline-start: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.work-features li + li { margin-top: 6px; }

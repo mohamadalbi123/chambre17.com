@@ -31,8 +31,8 @@
   "services.management.title": "Website Management",
   "services.management.body": "We manage your website monthly: updates, changes, technical care, maintenance and continuous improvements after launch.",
   "services.local": "Based in France, CHAMBRE 17 works with businesses in France and internationally. We design and build around your needs, with remote collaboration and optional ongoing maintenance.",
-  "work.kicker": "Selected Work",
-  "work.title": "Real projects. Real businesses.",
+  "work.kicker": "Our work",
+  "work.title": "A selection of our projects",
   "work.lazoya.title": "LAZOYA — Beauty Centre",
   "work.lazoya": "A multilingual website for presenting the beauty centre’s services and helping visitors book online. We designed the service pages and customer journey, integrated online booking and provide ongoing website management.",
   "work.jleilati.title": "J. LEILATI — E-commerce",
@@ -45,7 +45,7 @@
   "work.tags.webapp": "Web App",
   "work.tags.products": "Product Management",
   "work.tags.checkout": "Checkout",
-  "work.view": "View project",
+  "work.view": "Explore the project",
   "process.kicker": "Our Process",
   "process.title": "Business first.<br>Digital solution second.",
   "process.intro": "Every Chambre 17 project begins by understanding the business behind the screen.",
@@ -205,5 +205,16 @@
     "Footer navigation": "Footer navigation",
     "Legal navigation": "Legal navigation",
     "Breadcrumb": "Breadcrumb"
-  }
+  },
+  "work.built": "What we built",
+  "work.lazoya.features.1": "Multilingual website and service pages",
+  "work.lazoya.features.2": "Diagnostic system",
+  "work.lazoya.features.3": "Online booking integration",
+  "work.lazoya.features.4": "Navigation between multiple booking options",
+  "work.lazoya.features.5": "Ongoing website management and updates",
+  "work.jleilati.features.1": "Multilingual online store and product catalogue",
+  "work.jleilati.features.2": "Product management",
+  "work.jleilati.features.3": "Customer accounts",
+  "work.jleilati.features.4": "Checkout and payment journey",
+  "work.jleilati.features.5": "European delivery options"
 }

@@ -31,8 +31,8 @@
   "services.management.title": "Maintenance de sites web",
   "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
   "services.local": "Basé en France, CHAMBRE 17 accompagne les entreprises en France et à l’international. Nous concevons des solutions sur mesure, avec une collaboration à distance et une maintenance en option.",
-  "work.kicker": "Projets sélectionnés",
-  "work.title": "Des projets réels. Des entreprises réelles.",
+  "work.kicker": "Nos projets",
+  "work.title": "Quelques-unes de nos réalisations",
   "work.lazoya.title": "LAZOYA — Centre de beauté",
   "work.lazoya": "Un site multilingue pour présenter les prestations du centre de beauté et faciliter la réservation en ligne. Nous avons conçu les pages de services et le parcours client, intégré la réservation et assurons la gestion du site.",
   "work.jleilati.title": "J. LEILATI — E-commerce",
@@ -45,7 +45,7 @@
   "work.tags.webapp": "Web app",
   "work.tags.products": "Gestion produits",
   "work.tags.checkout": "Paiement",
-  "work.view": "Voir le projet",
+  "work.view": "Découvrir le projet",
   "process.kicker": "Notre Processus",
   "process.title": "Le business d'abord.<br>La solution digitale ensuite.",
   "process.intro": "Chaque projet Chambre 17 commence par comprendre l'entreprise derrière l'écran.",
@@ -205,5 +205,16 @@
     "Footer navigation": "Navigation de pied de page",
     "Legal navigation": "Informations légales",
     "Breadcrumb": "Fil d’Ariane"
-  }
+  },
+  "work.built": "Ce que nous avons réalisé",
+  "work.lazoya.features.1": "Site multilingue et présentation des services",
+  "work.lazoya.features.2": "Système de diagnostic",
+  "work.lazoya.features.3": "Intégration de la réservation en ligne",
+  "work.lazoya.features.4": "Navigation entre plusieurs options de réservation",
+  "work.lazoya.features.5": "Gestion et mises à jour du site",
+  "work.jleilati.features.1": "Boutique en ligne multilingue et catalogue produits",
+  "work.jleilati.features.2": "Gestion des produits",
+  "work.jleilati.features.3": "Comptes clients",
+  "work.jleilati.features.4": "Parcours de commande et paiement",
+  "work.jleilati.features.5": "Options de livraison en Europe"
 }
