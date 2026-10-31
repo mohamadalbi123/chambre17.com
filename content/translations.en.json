@@ -217,5 +217,12 @@
   "work.jleilati.features.3": "Customer accounts",
   "work.jleilati.features.4": "Checkout and payment journey",
   "work.jleilati.features.5": "European delivery options",
-  "nav.pricing": "Pricing"
+  "nav.pricing": "Pricing",
+  "pricing.enquiry.template": "Hello, I would like information and a quote for {offer}.\n\nMy project: ",
+  "pricing.offer.creation-essentiel": "Website creation — Essential — From 490 €",
+  "pricing.offer.creation-business": "Website creation — Business — From 890 €",
+  "pricing.offer.creation-sur-mesure": "Website creation — Custom — Custom quote",
+  "pricing.offer.gestion-essentiel": "Management & maintenance — Essential — 29 €/month",
+  "pricing.offer.gestion-business": "Management & maintenance — Business — 49 €/month",
+  "pricing.offer.gestion-premium": "Management & maintenance — Premium — 89 €/month"
 }

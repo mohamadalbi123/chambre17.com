@@ -1,0 +1,166 @@
+{
+  "creation": [
+    {
+      "name": "Essential",
+      "amount": "490",
+      "starting": true,
+      "description": "Ideal for freelancers and small businesses.",
+      "features": [
+        "1 to 3 pages",
+        "Modern, responsive design",
+        "Contact form",
+        "Initial search engine optimisation (SEO)",
+        "Domain name connection",
+        "Website launch",
+        "2 rounds of revisions before delivery"
+      ],
+      "cta": "Request a quote",
+      "offer": "creation-essentiel"
+    },
+    {
+      "name": "Business",
+      "amount": "890",
+      "starting": true,
+      "popular": true,
+      "description": "For businesses looking to grow their online presence.",
+      "features": [
+        "Up to 6 pages",
+        "Custom, responsive design",
+        "Service presentation",
+        "Photo gallery",
+        "Contact form",
+        "WhatsApp or external booking integration",
+        "Initial search engine optimisation (SEO)",
+        "Domain name connection",
+        "Website launch",
+        "2 rounds of revisions before delivery"
+      ],
+      "cta": "Request a quote",
+      "offer": "creation-business"
+    },
+    {
+      "name": "Custom",
+      "description": "For projects that need specific features.",
+      "features": [
+        "E-commerce websites",
+        "Online payments",
+        "Web applications",
+        "Client areas",
+        "Databases",
+        "Automations",
+        "Advanced integrations",
+        "Custom features"
+      ],
+      "cta": "Discuss my project",
+      "offer": "creation-sur-mesure"
+    }
+  ],
+  "management": [
+    {
+      "name": "Essential",
+      "amount": "29",
+      "monthly": true,
+      "description": "To keep your website running reliably.",
+      "features": [
+        "Managed hosting",
+        "SSL certificate (HTTPS)",
+        "Technical monitoring",
+        "Support for covered incidents",
+        "Deployment management",
+        "Content changes quoted separately"
+      ],
+      "cta": "Choose Essential",
+      "offer": "gestion-essentiel"
+    },
+    {
+      "name": "Business",
+      "amount": "49",
+      "monthly": true,
+      "popular": true,
+      "description": "For businesses looking for regular support.",
+      "features": [
+        "Everything in Essential",
+        "30 minutes of simple changes per month",
+        "Necessary technical updates",
+        "Email support",
+        "Request tracking"
+      ],
+      "cta": "Choose Business",
+      "offer": "gestion-business"
+    },
+    {
+      "name": "Premium",
+      "amount": "89",
+      "monthly": true,
+      "description": "For businesses that need closer ongoing support.",
+      "features": [
+        "Everything in Business",
+        "60 minutes total of simple changes per month",
+        "Priority support",
+        "Monthly report",
+        "Enhanced technical monitoring"
+      ],
+      "cta": "Choose Premium",
+      "offer": "gestion-premium"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is the domain name included?",
+      "answer": "The purchase and renewal of your domain name are defined in your quote. Chambre 17 can help you with every step. The domain remains registered in your name."
+    },
+    {
+      "question": "Is monthly management mandatory?",
+      "answer": "No. Website creation and monthly management are separate services. If you do not choose a subscription, hosting and maintenance arrangements will be agreed before delivery."
+    },
+    {
+      "question": "Can I request changes after the website is built?",
+      "answer": "Yes. Simple changes are included according to your management plan. Additional requests and new features are quoted separately."
+    },
+    {
+      "question": "Can I cancel my subscription?",
+      "answer": "Yes. Subscriptions have no minimum commitment period and can be cancelled with 30 days’ notice. Website handover or transfer arrangements are specified in the agreed terms."
+    },
+    {
+      "question": "How long does it take to create my website?",
+      "answer": "The timeline depends on the project’s complexity and the content available. We will provide an estimated schedule with your quote."
+    },
+    {
+      "question": "Will my website work on phones?",
+      "answer": "Yes. All websites created by Chambre 17 are designed to work on computers, tablets and smartphones."
+    }
+  ],
+  "ui": {
+    "nav": "Pricing",
+    "intro_title": "Our pricing",
+    "intro_text": "A website built for your business. Monthly support, if you need it.",
+    "plans_aria": "Our plans",
+    "creation_label": "Website creation",
+    "creation_heading": "A professional website,\nbuilt for your business.",
+    "creation_subtitle": "A one-time investment in your online presence.",
+    "creation_note": "Prices shown are starting prices. We prepare a personalised quote based on your project’s needs and features.",
+    "management_label": "Management & maintenance",
+    "management_heading": "We handle the technology.\nYou run your business.",
+    "management_subtitle": "Monthly plans to keep your website running smoothly and supported.",
+    "separation": "Monthly management is optional and billed separately from website creation.",
+    "management_note": "No minimum commitment period. Cancel with 30 days’ notice. Additional services are quoted separately.",
+    "conditions_aria": "Monthly plan details",
+    "conditions_title": "Clear terms, from the start.",
+    "condition_time": "Unused editing time does not roll over to the next month.",
+    "condition_extra": "Additional changes and new features are quoted separately.",
+    "condition_external": "Paid third-party services and exceptional infrastructure usage are not automatically included.",
+    "faq_kicker": "To help you choose",
+    "faq_title": "Frequently asked questions",
+    "final_kicker": "Your project starts here",
+    "final_title": "Let’s discuss your project",
+    "final_text": "Tell us about your business and your needs. We’ll help you choose the right plan.",
+    "vat": "VAT not applicable, Article 293 B of the French General Tax Code.",
+    "popular": "Most popular",
+    "from": "From",
+    "month": "/month",
+    "custom": "Custom quote",
+    "home": "Home",
+    "seo_title": "Website Creation & Maintenance Pricing | Chambre 17",
+    "seo_description": "Explore Chambre 17 pricing: custom websites from €490 and optional monthly management from €29/month. Request a personalised quote."
+  }
+}

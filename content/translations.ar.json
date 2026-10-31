@@ -217,5 +217,12 @@
   "work.jleilati.features.3": "حسابات العملاء",
   "work.jleilati.features.4": "مسار إتمام الطلب والدفع",
   "work.jleilati.features.5": "خيارات التوصيل داخل أوروبا",
-  "nav.pricing": "الأسعار"
+  "nav.pricing": "الأسعار",
+  "pricing.enquiry.template": "مرحباً، أودّ الحصول على معلومات وعرض سعر بشأن {offer}.\n\nمشروعي: ",
+  "pricing.offer.creation-essentiel": "إنشاء المواقع الإلكترونية — الأساسية — ابتداءً من 490 €",
+  "pricing.offer.creation-business": "إنشاء المواقع الإلكترونية — الأعمال — ابتداءً من 890 €",
+  "pricing.offer.creation-sur-mesure": "إنشاء المواقع الإلكترونية — حسب الطلب — حسب عرض السعر",
+  "pricing.offer.gestion-essentiel": "الإدارة والصيانة — الأساسية — 29 € شهرياً",
+  "pricing.offer.gestion-business": "الإدارة والصيانة — الأعمال — 49 € شهرياً",
+  "pricing.offer.gestion-premium": "الإدارة والصيانة — المميزة — 89 € شهرياً"
 }

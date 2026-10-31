@@ -217,5 +217,12 @@
   "work.jleilati.features.3": "Comptes clients",
   "work.jleilati.features.4": "Parcours de commande et paiement",
   "work.jleilati.features.5": "Options de livraison en Europe",
-  "nav.pricing": "Tarifs"
+  "nav.pricing": "Tarifs",
+  "pricing.enquiry.template": "Bonjour, je souhaite recevoir des informations et un devis pour {offer}.\n\nMon projet : ",
+  "pricing.offer.creation-essentiel": "Création de sites web — Essentiel — À partir de 490 €",
+  "pricing.offer.creation-business": "Création de sites web — Business — À partir de 890 €",
+  "pricing.offer.creation-sur-mesure": "Création de sites web — Sur mesure — Sur devis",
+  "pricing.offer.gestion-essentiel": "Gestion & maintenance — Essentiel — 29 €/mois",
+  "pricing.offer.gestion-business": "Gestion & maintenance — Business — 49 €/mois",
+  "pricing.offer.gestion-premium": "Gestion & maintenance — Premium — 89 €/mois"
 }

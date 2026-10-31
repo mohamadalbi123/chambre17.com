@@ -1,50 +1,50 @@
 <main class="pricing-page" id="top">
   <div class="pricing-intro">
-    <p class="section-kicker">CHAMBRE 17 · Tarifs</p>
-    <h1>Nos tarifs</h1>
-    <p>Un site conçu pour votre activité. Un accompagnement mensuel, si vous en avez besoin.</p>
-    <nav class="pricing-jump-links" aria-label="Les offres"><a href="#creation">Création de sites web <span aria-hidden="true">↗</span></a><a href="#gestion">Gestion &amp; maintenance <span aria-hidden="true">↗</span></a></nav>
+    <p class="section-kicker">CHAMBRE 17 · {{nav}}</p>
+    <h1>{{intro_title}}</h1>
+    <p>{{intro_text}}</p>
+    <nav class="pricing-jump-links" aria-label="{{plans_aria}}"><a href="#creation">{{creation_label}} <span aria-hidden="true">↗</span></a><a href="#gestion">{{management_label}} <span aria-hidden="true">↗</span></a></nav>
   </div>
 
   <section class="pricing-section" id="creation" aria-labelledby="creation-title">
     <div class="pricing-section-heading">
-      <p class="section-kicker">01 · Création de sites web</p>
-      <h2 id="creation-title">Un site professionnel,<br> adapté à votre activité.</h2>
-      <p>Un investissement unique pour créer votre présence en ligne.</p>
+      <p class="section-kicker">01 · {{creation_label}}</p>
+      <h2 id="creation-title">{{creation_heading}}</h2>
+      <p>{{creation_subtitle}}</p>
     </div>
     <div class="pricing-grid">{{CREATION_CARDS}}</div>
-    <p class="pricing-note">Les tarifs indiqués sont des prix de départ. Un devis personnalisé est établi selon les besoins et les fonctionnalités de votre projet.</p>
+    <p class="pricing-note">{{creation_note}}</p>
   </section>
 
   <section class="pricing-section" id="gestion" aria-labelledby="gestion-title">
     <div class="pricing-section-heading">
-      <p class="section-kicker">02 · Gestion &amp; maintenance</p>
-      <h2 id="gestion-title">Nous gérons la technique.<br> Vous gérez votre activité.</h2>
-      <p>Des formules mensuelles pour assurer le bon fonctionnement et le suivi de votre site.</p>
-      <p class="pricing-separation">La gestion mensuelle est optionnelle et facturée séparément de la création du site.</p>
+      <p class="section-kicker">02 · {{management_label}}</p>
+      <h2 id="gestion-title">{{management_heading}}</h2>
+      <p>{{management_subtitle}}</p>
+      <p class="pricing-separation">{{separation}}</p>
     </div>
     <div class="pricing-grid">{{MANAGEMENT_CARDS}}</div>
-    <p class="pricing-note">Abonnements sans engagement de durée minimale. Préavis de résiliation de 30 jours. Prestations complémentaires sur devis.</p>
-    <aside class="pricing-conditions" aria-label="Précisions sur les formules mensuelles">
-      <h3>Un cadre clair, dès le départ.</h3>
+    <p class="pricing-note">{{management_note}}</p>
+    <aside class="pricing-conditions" aria-label="{{conditions_aria}}">
+      <h3>{{conditions_title}}</h3>
       <ul>
-        <li>Le temps de modification non utilisé ne se cumule pas d’un mois à l’autre.</li>
-        <li>Les modifications supplémentaires et les nouvelles fonctionnalités font l’objet d’un devis séparé.</li>
-        <li>Les services tiers payants et les usages exceptionnels de l’infrastructure ne sont pas automatiquement inclus.</li>
+        <li>{{condition_time}}</li>
+        <li>{{condition_extra}}</li>
+        <li>{{condition_external}}</li>
       </ul>
     </aside>
   </section>
 
   <section class="pricing-section pricing-faq" id="questions" aria-labelledby="faq-title">
-    <div class="pricing-section-heading"><p class="section-kicker">03 · Pour vous aider à choisir</p><h2 id="faq-title">Questions fréquentes</h2></div>
+    <div class="pricing-section-heading"><p class="section-kicker">03 · {{faq_kicker}}</p><h2 id="faq-title">{{faq_title}}</h2></div>
     <div class="pricing-faq-list">{{FAQ}}</div>
   </section>
 
   <section class="pricing-final" aria-labelledby="pricing-contact-title">
-    <p class="section-kicker">Votre projet commence ici</p>
-    <h2 id="pricing-contact-title">Parlons de votre projet</h2>
-    <p>Présentez-nous votre activité et vos besoins. Nous vous aiderons à définir la formule adaptée.</p>
-    <a class="button" href="/fr/#contact">Parlons de votre projet <span aria-hidden="true">↗</span></a>
-    <p class="pricing-vat">TVA non applicable, art. 293 B du CGI</p>
+    <p class="section-kicker">{{final_kicker}}</p>
+    <h2 id="pricing-contact-title">{{final_title}}</h2>
+    <p>{{final_text}}</p>
+    <a class="button" href="{{home_url}}#contact">{{final_title}} <span aria-hidden="true">↗</span></a>
+    <p class="pricing-vat">{{vat}}</p>
   </section>
 </main>

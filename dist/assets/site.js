@@ -529,12 +529,12 @@
   // Pricing buttons open the existing enquiry form; they do not create a subscription.
   function preselectPricingOffer(form, query) {
     var offers = {
-      "creation-essentiel": ["form.option.website", "la formule Essentiel — création de site à partir de 490 €"],
-      "creation-business": ["form.option.website", "la formule Business — création de site à partir de 890 €"],
-      "creation-sur-mesure": ["form.option.webapp", "un projet sur mesure — sur devis"],
-      "gestion-essentiel": ["form.option.management", "la formule de gestion Essentiel — 29 €/mois"],
-      "gestion-business": ["form.option.management", "la formule de gestion Business — 49 €/mois"],
-      "gestion-premium": ["form.option.management", "la formule de gestion Premium — 89 €/mois"]
+      "creation-essentiel": ["form.option.website", "pricing.offer.creation-essentiel"],
+      "creation-business": ["form.option.website", "pricing.offer.creation-business"],
+      "creation-sur-mesure": ["form.option.webapp", "pricing.offer.creation-sur-mesure"],
+      "gestion-essentiel": ["form.option.management", "pricing.offer.gestion-essentiel"],
+      "gestion-business": ["form.option.management", "pricing.offer.gestion-business"],
+      "gestion-premium": ["form.option.management", "pricing.offer.gestion-premium"]
     };
     var key = new URLSearchParams(query).get("offre");
     if (!Object.prototype.hasOwnProperty.call(offers, key)) return;
@@ -545,7 +545,7 @@
     if (!message || message.value.trim()) return;
     var dict = translations[document.documentElement.lang] || translations.fr;
     if (need && dict[offer[0]]) need.value = dict[offer[0]];
-    message.value = "Bonjour, je souhaite recevoir des informations et un devis pour " + offer[1] + ".\n\nMon projet : ";
+    message.value = dict["pricing.enquiry.template"].replace("{offer}", dict[offer[1]]);
   }
 
   var contactForm = document.querySelector("[data-project-form]");

@@ -42,8 +42,11 @@ for path, page in pages.items():
     assert page.lang in ("fr", "en", "ar"), path
     assert (path == "/tarifs/" and page.lang == "fr") or path.startswith("/" + page.lang + "/"), path
     assert len(page.attributes("a", **{"data-lang-switch":"ar"})) == 1, path
-    expected_languages = set() if path == "/tarifs/" else {"fr","en","ar","x-default"}
+    expected_languages = {"fr","en","ar","x-default"}
     assert {a["hreflang"] for a in page.attributes("link", rel="alternate")} == expected_languages, path
+    pricing_paths = {"fr":"/tarifs/", "en":"/en/pricing/", "ar":"/ar/pricing/"}
+    for link in page.attributes("a", **{"data-i18n":"nav.pricing"}):
+        assert link['href'] == pricing_paths[page.lang], f"Wrong pricing destination: {path}"
     assert page.h1 == 1, f"{path}: expected one H1, got {page.h1}"
     assert page.title and page.title not in titles, f"Duplicate/missing title: {path}"
     titles.add(page.title)

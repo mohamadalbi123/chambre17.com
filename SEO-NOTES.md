@@ -66,8 +66,10 @@ Arabic content includes the three service pages, legal/privacy pages, forms, pro
 
 The pinned zod override patches a transitive dependency in the Vercel helper. The dependency audit is clean.
 
-## French pricing page
+## Localized pricing pages
 
-`/tarifs/` is intentionally French-only, with its own canonical URL and no fabricated language alternates. It reuses the French header/footer and is listed in the sitemap alongside the 18 localized pages. Main navigation includes Tarifs on desktop and mobile. Edit `content/pricing.fr.json`, `templates/tarifs.html` and `scripts/pricing_page.py` for the page.
+French pricing remains at `/tarifs/`, with English at `/en/pricing/` and Arabic at `/ar/pricing/`. Each page has its own title, description and canonical URL, reciprocal hreflang and a sitemap entry (21 content pages total). Pricing menu links and language selectors point to the corresponding pricing version. No automatic detection redirects localized pages.
 
-All six offer buttons open `/fr/?offre=...#contact`. The contact form allowlists the package, selects the service, and prefills an editable enquiry message; it does not start a paid subscription. Existing message drafts are preserved. Run `node scripts/check_pricing.mjs` to verify this path. The FAQ uses native keyboard-accessible details/summary controls; FAQ rich-result markup is omitted because Google deprecated the feature in May 2026. VAT wording reuses the existing legal notice’s stated franchise regime.
+Edit `content/pricing.{fr,en,ar}.json`, `templates/tarifs.html` and `scripts/pricing_page.py`. All six buttons on each page open the matching language’s contact form, select the service and prefill a translated editable enquiry. They do not start a paid subscription. Existing drafts are preserved. Run `node scripts/check_pricing.mjs` for the 18 offer journeys and language-link assertions.
+
+The FAQ uses native keyboard-accessible details/summary controls. FAQ rich-result markup is omitted because Google deprecated the feature in May 2026. Prices, package scope and terms remain identical in all languages. VAT wording follows the existing legal notice’s stated franchise regime.

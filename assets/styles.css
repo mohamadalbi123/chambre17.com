@@ -2894,3 +2894,6 @@ body[data-page="pricing"]::after { display: none; }
   .pricing-conditions { padding: 22px; }
   .pricing-final { padding-block: 54px 72px; }
 }
+
+.pricing-custom strong { white-space: normal; }
+html[dir="rtl"] .pricing-custom strong { letter-spacing: 0; }

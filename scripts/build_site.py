@@ -11,7 +11,7 @@ from pathlib import Path
 import re
 import shutil
 import tempfile
-from pricing_page import render_pricing
+from pricing_page import render_pricing, PRICING_PATHS
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://www.chambre17.com"
@@ -75,6 +75,7 @@ def apply_metadata(page, title, description, path, lang, alternates):
 
 def localized_page(template_name, lang, slug, page_key):
     page = translate((ROOT / "templates" / template_name).read_text(), lang)
+    page = page.replace('href="/tarifs/" hreflang="fr"', f'href="{PRICING_PATHS[lang]}" hreflang="{lang}"')
     path = path_for(lang, slug)
     alternates = {code: path_for(code, slug) for code in LANGUAGES}
     page = re.sub(r'<html[^>]*>', f'<html lang="{lang}" data-lang="{lang}" dir="{"rtl" if lang == "ar" else "ltr"}">', page)
@@ -84,8 +85,6 @@ def localized_page(template_name, lang, slug, page_key):
     for legal_slug in ("mentions-legales", "politique-confidentialite"):
         page = page.replace(f'href="/{legal_slug}/"', f'href="{path_for(lang, legal_slug)}"')
     page = page.replace('href="/"', f'href="{path_for(lang)}"')
-    # The above homepage link replacement must not alter the French language link.
-    page = re.sub(r'(<a href=")[^"]+(" hreflang="fr")', r'\g<1>' + path_for("fr", slug) + r'\2', page)
     page = apply_metadata(page, TRANSLATIONS[lang][page_key + ".titleTag"],
                           TRANSLATIONS[lang][page_key + ".description"], path, lang, alternates)
     page = page.replace('</head>', '<noscript><style>[data-reveal]{opacity:1;transform:none;filter:none}</style></noscript>\n  </head>')
@@ -175,7 +174,8 @@ for language, services in SERVICES.items():
     for service in services:
         PAGES[path_for(language)] = PAGES[path_for(language)].replace(f'href="/{service["slug"]}/"', f'href="{path_for(language, service["slug"])}"')
 
-PAGES["/tarifs/"] = render_pricing(ROOT, PAGES[path_for("fr")], metadata, json_ld, ORIGIN)
+for language in LANGUAGES:
+    PAGES[PRICING_PATHS[language]] = render_pricing(ROOT, PAGES[path_for(language)], metadata, json_ld, ORIGIN, language, switcher)
 
 for language in LANGUAGES:
     localized_js = re.sub(r"var translations = \{\};", lambda m: "var translations = " + json.dumps({language: TRANSLATIONS[language]}, ensure_ascii=False) + ";", source_js, flags=re.S)
