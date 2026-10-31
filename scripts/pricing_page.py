@@ -37,7 +37,7 @@ def render_pricing(root, home, metadata, json_ld, origin):
         {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Accueil','item':origin+'/fr/'},{'@type':'ListItem','position':2,'name':'Tarifs','item':origin+'/tarifs/'}]}]}) + '</head>')
     header = re.search(r'<header class="site-header">.*?</header>', home, re.S)[0]
     footer = re.search(r'<footer class="site-footer">.*?</footer>', home, re.S)[0]
-    header = header.replace('href="/tarifs/" lang="fr"', 'href="/tarifs/" lang="fr" aria-current="page"')
+    header = header.replace('href="/tarifs/" hreflang="fr"', 'href="/tarifs/" hreflang="fr" aria-current="page"')
     header = header.replace('href="/fr/" hreflang="fr"', 'href="/tarifs/" hreflang="fr"')
     for fragment in ('services','work','about','process','contact'):
         header = header.replace(f'href="#{fragment}"', f'href="/fr/#{fragment}"')
