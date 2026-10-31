@@ -1,0 +1,20 @@
+{
+  "creation": [
+    {"name":"Essentiel","amount":"490","starting":true,"description":"Idéal pour les indépendants et petites entreprises.","features":["1 à 3 pages","Design moderne et responsive","Formulaire de contact","Référencement naturel initial (SEO)","Connexion du nom de domaine","Mise en ligne du site","2 séries de retouches avant livraison"],"cta":"Demander un devis","offer":"creation-essentiel"},
+    {"name":"Business","amount":"890","starting":true,"popular":true,"description":"Pour les entreprises souhaitant développer leur présence en ligne.","features":["Jusqu’à 6 pages","Design personnalisé et responsive","Présentation des services","Galerie photos","Formulaire de contact","Intégration WhatsApp ou réservation externe","Référencement naturel initial (SEO)","Connexion du nom de domaine","Mise en ligne du site","2 séries de retouches avant livraison"],"cta":"Demander un devis","offer":"creation-business"},
+    {"name":"Sur mesure","description":"Pour les projets nécessitant des fonctionnalités spécifiques.","features":["Sites e-commerce","Paiement en ligne","Applications web","Espaces clients","Bases de données","Automatisations","Intégrations avancées","Fonctionnalités personnalisées"],"cta":"Parler de mon projet","offer":"creation-sur-mesure"}
+  ],
+  "management": [
+    {"name":"Essentiel","amount":"29","monthly":true,"description":"Pour assurer le fonctionnement technique de votre site.","features":["Hébergement géré","Certificat SSL (HTTPS)","Surveillance technique","Assistance en cas d’incident couvert","Gestion des déploiements","Modifications de contenu sur devis"],"cta":"Choisir Essentiel","offer":"gestion-essentiel"},
+    {"name":"Business","amount":"49","monthly":true,"popular":true,"description":"Pour les entreprises souhaitant un accompagnement régulier.","features":["Tout ce qui est inclus dans Essentiel","30 minutes de modifications simples par mois","Mises à jour techniques nécessaires","Assistance par e-mail","Suivi des demandes"],"cta":"Choisir Business","offer":"gestion-business"},
+    {"name":"Premium","amount":"89","monthly":true,"description":"Pour les entreprises ayant besoin d’un suivi plus régulier.","features":["Tout ce qui est inclus dans Business","60 minutes au total de modifications simples par mois","Assistance prioritaire","Rapport mensuel","Suivi technique renforcé"],"cta":"Choisir Premium","offer":"gestion-premium"}
+  ],
+  "faq": [
+    {"question":"Le nom de domaine est-il inclus ?","answer":"L’achat et le renouvellement du nom de domaine sont définis dans votre devis. Chambre 17 peut vous accompagner dans toutes les démarches. Le domaine reste à votre nom."},
+    {"question":"L’abonnement mensuel est-il obligatoire ?","answer":"Non. La création du site et sa gestion mensuelle sont deux prestations distinctes. Si vous ne souscrivez pas d’abonnement, les modalités d’hébergement et de maintenance seront définies avant la livraison."},
+    {"question":"Puis-je demander des modifications après la création ?","answer":"Oui. Les modifications simples sont incluses selon votre formule de gestion. Les demandes supplémentaires ou les nouvelles fonctionnalités font l’objet d’un devis."},
+    {"question":"Puis-je résilier mon abonnement ?","answer":"Oui. Les abonnements sont sans engagement de durée minimale, avec un préavis de 30 jours. Les modalités de récupération ou de transfert du site sont précisées dans les conditions convenues."},
+    {"question":"Combien de temps faut-il pour créer mon site ?","answer":"Le délai dépend de la complexité du projet et des contenus disponibles. Un calendrier prévisionnel vous sera communiqué avec votre devis."},
+    {"question":"Mon site sera-t-il adapté aux téléphones ?","answer":"Oui. Tous les sites créés par Chambre 17 sont conçus pour fonctionner sur ordinateur, tablette et smartphone."}
+  ]
+}

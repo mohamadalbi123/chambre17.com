@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import shutil
 import tempfile
+from pricing_page import render_pricing
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIGIN = "https://www.chambre17.com"
@@ -173,6 +174,8 @@ for language, services in SERVICES.items():
         PAGES[path_for(language, service["slug"])] = service_page(service, language)
     for service in services:
         PAGES[path_for(language)] = PAGES[path_for(language)].replace(f'href="/{service["slug"]}/"', f'href="{path_for(language, service["slug"])}"')
+
+PAGES["/tarifs/"] = render_pricing(ROOT, PAGES[path_for("fr")], metadata, json_ld, ORIGIN)
 
 for language in LANGUAGES:
     localized_js = re.sub(r"var translations = \{\};", lambda m: "var translations = " + json.dumps({language: TRANSLATIONS[language]}, ensure_ascii=False) + ";", source_js, flags=re.S)

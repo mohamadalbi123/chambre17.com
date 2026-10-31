@@ -38,7 +38,7 @@ selection('ar','FR',preferenceCookie+'=invalid','ar');
 assert.equal(browserLanguage('fr;q=0,ar;q=0'),undefined);
 const legacy=entryRedirect(new Request('https://www.chambre17.com/?lang=ar&utm_source=test',{headers:{cookie:preferenceCookie+'=fr'}}));
 assert.equal(legacy.headers.get('Location'),'https://www.chambre17.com/ar/?utm_source=test');
-for(const path of ['/fr/','/ar/maintenance-site-web/','/assets/site.fr.js','/api/contact','/sitemap.xml','/unknown/']) {
+for(const path of ['/tarifs/','/fr/','/ar/maintenance-site-web/','/assets/site.fr.js','/api/contact','/sitemap.xml','/unknown/']) {
  assert.equal(entryRedirect(new Request('https://www.chambre17.com'+path)),null);
  assert.equal(proxy(new Request('https://www.chambre17.com'+path)).headers.get('x-middleware-next'),'1');
 }

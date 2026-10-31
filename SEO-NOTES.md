@@ -65,3 +65,9 @@ Avoid repeated near-identical location pages. La Rochelle and Lagord are natural
 Arabic content includes the three service pages, legal/privacy pages, forms, process labels and accessibility text. All six existing hero videos/posters are selected by language and viewport; no video assets were changed. The neutral root has a noindex language-link fallback for hosts that do not run middleware. Sitemap and canonical checks cover the 18 localized pages.
 
 The pinned zod override patches a transitive dependency in the Vercel helper. The dependency audit is clean.
+
+## French pricing page
+
+`/tarifs/` is intentionally French-only, with its own canonical URL and no fabricated language alternates. It reuses the French header/footer and is listed in the sitemap alongside the 18 localized pages. Main navigation includes Tarifs on desktop and mobile. Edit `content/pricing.fr.json`, `templates/tarifs.html` and `scripts/pricing_page.py` for the page.
+
+All six offer buttons open `/fr/?offre=...#contact`. The contact form allowlists the package, selects the service, and prefills an editable enquiry message; it does not start a paid subscription. Existing message drafts are preserved. Run `node scripts/check_pricing.mjs` to verify this path. The FAQ uses native keyboard-accessible details/summary controls; FAQ rich-result markup is omitted because Google deprecated the feature in May 2026. VAT wording reuses the existing legal notice’s stated franchise regime.
