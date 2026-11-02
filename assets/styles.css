@@ -2424,6 +2424,12 @@ select {
   }
 }
 
+/* Keep all header controls inside narrow phone viewports. */
+@media (max-width: 380px) {
+  .site-header { column-gap: 12px; }
+  .header-actions { margin-right: 0; }
+}
+
 html[dir="rtl"] body {
   direction: rtl;
 }
