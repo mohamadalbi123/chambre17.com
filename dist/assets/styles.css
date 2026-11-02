@@ -1605,341 +1605,44 @@ select {
     #050505;
 }
 
+/* Shared technical drawing system: no raster assets, filters or runtime drawing. */
 .process-visual::before {
   content: "";
   position: absolute;
-  inset: -35%;
-  background: conic-gradient(from 90deg, transparent, rgba(255, 255, 255, 0.16), transparent 34%);
-  opacity: 0;
-  transform: rotate(0deg);
-  transition: opacity 260ms ease;
-  animation: orbitSweep 7s linear infinite;
+  inset: 0;
+  background: radial-gradient(ellipse at 42% 28%, rgba(255, 255, 255, 0.055), transparent 70%);
+  pointer-events: none;
 }
 
-.process-item[data-active="true"] .process-visual::before,
-.process-item:hover .process-visual::before {
-  opacity: 0.5;
-}
-
-.process-visual video {
+.process-blueprint {
+  position: relative;
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: grayscale(1);
+  stroke: #b8b8b8;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
-.visual-placeholder {
-  position: absolute;
-  inset: 0;
-  display: block;
-  z-index: 1;
+.blueprint-grid { stroke: #fff; stroke-opacity: 0.055; stroke-width: 0.65; }
+.blueprint-guides { stroke: #777; stroke-width: 0.85; }
+.blueprint-secondary { stroke: #787878; stroke-width: 1; }
+.blueprint-solid { stroke: #c4c4c4; fill: #101010; }
+.blueprint-main { stroke: #e2e2e2; stroke-width: 1.5; }
+.blueprint-detail { stroke: #a0a0a0; stroke-width: 1; }
+.blueprint-signal { stroke: #e0e0e0; stroke-width: 1.6; }
+
+/* One restrained confirmation pulse on the active stage; static on touch devices. */
+@media (min-width: 981px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .process-item[data-active="true"] .blueprint-signal {
+    animation: blueprint-confirm 1.6s ease-out both;
+  }
 }
 
-.visual-placeholder::before,
-.visual-placeholder::after {
-  content: "";
-  position: absolute;
-  inset: 12%;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-}
-
-.visual-placeholder::after {
-  inset: auto 16% 22% 16%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.28);
-  border: 0;
-  animation: processScan 2.8s ease-in-out infinite;
-}
-
-.visual-placeholder span {
-  position: absolute;
-  display: block;
-  border-color: rgba(255, 255, 255, 0.86);
-}
-
-.person,
-.review-person,
-.desk-person {
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-}
-
-.person::after,
-.review-person::after,
-.desk-person::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 28px;
-  width: 1.5px;
-  height: 38px;
-  background: rgba(255, 255, 255, 0.74);
-  transform: translateX(-50%);
-}
-
-.person-left {
-  left: 22%;
-  top: 29%;
-}
-
-.person-right {
-  right: 22%;
-  top: 29%;
-}
-
-.table-line {
-  left: 20%;
-  right: 20%;
-  top: 64%;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.table-leg {
-  top: 64%;
-  width: 1.5px;
-  height: 20%;
-  background: rgba(255, 255, 255, 0.54);
-}
-
-.leg-left {
-  left: 30%;
-}
-
-.leg-right {
-  right: 30%;
-}
-
-.dialogue {
-  top: 22%;
-  width: 32px;
-  height: 14px;
-  border-top: 1.5px solid rgba(255, 255, 255, 0.72);
-  animation: processPulse 2.4s ease-in-out infinite;
-}
-
-.dialogue-left {
-  left: 38%;
-}
-
-.dialogue-right {
-  right: 38%;
-  animation-delay: 0.7s;
-}
-
-.desk-person {
-  left: 20%;
-  bottom: 30%;
-}
-
-.desk-line {
-  left: 14%;
-  right: 14%;
-  bottom: 25%;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.88);
-}
-
-.screen-shape,
-.review-screen,
-.manage-site,
-.launch-window {
-  border: 1.5px solid rgba(255, 255, 255, 0.88);
-}
-
-.screen-shape {
-  right: 15%;
-  top: 21%;
-  width: 48%;
-  height: 42%;
-}
-
-.interface-line {
-  right: 25%;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.78);
-  animation: processPulse 2.2s ease-in-out infinite;
-}
-
-.cursor-node {
-  right: 18%;
-  top: 18%;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  animation: cursorTravel 3s ease-in-out infinite;
-}
-
-.line-a {
-  top: 36%;
-  width: 24%;
-}
-
-.line-b {
-  top: 45%;
-  width: 17%;
-  animation-delay: 0.35s;
-}
-
-.line-c {
-  top: 54%;
-  width: 28%;
-  animation-delay: 0.7s;
-}
-
-.review-person.person-left {
-  left: 15%;
-  bottom: 22%;
-}
-
-.review-person.person-right {
-  right: 15%;
-  bottom: 22%;
-}
-
-.review-screen {
-  left: 23%;
-  right: 23%;
-  top: 19%;
-  height: 42%;
-}
-
-.review-block {
-  top: 34%;
-  height: 16px;
-  border: 1.5px solid rgba(255, 255, 255, 0.66);
-  animation: processPulse 2.8s ease-in-out infinite;
-}
-
-.block-a {
-  left: 35%;
-  width: 18%;
-}
-
-.block-b {
-  right: 35%;
-  width: 12%;
-  animation-delay: 0.55s;
-}
-
-.review-check {
-  left: 46%;
-  top: 50%;
-  width: 24px;
-  height: 12px;
-  border-left: 1.5px solid #fff;
-  border-bottom: 1.5px solid #fff;
-  transform: rotate(-45deg);
-  animation: processPulse 2.8s 0.3s ease-in-out infinite;
-}
-
-.launch-window {
-  left: 18%;
-  top: 34%;
-  width: 38%;
-  height: 32%;
-}
-
-.launch-plane {
-  width: 28%;
-  height: 1.5px;
-  background: rgba(255, 255, 255, 0.9);
-  transform: skewY(-12deg);
-}
-
-.plane-back {
-  left: 42%;
-  top: 35%;
-  opacity: 0.42;
-}
-
-.plane-front {
-  left: 50%;
-  top: 49%;
-  animation: launchDrift 3s ease-in-out infinite;
-}
-
-.launch-line {
-  left: 26%;
-  right: 18%;
-  bottom: 26%;
-  height: 1.5px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
-}
-
-.launch-glow {
-  left: 57%;
-  top: 43%;
-  width: 34px;
-  height: 34px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  animation: orbitBreath 2.6s ease-in-out infinite;
-}
-
-.manage-site {
-  left: 27%;
-  top: 25%;
-  width: 46%;
-  height: 44%;
-}
-
-.manage-node {
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
-  animation: processPulse 2.5s ease-in-out infinite;
-}
-
-.node-one {
-  left: 23%;
-  top: 38%;
-}
-
-.node-two {
-  right: 22%;
-  top: 30%;
-  animation-delay: 0.45s;
-}
-
-.node-three {
-  right: 28%;
-  bottom: 24%;
-  animation-delay: 0.9s;
-}
-
-.manage-orbit {
-  left: 24%;
-  right: 24%;
-  top: 24%;
-  bottom: 21%;
-  border: 1.5px solid rgba(255, 255, 255, 0.34);
-  border-radius: 50%;
-  animation: orbitBreath 3.2s ease-in-out infinite;
-}
-
-.manage-link {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.4);
-  transform-origin: left center;
-}
-
-.link-one {
-  left: 34%;
-  top: 42%;
-  width: 38%;
-  transform: rotate(-18deg);
-}
-
-.link-two {
-  left: 44%;
-  top: 62%;
-  width: 28%;
-  transform: rotate(24deg);
+@keyframes blueprint-confirm {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0.35; }
 }
 
 .process-copy {
