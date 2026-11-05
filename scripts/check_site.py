@@ -61,6 +61,8 @@ for path, page in pages.items():
         target = urlsplit(alternate['href']).path
         if alternate.get('hreflang') == 'x-default' and target == '/': continue
         assert target in pages, f"Missing alternate: {path} -> {target}"
+        if alternate['hreflang'] != 'x-default':
+            assert pages[target].lang == alternate['hreflang'], f"Wrong hreflang target language: {path} -> {target}"
         assert any(a['href'] == ORIGIN + path for a in pages[target].attributes('link', rel='alternate')), f"Nonreciprocal hreflang: {path}"
     for property in ('og:title', 'og:description', 'og:url', 'og:image'):
         assert len(page.attributes('meta', property=property)) == 1, f"Missing {property}: {path}"
@@ -81,6 +83,15 @@ for path, page in pages.items():
         assert schema.get('@context') == 'https://schema.org', path
         for item in schema.get('@graph', []):
             assert '@type' in item, path
+    definitions = [item for schema in page.schemas for item in schema.get('@graph', [])]
+    definition_ids = [item['@id'] for item in definitions if '@id' in item]
+    assert len(definition_ids) == len(set(definition_ids)), f"Duplicate structured-data entity: {path}"
+    services = [item for item in definitions if item['@type'] == 'Service']
+    if services:
+        assert len(services) == 1 and services[0]['url'] == ORIGIN + path, f"Service URL/entity mismatch: {path}"
+        breadcrumbs = [item for item in definitions if item['@type'] == 'BreadcrumbList']
+        assert len(breadcrumbs) == 1, f"Duplicate/missing service breadcrumb: {path}"
+        assert breadcrumbs[0]['itemListElement'][-1]['item'] == ORIGIN + path, f"Breadcrumb canonical mismatch: {path}"
 assert 'Allow: /' in (ROOT / 'robots.txt').read_text()
 assert ORIGIN + '/sitemap.xml' in (ROOT / 'robots.txt').read_text()
 public = {'/' + str(p.relative_to(ROOT).parent).replace('.', '').strip('/') + '/' for p in ROOT.rglob('index.html')}

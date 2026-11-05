@@ -134,14 +134,23 @@ def service_page(service, lang):
     labels = {"fr": ("Accueil", "Parlons de votre projet", "Présentez-nous votre activité et vos besoins pour définir ensemble le périmètre de votre projet.", "Démarrer un projet", "Projet associé", "Autres services"),
               "en": ("Home", "Let's discuss your project", "Tell us about your business and your needs so we can define the scope of your project together.", "Start a project", "Related project", "Other services"),
               "ar": ("الرئيسية", "لنتحدث عن مشروعك", "أخبرنا عن نشاطك واحتياجاتك لنحدّد معاً نطاق المشروع.", "ابدأ مشروعك", "مشروع ذو صلة", "خدمات أخرى")}[lang]
-    local_service = service["slug"] == "creation-site-internet-la-rochelle"
+    local_service = service.get("localFocus", service["slug"] == "creation-site-internet-la-rochelle")
     service_location = ("لاغور / لا روشيل" if local_service else "فرنسا") if lang == "ar" else ("Lagord / La Rochelle" if local_service else "France")
+    def content_links(links):
+        if not links:
+            return ""
+        return '<p>' + ' · '.join(
+            f'<a class="text-link" href="{html.escape(link["href"], quote=True)}">{html.escape(link["label"])}</a>'
+            for link in links) + '</p>'
+
+    contact = service.get("contact", {})
     blocks = []
     for section in service["sections"]:
         block = '<section><h2>' + html.escape(section["heading"]) + '</h2>'
         block += ''.join('<p>' + html.escape(p) + '</p>' for p in section["paragraphs"])
         if section.get("bullets"):
             block += '<ul>' + ''.join('<li>' + html.escape(p) + '</li>' for p in section["bullets"]) + '</ul>'
+        block += content_links(section.get("links"))
         blocks.append(block + '</section>')
     project = service.get("relatedProject")
     if project:
@@ -157,8 +166,8 @@ def service_page(service, lang):
     head = head.replace("</head>", json_ld(schema) + "\n  </head>")
     return (head + f'<body data-static-lang="{lang}">\n' + header +
             f'<main class="service-document" id="top"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{path_for(lang)}">{labels[0]}</a><span aria-hidden="true"> / </span><span aria-current="page">{html.escape(service["h1"])}</span></nav>' +
-            f'<article><p class="section-kicker">CHAMBRE 17 · {service_location}</p><h1>{html.escape(service["h1"])}</h1><p class="service-intro">{html.escape(service["intro"])}</p>' +
-            ''.join(blocks) + f'<section class="service-contact"><h2>{labels[1]}</h2><p>{labels[2]}</p><a class="button" href="{path_for(lang)}#contact">{labels[3]}</a></section></article>' +
+            f'<article><p class="section-kicker">CHAMBRE 17 · {service_location}</p><h1>{html.escape(service["h1"])}</h1><p class="service-intro">{html.escape(service["intro"])}</p>' + content_links(service.get("introLinks")) +
+            ''.join(blocks) + f'<section class="service-contact"><h2>{html.escape(contact.get("heading", labels[1]))}</h2><p>{html.escape(contact.get("body", labels[2]))}</p><a class="button" href="{path_for(lang)}#contact">{html.escape(contact.get("label", labels[3]))}</a></section></article>' +
             f'<nav class="service-page-links" aria-label="{labels[5]}"><p>{labels[5]}</p>{related}</nav></main>' + footer + '</body></html>\n')
 
 

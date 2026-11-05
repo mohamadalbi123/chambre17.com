@@ -224,5 +224,8 @@
   "pricing.offer.creation-sur-mesure": "Website creation — Custom — Custom quote",
   "pricing.offer.gestion-essentiel": "Management & maintenance — Essential — 29 €/month",
   "pricing.offer.gestion-business": "Management & maintenance — Business — 49 €/month",
-  "pricing.offer.gestion-premium": "Management & maintenance — Premium — 89 €/month"
+  "pricing.offer.gestion-premium": "Management & maintenance — Premium — 89 €/month",
+  "services.links.website": "Custom Website Design",
+  "services.links.webapp": "Web App Development",
+  "services.links.management": "Website Management"
 }

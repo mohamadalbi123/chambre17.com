@@ -30,7 +30,7 @@
   "services.launch.item5": "Checklist de lancement pour visibilité et contact",
   "services.management.title": "Maintenance de sites web",
   "services.management.body": "Nous gérons votre site chaque mois : mises à jour, changements, maintenance technique et améliorations continues après le lancement.",
-  "services.local": "Basé en France, CHAMBRE 17 accompagne les entreprises en France et à l’international. Nous concevons des solutions sur mesure, avec une collaboration à distance et une maintenance en option.",
+  "services.local": "Depuis Lagord, près de La Rochelle, CHAMBRE 17 accompagne les entreprises en France et à l’international. Nous concevons des solutions sur mesure, avec une collaboration à distance et une maintenance en option.",
   "work.kicker": "Nos projets",
   "work.title": "Quelques-unes de nos réalisations",
   "work.lazoya.title": "LAZOYA — Centre de beauté",
@@ -224,5 +224,8 @@
   "pricing.offer.creation-sur-mesure": "Création de sites web — Sur mesure — Sur devis",
   "pricing.offer.gestion-essentiel": "Gestion & maintenance — Essentiel — 29 €/mois",
   "pricing.offer.gestion-business": "Gestion & maintenance — Business — 49 €/mois",
-  "pricing.offer.gestion-premium": "Gestion & maintenance — Premium — 89 €/mois"
+  "pricing.offer.gestion-premium": "Gestion & maintenance — Premium — 89 €/mois",
+  "services.links.website": "Création de site internet à La Rochelle",
+  "services.links.webapp": "Applications web à La Rochelle",
+  "services.links.management": "Maintenance de site web à La Rochelle"
 }
