@@ -38,12 +38,7 @@
           "After launch, optional monthly management can keep content current, add pages and monitor performance. Your website can continue to evolve as your business changes."
         ]
       }
-    ],
-    "relatedProject": {
-      "name": "LAZOYA — Beauty Centre",
-      "url": "https://www.lazoya.fr",
-      "description": "A service website with online booking, multilingual content and a customer journey designed around the beauty centre."
-    }
+    ]
   },
   {
     "slug": "developpement-application-web",
@@ -85,12 +80,7 @@
           "To discuss your application, describe who will use it, the tasks they need to complete and your current tools. This helps us understand the scope and prepare a proposal around the way your business works."
         ]
       }
-    ],
-    "relatedProject": {
-      "name": "J. LEILATI — E-commerce",
-      "url": "https://www.jleilati.com",
-      "description": "A multilingual e-commerce platform with product management, customer accounts, checkout and European delivery."
-    }
+    ]
   },
   {
     "slug": "maintenance-site-web",

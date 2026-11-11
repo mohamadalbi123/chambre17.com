@@ -64,11 +64,6 @@
         ]
       }
     ],
-    "relatedProject": {
-      "name": "LAZOYA — Centre de beauté",
-      "url": "https://www.lazoya.fr",
-      "description": "Un site de services avec réservation en ligne, contenus multilingues et parcours client pensé pour le centre de beauté."
-    },
     "introLinks": [
       {
         "label": "Demander un devis pour mon site",
@@ -149,11 +144,6 @@
         ]
       }
     ],
-    "relatedProject": {
-      "name": "J. LEILATI — E-commerce",
-      "url": "https://www.jleilati.com",
-      "description": "Une plateforme e-commerce multilingue avec gestion des produits, comptes clients, paiement et livraison en Europe."
-    },
     "localFocus": true,
     "introLinks": [
       {

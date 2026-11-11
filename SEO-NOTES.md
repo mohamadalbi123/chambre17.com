@@ -26,7 +26,7 @@ The site is static, not Next.js. The build uses Python's standard library. `pack
 - Dedicated `/fr/`, `/en/` and `/ar/` URLs always honour the requested language. `/` negotiates via a manual preference cookie, weighted Accept-Language, Vercel country, then English. Its 302 response is private/no-store. Only manual selector clicks set the one-year `chambre17-language` cookie. Old `?lang=` links remain supported. Old unprefixed French subpages redirect permanently to `/fr/...`.
 - Three substantive service pages in French, English and Arabic: website creation, web applications, website maintenance. Header, footer, related-service, contact, and language links connect the pages.
 - All 18 public content pages have unique titles and descriptions, one H1, canonical URLs on `https://www.chambre17.com`, reciprocal language alternates, and social metadata. Legal and privacy pages are translated too.
-- Visible local service introduction, accurate Lagord location, La Rochelle service coverage, and fuller descriptions of the existing LAZOYA and J. LEILATI projects.
+- Visible local service introduction, accurate Lagord location, La Rochelle service coverage, and direct links to the three service pages. Project examples and related-project references were removed in all languages at the owner’s request on 11 November 2026.
 - Existing Organization / ProfessionalService and WebSite data retained; localized WebPage, Service and BreadcrumbList data added. No invented reviews, ratings, prices, physical offices, testimonials, results or client statistics.
 - Sitemap lists every generated content page. It omits unverifiable modification dates. Robots and the existing Search Console verification file remain available.
 - Hero video downloads reduced approximately 50–55%, retaining full 10-second animations and aspect ratios. Originals retained. H.264 MP4 outputs have front-loaded metadata for streaming and WebP posters. Desktop output is 1280×720; mobile is 720×1280.
@@ -52,7 +52,7 @@ After publication:
 
 ## Useful future content
 
-- A dedicated e-commerce page can explain product/catalogue management, multilingual shopping, customer accounts, checkout and delivery, supported by the existing J. LEILATI work. Add more project-specific detail before separating it from the application service page.
+- A dedicated e-commerce page can explain product/catalogue management, multilingual shopping, customer accounts, checkout and delivery, once the owner confirms the scope and supporting evidence. Keep it within the application service page until then.
 - Google Business Profile: current verified offering is launch setup. A page can explain profile setup and launch tasks; do not advertise ongoing management until the owner confirms its scope.
 - Google Ads: current verified offering is setup and launch support. Confirm ongoing campaign management, reporting and deliverables before publishing a management page or performance claims.
 
